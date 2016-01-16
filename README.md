@@ -7,7 +7,7 @@ Smalltalk is a wonderful way of doing things in software and Cuis is a particula
 
 Cuis shares much with other Smalltalk implementations and shares much of its implementation mechanics with the Squeak and Pharo environments.
 
-Smalltalk is a big world, which you can use to do just about anything with a computer.
+Smalltalk is a big world, which you can use to do just about anything that can be done with a computer.
 
 Cuis is different in that it is actively managed to become smaller, where each component carries its own weight with the minimum of baggage.
 
