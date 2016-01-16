@@ -3,7 +3,56 @@ Cuis-Smalltalk-Learning
 
 Greetings and Welcome!!
 
+Smalltalk is a wonderful way of doing things in software and Cuis is a particular implementation of this language and its environment.
+
+Cuis shares much with other Smalltalk implementations and shares much of its implementation mechanics with the Squeak and Pharo environments.
+
+Smalltalk is a big world, which you can use to do just about anything with a computer.
+
+Cuis is different in that it is actively managed to become smaller, where each component carries its own weight with the minimum of baggage.
+
+We think this makes Cuis easier to learn.
+
+One measure of a Smalltalk's size is the number of Classes which implement it code.
+
+If I open a Workspace in the current Cuis and print
+  Smalltalk allClasses size. 
+
+- Cuis 4.2 (rev 2658) --> 497 
+
+For comparison, here are the class counts for some related implementations
+
+-  Squeak 4.4 --> 2511
+-  Squeak 4.5 --> 2175
+-  Squeak 5.0 --> 2244
+-  eToys  5.0 --> 2236
+-  Pharo  2.0 --> 3226
+-  Pharo  3.0 --> 4020
+-  Pharo  4.0 --> 4924
+
+
 This project is all about learning Cuis and sharing Cuis code which others may find of interest.
+
+# Beginners: 
+
+Take a look at Quick-UI-Tour.  
+
+Get Cuis from https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
+
+Look at the Terse Guide (World Menu -> Help -> Terse Guide)
+
+Look at documentation available for other wonderful Smalltalk implementations
+- http://squeak.org/documentation/
+
+Look at the repositories here
+- https://github.com/Cuis-Smalltalk-Learning
+
+Subscribe and ask questions at the Cuis developers email list
+- http://jvuletich.org/mailman/listinfo/cuis_jvuletich.org
+- cuis-dev@cuis-smalltalk.org
+
+
+# Contributors:
 
 The basic goals here are to develop a strategy which is
 - Easy to contribute to
