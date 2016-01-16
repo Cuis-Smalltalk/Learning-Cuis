@@ -15,8 +15,10 @@ We think this makes Cuis easier to learn.
 
 One measure of a Smalltalk's size is the number of Classes which implement it code.
 
-If I open a Workspace in the current Cuis and print
-  Smalltalk allClasses size. 
+If I open a Workspace in the current Cuis and print (cmd-p)
+````Smalltalk
+	Smalltalk allClasses size.
+````   
 
 - Cuis 4.2 (rev 2658) --> 497 
 
@@ -35,11 +37,11 @@ This project is all about learning Cuis and sharing Cuis code which others may f
 
 # Beginners: 
 
-Take a look at Quick-UI-Tour.  
+Take a look at Quick-UI-Tour (click on file 'Quick-UI-Tour.md' above).  
 
 Get Cuis from https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
 
-Look at the Terse Guide (World Menu -> Help -> Terse Guide)
+Look at the Terse Guide (World Menu -> Help -> Terse Guide to Cuis)
 
 Look at documentation available for other wonderful Smalltalk implementations
 - http://squeak.org/documentation/
@@ -61,7 +63,7 @@ The basic goals here are to develop a strategy which is
 
 The gist is that we, the Cuis community,  maintain an overview page, then just _fork_ our own mature/example projects (e.g. Cuis-Smalltalk-ColorEditor) where each has/adds its own explanation about what is interesting to learn there.  Each contributed project adds an author to the repository who is responsible for keeping his/her stuff up to date and supplying an orienting overview for learning.
 
-Each Project should supply a 'RoughGuide.md', which talks what the interesting bits of code are, as well as the Project 'README.md' which should
+Each Project should supply a 'RoughGuide.md', which describes what the interesting bits of code are, as well as the Project 'README.md' which should
 - Name the project/feature(s) -- what is this good for, what does it do?
 - List the latest Cuis version+revision the code was tested with.
 - Have the Smalltalk code to load the package(s).
