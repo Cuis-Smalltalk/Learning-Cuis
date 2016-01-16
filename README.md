@@ -13,7 +13,7 @@ Cuis is different in that it is actively managed to become smaller, where each c
 
 We think this makes Cuis easier to learn.
 
-One measure of a Smalltalk's size is the number of Classes which implement it code.
+One measure of a Smalltalk's size is the number of Classes which implement its code.
 
 If I open a Workspace in the current Cuis and print (cmd-p)
 ````Smalltalk
@@ -66,7 +66,7 @@ The gist is that we, the Cuis community,  maintain an overview page, then just _
 Each Project should supply a 'RoughGuide.md', which describes what the interesting bits of code are, as well as the Project 'README.md' which should
 - Name the project/feature(s) -- what is this good for, what does it do?
 - List the latest Cuis version+revision the code was tested with.
-- Have the Smalltalk code to load the package(s).
+- Show the Smalltalk code to load the package(s).
 - Have useful code/usage examples.
 - Optionally, show a screen graphic (what does this look like?)
 
