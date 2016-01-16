@@ -19,6 +19,8 @@ Each Project should supply a 'RoughGuide.md', which talks what the interesting b
 - Have useful code/usage examples.
 - Optionally, show a screen graphic (what does this look like?)
 
+All project repositories should be named with prefix 'Cuis-Smalltalk-'.
+
 For an example. look at the Cuis-Smalltalk-ColorEditor repository.
 
 ToDo:
