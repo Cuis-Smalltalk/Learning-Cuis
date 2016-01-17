@@ -1,5 +1,4 @@
-# Learning-Cuis
-Quick-UI-Tour
+# Quick-UI-Tour
 
 Greetings and Welcome!!
 
@@ -15,7 +14,7 @@ There are many great tools waiting to be used.  This tour gives an introduction 
 
 Perhaps the best way to think of Cuis is as a playground.
 
-You can open a Cuis image using a protable virtual machine and see the same windows in the same positions pixel-per-pixel on Linux, Macintosh, Windows or any operating system where the VM runs.
+You can open a Cuis image using a portable virtual machine and see the same windows in the same positions pixel-per-pixel on Linux, Macintosh, Windows or any operating system where the VM runs.
 
 You can start an image, do things with it and throw it away or save the image and its  record of the changes to be opened another time and take up right where you left off.
 
@@ -110,7 +109,7 @@ You can also write code in the lower pane in which "self" is bound to the object
 
 ![Worspace-Code](UITour/Cuis12-Worspace-Code.png)
 
-Another way to change a value is to send a message to an object using the Workspace.
+Another way to change a value is to send a message to an object using a Workspace.
 
 ![Workspace-Menu](UITour/Cuis13-Workspace-Menu.png)
 

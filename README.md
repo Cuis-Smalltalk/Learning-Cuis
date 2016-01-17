@@ -1,5 +1,4 @@
 # Learning-Cuis
-Cuis-Smalltalk-Learning
 
 Greetings and Welcome!!
 
