@@ -55,7 +55,7 @@ Clicking World Menu -> Open.. -> Workspace  brings up a Workspace window for you
 
 As you type, the system does "syntax hilighting" which gives clues to class and method names.  If you start typing a method name, you can hit the Tab key which will usually give you a "select list" of possible message name completions.
 
-Again, you can select code and DoIt (cms-d) or PrintIt (cmd-p) to get results.
+Again, you can select code and DoIt (cmd-d) or PrintIt (cmd-p) to get results.
 
 ![FileList](UITour/Cuis07-FileList.png)
 
@@ -72,9 +72,9 @@ You can also "right-click" or "double-click" to get a context sensitive menu in 
 In the picture above, a Package File has been selected.  Cuis Packages implement system Features.  The file shown implements a Feature named 'Graphics-Files-Additional' and requires the Feature 'Compression" be present.
 
 Clicking on the "installPackage" button has the same effect as running the code in the previous Workspace picture.
-''''Smalltalk
-    Feature require: #'Graphics-Files-Additional'.
-''''
+````Smalltalk
+  Feature require: #'Graphics-Files-Additional'.
+````
 
 ![InstalledPackages](UITour/Cuis08-InstalledPackages.png)
 
@@ -102,7 +102,7 @@ Clicking on the blue Menu button gives a menu for the morph.
 
 ![ObjectInspector](UITour/Cuis11-ObjectInspector.png)
 
-Selecting debug -> inspect gives an Object Inspector tool which allows one to see the inner structure of the morph, its "state".
+Selecting debug -> inspect morph gives an Object Inspector tool which allows one to see the inner structure of the morph, its "state".
 
 One can click on a Morph's "instance variables" to see their values, and in turn "inspect" those values.
 
@@ -136,9 +136,9 @@ I chose the Debug option and clicked on the "DoIt" stack frame which shows the c
 
 ![Debug-Plus](UITour/Cuis16-Debug-Plus.png)
 
-I then clicked on "+" to see what the fuss is about and see the method code for "+" in the String class.
+I then clicked on "+" frame above to see what the fuss is about and see the method code for "+" in the String class.
 
-At this point I am just going to close the debugger and ignore this as adding a string and a number really is a silly thing to do.  But I could have written or changes some code and them re-executed the stack frame to continue the computation -- without unwinding the stack! 
+At this point I am just going to close the debugger and ignore this as adding a string and a number really is a silly thing to do.  But I could have written or changed some code and them re-executed the stack frame to continue the computation -- without unwinding the stack! 
 
 Well, this is enough for thie brief introduction to the Cuis User Interface.
 
