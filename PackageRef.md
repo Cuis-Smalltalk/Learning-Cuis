@@ -1,4 +1,4 @@
-## Cuis Package Reference
+# Cuis Package Reference
 
 Also, do a search on GitHub repositories containing 'Cuis-Smalltalk'
 
@@ -39,9 +39,25 @@ description: 'Browse class comments for classes with names such as "Pluggable," 
 provides: #'ClassCommentBrowser'
 requires: {}
 ````
+## Of Interest
+- Multipane browser with selection and search
 
+- Popup menu on selected class allows opening browsers
+
+- Class Comment Pane allows evaluation of Smalltalk expressions.
+
+
+#'Crypto-NaCl'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Crypto-NaCl
+````Smalltalk
+description: 'Smalltalk interface to the NaCl (salt) crypto library'
+provides: #'Crypto-NaCl'
+requires: { #'FFI. }
+````
+## Of Interest
+- Simple example of FFI (Foreign Function Interface) usage
+
 - https://github.com/KenDickey/Cuis-Smalltalk-Ia-En
 - https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
 - https://github.com/KenDickey/Cuis-Smalltalk-NamedColors
