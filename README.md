@@ -98,7 +98,7 @@ The basic goals here are to develop a strategy which is
 - Orienting and useful to people learning Cuis/Smalltalk
 - Simple enough that we will bother to maintain it and not step (often) on each others feet.
 
-The gist is that we, the Cuis community, maintain an overview/READM.md page, then just add our own mature/example projects to the list of interesting repositories.  Each contributed project adds an author to the repository who will be keeping his/her stuff up to date and supplying an orienting overview for learning.
+The gist is that we, the Cuis community, maintain an overview/README.md page, then just add our own mature/example projects to the list of interesting repositories.
 
 Each Project should supply a 'RoughGuide.md', which describes what the interesting bits of code are, as well as the Project 'README.md' which should
 - Name the project/feature(s) -- what is this good for, what does it do?
