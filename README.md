@@ -45,12 +45,50 @@ Look at the Terse Guide (World Menu -> Help -> Terse Guide to Cuis)
 Look at documentation available for other wonderful Smalltalk implementations
 - http://squeak.org/documentation/
 
-Look at the repositories here.  There is usually a 'RoughGuide.md' with notes of interest
-- https://github.com/Cuis-Smalltalk-Learning
-
 Subscribe and ask questions at the Cuis developers email list
 - http://jvuletich.org/mailman/listinfo/cuis_jvuletich.org
 - cuis-dev@cuis-smalltalk.org
+
+Software 'code' is meant to be read as well as written.  Well written software is something we all work on getting better at.  There are some cool Cuis packages on GitHib.
+
+Look at the repositories in GitHub with names starting 'Cuis-Smalltalk'.  Many of these have a 'RoughGuide.md' file which points out code topics/techniques of interest.
+
+Some repositories of interest;
+- https://github.com/KenDickey/Cuis-Smalltalk-ColorEditor
+- https://github.com/dhnorton/Cuis-Smalltalk-comments
+- https://github.com/KenDickey/Cuis-Smalltalk-Crypto-NaCl
+- https://github.com/KenDickey/Cuis-Smalltalk-Ia-En
+- https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
+- https://github.com/KenDickey/Cuis-Smalltalk-NamedColors
+- https://github.com/dhnorton/Cuis-Smalltalk-patterns
+- https://github.com/KenDickey/Cuis-Smalltalk-Ropes
+- https://github.com/KenDickey/Cuis-Smalltalk-Solitaire
+
+I find it best to "git clone" repositories in a common directory, in my case named 'Cuis'.
+
+For example, to get a copy of the ColorEditor in your image, you first must clone the Cuis-Smalltalk-ColorEditor and (from its 'README.md' file) its dependent repositories Cuis-Smalltalk-Morphic-Misc1 and Cuis-Smalltalk-NamedColors.
+
+Assuming you did a "git clone https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev" into a directory named 'Cuis'.
+
+````
+cd Cuis
+git clone https://github.com/KenDickey/Cuis-Smalltalk-ColorEditor
+git clone https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
+git clone https://github.com/KenDickey/Cuis-Smalltalk-NamedColors
+cd Cuis-Smalltalk-Dev
+squeak Cuis<version>.image
+````
+In a workspace
+````Smalltalk
+  Feature require: #'Morphic-ColorEditor'.
+````
+Select the code and "do-it" (cmd-d).
+
+If all went well, you should be able to open a ColorEditor via the World Menu -> New morph.. -> ColorEditor -> ColorEditorPanel
+
+Enjoy!
+
+
 
 
 # Contributors:
