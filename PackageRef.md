@@ -3,6 +3,7 @@
 Also, do a search on GitHub repositories containing 'Cuis-Smalltalk'
 
 
+
 #'Morphic-ColorEditor'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-ColorEditor
@@ -32,6 +33,7 @@ requires: { #'Cuis-Base'. #'Morphic-Misc1'.
 - Adds menu items to World Menu 
 
 
+
 #'ClassCommentBrowser'
 
 - https://github.com/dhnorton/Cuis-Smalltalk-comments
@@ -48,6 +50,7 @@ requires: {}
 - Class Comment Pane allows evaluation of Smalltalk expressions.
 
 
+
 #'Crypto-NaCl'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Crypto-NaCl
@@ -58,6 +61,7 @@ requires: { #'FFI. }
 ````
 ## Of Interest
 - Simple example of FFI (Foreign Function Interface) usage
+
 
 
 #'Interlingua-English-Lookup'
@@ -75,6 +79,8 @@ requires: { }
 - Shows a useful application built with a small amount of code.
 
 - Note IEDictWindow>>fontPreferenceChanged updates sizes when font sizes change.
+
+
 
 #'Morphic-Misc1'
 
@@ -118,7 +124,7 @@ A very simple window with a label.  Useful when you don't need the full generali
 - SimpleNumberEntryMorph - 
 - WindowTitleMorph - Used in Panels to supply Title and common Buttons
  
-# Adding Morphs to the New Morph menu
+### Adding Morphs to the New Morph menu
 
 When the browser category or a Morph starts with 'Morphic-' and the Morph's class answers true to #includeInNewMorphMenu, then the Morph will show up under the category name with the 'Morphic-' prefix removed.  
 
@@ -129,7 +135,103 @@ To prevent such morphs from showing up in the New Morph Menu, add a class side m
 You may also wish to add a class method #initializedInstance to return something special when a new Morph is created from the New Morph Menu.  Look at the code in UpdatingStringMorph class>>initializedInstance for an example.
 
 
+#'XKCD-NamedColors'
+#'NBSISCC-NamedColors'
+#'CSS2-NamedColors'
+#'CSS3-NamedColors'
+#'Crayon-NamedColors'
+
 - https://github.com/KenDickey/Cuis-Smalltalk-NamedColors
+````Smalltalk
+description: 'Color Name Dictionaries from various Color "Standards"'
+provides: { #'XKCD-NamedColors'. #'NBSISCC-NamedColors'.
+	#'CSS2-NamedColors'. #'CSS3-NamedColors'. #'Crayon-NamedColors''. }
+requires: { }
+````
+## Of Interest
+- Create custom color dictionaries
+
+- Make your color dictionary the system color dictionary
+
+- Note method Color>>doesNotUnderstand: which shows how new colors are created by name using the current color dictionary.
+
+
+
+#'Code-Patterns'
+
 - https://github.com/dhnorton/Cuis-Smalltalk-patterns
+````Smalltalk
+description: 'Useful Cuis code patterns, intended to help the programmer exploit some of the features of Cuis classes. These examples separate model from view and feature two styles: coupled and decoupled.
+
+The coupled style employs the "dependency mechanism" and exposes the model to changes in the view and to views which were unanticipated. The primary methods of the dependency mechanism are #changed: and #update: .
+
+The decoupled style employs the "observer pattern" which ensures that the model can remain unaffected by changes to the view or by additional views. The primary methods of the observer pattern are #triggerEvent: and #when:send:to: . This is the preferred style for Cuis, although both styles can be found in the base.
+'
+provides: #'Code-Patterns'
+requires: { }
+````
+## Of Interest
+- Multiple views on a single model
+ 
+- Model is independent of the views
+
+- Example of updating all views when one view changes
+
+- Example of changing one view having no effect on other views
+
+- Extensive line comments explaining reason for the code
+
+- Use of #when:send:to: and #triggerEvent: for communication between view and model (Observer Pattern)
+
+- Contrasting Observer Pattern and Dependency Mechanism 
+
+
+
+#'Ropes'
+
 - https://github.com/KenDickey/Cuis-Smalltalk-Ropes
+````Smalltalk
+description: 'Ropes: functional, immutable strings'
+provides: #'Ropes'
+requires: { #'Compression'. }
+````
+## Of Interest
+- Thread-safe functional strings
+
+- RopeFileList, RopeTextEditor show how to subclass/specialize system tools
+
+- Shows a family of related data structures working to support a common abstraction.
+
+
+
+#'Morphic-Games-Solitaire'
+
 - https://github.com/KenDickey/Cuis-Smalltalk-Solitaire
+````Smalltalk
+description: 'Freecell and Klondike Solitaire Card Games'
+provides: #'Morphic-Games-Solitaire'
+requires: { #'Graphics-Files-Additional' }
+````
+## Of Interest
+- Shows the structure of a complex application with a number of classes.
+
+- Drag 'n Drop
+
+- Card Images
+
+- Undo
+
+- Momento Pattern: save/restore game play
+
+- FreeCell and Klondike games share behaviors implemented in their parent class: CardTableMorph
+
+- Rule based interactions.  E.g. CardContainerMorph>>okToPickUp: aCard
+
+- Continuation Passing: Card Moves are animated asynchronously, passing in the 'next' action.  See CardTableMorph>>slideto:nSteps:delay:next:
+
+- Dynamic DropShadows: See CardMorph>>setDropShadowMorph
+
+- CardTableMorph class initializes games and causes table setup for Klindike, FreeCell, your-solitaire-game-here.
+
+
+### More to come..
