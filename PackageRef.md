@@ -1,6 +1,6 @@
 # Cuis Package Reference
 
-Also, do a search on GitHub repositories containing 'Cuis-Smalltalk'
+Also, do a search on GitHub for repositories containing 'Cuis-Smalltalk'
 
 
 
