@@ -53,16 +53,9 @@ Software 'code' is meant to be read as well as written.  Well written software i
 
 Look at the repositories in GitHub with names starting 'Cuis-Smalltalk'.  Many of these have a 'RoughGuide.md' file which points out code topics/techniques of interest.
 
-Some repositories of interest;
-- https://github.com/KenDickey/Cuis-Smalltalk-ColorEditor
-- https://github.com/dhnorton/Cuis-Smalltalk-comments
-- https://github.com/KenDickey/Cuis-Smalltalk-Crypto-NaCl
-- https://github.com/KenDickey/Cuis-Smalltalk-Ia-En
-- https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
-- https://github.com/KenDickey/Cuis-Smalltalk-NamedColors
-- https://github.com/dhnorton/Cuis-Smalltalk-patterns
-- https://github.com/KenDickey/Cuis-Smalltalk-Ropes
-- https://github.com/KenDickey/Cuis-Smalltalk-Solitaire
+Many interesting Features are described in 
+- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/PackageRef.md
+
 
 I find it best to "git clone" repositories in a common directory, in my case named 'Cuis'.
 
