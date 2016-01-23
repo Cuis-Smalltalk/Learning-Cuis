@@ -36,7 +36,9 @@ This project is all about learning Cuis and sharing Cuis code which others may f
 
 # Beginners: 
 
-Take a look at Quick-UI-Tour (click on file 'Quick-UI-Tour.md' above).  
+Take a look at Quick-UI-Tour (click on file 'Quick-UI-Tour.md' above or)
+- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/Quick-UI-Tour.md
+
 
 Get Cuis from https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
 
@@ -53,7 +55,7 @@ Software 'code' is meant to be read as well as written.  Well written software i
 
 Look at the repositories in GitHub with names starting 'Cuis-Smalltalk'.  Many of these have a 'RoughGuide.md' file which points out code topics/techniques of interest.
 
-Many interesting Features are described in 
+Many interesting Features are described in 'PackageRef.md' above:
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/PackageRef.md
 
 
