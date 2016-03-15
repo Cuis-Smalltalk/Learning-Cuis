@@ -111,3 +111,8 @@ ToDo:
 -  Using the Styled Text Editor, we start and maintain a Rough Guide to Cuis (Cuis-by-Example).  After the general Smalltalk and Cuis overviews, we can write about parts of the system, patterns of how to get things done, and use forked project examples.
 
 I suspect it would not be too much work to embed Smalltalk WorkSheets (TerseGuide WorkSpaces) as objects in STE, which would allow us to have nice live examples.  Projects could contribute chapters.
+
+Open a FileList after loading STE, select MorphBecomeButton.object and click on button "openSTE" to see some interesting code.
+
+Enjoy!
+
