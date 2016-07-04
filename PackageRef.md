@@ -160,6 +160,7 @@ requires: { }
 #'Code-Patterns'
 
 - https://github.com/dhnorton/Cuis-Smalltalk-patterns
+
 ````Smalltalk
 description: 'Useful Cuis code patterns, intended to help the programmer exploit some of the features of Cuis classes. These examples separate model from view and feature two styles: coupled and decoupled.
 
@@ -238,5 +239,32 @@ requires: { #'Graphics-Files-Additional' }
 
 - FreeCell and Klondike register with the FileList to restore saved game files.
 
+#'Life'
 
+- https://github.com/dhnorton/Cuis-Smalltalk-life
+
+````Smalltalk
+description:The game of Life is an example of a cellular automaton. It was developed by Prof. John H. Conway at the University of Cambridge. Cells are displayed on a grid, analogous to graph paper, and live or die by the following rules:
+
+- a live cell surrounded by 2 or 3 other live cells will continue to live
+- a live cell surrounded by 0 or 1 other live cells will die of loneliness
+- a dead cell surrounded by exactly 3 live cells will come alive
+- a cell surrounded by 4 or more live cells will die of overcrowding
+
+#####References
+Gardner, Martin, "Mathematical Games", Scientific American, October 1970, February 1971
+
+"Some Facts of Life", Byte Magazine, December 1978
+## Of Interest
+- A view creating another view
+
+- Model is independent of the views
+
+- Example of changing one view having no effect on other views
+
+- Use of #when:send:to: and #triggerEvent: for communication between view and model (Observer Pattern)
+
+- Each cell of the grid is a morph
+
+- Need for popup menu signaled by grid morphs
 ### More to come..
