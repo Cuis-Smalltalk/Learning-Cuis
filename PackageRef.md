@@ -171,6 +171,10 @@ provides: #'Code-Patterns'
 requires: { }
 ````
 ## Of Interest
+- Extensive line comments explaining reason for the code
+
+- How to use PluggableListMorph
+ 
 - Multiple views on a single model
  
 - Model is independent of the views
@@ -179,7 +183,6 @@ requires: { }
 
 - Example of changing one view having no effect on other views
 
-- Extensive line comments explaining reason for the code
 
 - Use of #when:send:to: and #triggerEvent: for communication between view and model (Observer Pattern)
 
