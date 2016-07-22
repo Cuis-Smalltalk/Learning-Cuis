@@ -298,7 +298,8 @@ description:
 - a dead cell surrounded by exactly 3 live cells will come alive
 - a cell surrounded by 4 or more live cells will die of overcrowding
 
-#####References
+References:
+
 Gardner, Martin, "Mathematical Games", Scientific American, October 1970, February 1971
 
 "Some Facts of Life", Byte Magazine, December 1978'
