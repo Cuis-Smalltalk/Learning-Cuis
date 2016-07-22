@@ -61,9 +61,8 @@ requires: {}
 
 
 #'Crypto-NaCl'
-
 - https://github.com/KenDickey/Cuis-Smalltalk-Crypto-NaCl
-
+-
 
 ````Smalltalk
 description: 
@@ -190,7 +189,7 @@ requires: { }
 #'Code-Patterns'
 
 - https://github.com/dhnorton/Cuis-Smalltalk-patterns
-
+-
 ````Smalltalk
 description: 
 
@@ -288,7 +287,7 @@ requires: { #'Graphics-Files-Additional' }
 #'Life'
 
 - https://github.com/dhnorton/Cuis-Smalltalk-life
-
+-
 ````Smalltalk
 description:
 
