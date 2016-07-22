@@ -1,19 +1,23 @@
 # Cuis Package Reference
 
-Also, do a search on GitHub for repositories containing 'Cuis-Smalltalk'
+Also, do a search on GitHub for repositories containing 'Cuis-Smalltalk' . The packages are as follows:
 
 
 
 #'Morphic-ColorEditor'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-ColorEditor
+- 
 ````Smalltalk
-description: 'Color Editor/Picker'
+description: 
+
+'Color Editor/Picker'
 provides: #'Morphic-ColorEditor'
+
 requires: { #'Cuis-Base'. #'Morphic-Misc1'. 
 	#'Graphics-Files-Additional'. #'CSS3-NamedColors'.}
 ````
-## Of Interest
+## Of Interest in 'Morphic-ColorEditor'
 - Adds custom Morphs to the Morphic Menu (World Menu -> New Morph..)
 
 - Making use of other packages (Requires Features CSS3-Colors and Morphic-Misc-1)
@@ -37,12 +41,17 @@ requires: { #'Cuis-Base'. #'Morphic-Misc1'.
 #'ClassCommentBrowser'
 
 - https://github.com/dhnorton/Cuis-Smalltalk-comments
+- 
 ````Smalltalk
-description: 'Browse class comments for classes with names such as "Pluggable," "Morphic," "Text," or "Morph" which appear in a hierarchical list.'
+description: 
+
+'Browse class comments for classes with names such as "Pluggable," "Morphic," "Text," or "Morph" which appear in a hierarchical list.'
+
 provides: #'ClassCommentBrowser'
+
 requires: {}
 ````
-## Of Interest
+## Of Interest in 'ClassCommentBrowser'
 - Multipane browser with selection and search
 
 - Popup menu on selected class allows opening browsers
@@ -54,12 +63,18 @@ requires: {}
 #'Crypto-NaCl'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Crypto-NaCl
+
+
 ````Smalltalk
-description: 'Smalltalk interface to the NaCl (salt) crypto library'
+description: 
+
+'Smalltalk interface to the NaCl (salt) crypto library'
+
 provides: #'Crypto-NaCl'
+
 requires: { #'FFI. }
 ````
-## Of Interest
+## Of Interest in 'Crypto-NaCl'
 - Simple example of FFI (Foreign Function Interface) usage
 
 
@@ -67,12 +82,17 @@ requires: { #'FFI. }
 #'Interlingua-English-Lookup'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Ia-En
+- 
 ````Smalltalk
-description: 'Interlingua<->English Language Lookup'
+description: 
+
+'Interlingua<->English Language Lookup'
+
 provides: #'Interlingua-English-Lookup'
+
 requires: { }
 ````
-## Of Interest
+## Of Interest in 'Interlingua-English-Lookup'
 
 - Shows how to set up a specialized SystemWindow using method #buildMorphicWindow.
 
@@ -85,12 +105,17 @@ requires: { }
 #'Morphic-Misc1'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
+- 
 ````Smalltalk
-description: 'Various basic morphs used by several packages'
+description: 
+
+'Various basic morphs used by several packages'
+
 provides: #'Morphic-Misc1'
+
 requires: { }
 ````
-## Of Interest
+## Of Interest in 'Morphic-Misc1'
 - AddedCursors - 
 Shows how to create and use a custom cursor.
 - BorderedImageMorph - 
@@ -134,21 +159,26 @@ To prevent such morphs from showing up in the New Morph Menu, add a class side m
 
 You may also wish to add a class method #initializedInstance to return something special when a new Morph is created from the New Morph Menu.  Look at the code in UpdatingStringMorph class>>initializedInstance for an example.
 
-
-#'XKCD-NamedColors'
-#'NBSISCC-NamedColors'
-#'CSS2-NamedColors'
-#'CSS3-NamedColors'
-#'Crayon-NamedColors'
+#'... -NamedColors'
+##'XKCD-NamedColors'
+##'NBSISCC-NamedColors'
+##'CSS2-NamedColors'
+##'CSS3-NamedColors'
+##'Crayon-NamedColors'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-NamedColors
+- 
 ````Smalltalk
-description: 'Color Name Dictionaries from various Color "Standards"'
+description: 
+
+'Color Name Dictionaries from various Color "Standards"'
+
 provides: { #'XKCD-NamedColors'. #'NBSISCC-NamedColors'.
 	#'CSS2-NamedColors'. #'CSS3-NamedColors'. #'Crayon-NamedColors''. }
+
 requires: { }
 ````
-## Of Interest
+## Of Interest in '... -NamedColors'
 - Create custom color dictionaries
 
 - Make your color dictionary the system color dictionary
@@ -162,16 +192,20 @@ requires: { }
 - https://github.com/dhnorton/Cuis-Smalltalk-patterns
 
 ````Smalltalk
-description: 'Useful Cuis code patterns, intended to help the programmer exploit some of the features of Cuis classes. These examples separate model from view and feature two styles: coupled and decoupled.
+description: 
+
+'Useful Cuis code patterns, intended to help the programmer exploit some of the features of Cuis classes. These examples separate model from view and feature two styles: coupled and decoupled.
 
 The coupled style employs the "dependency mechanism" and exposes the model to changes in the view and to views which were unanticipated. The primary methods of the dependency mechanism are #changed: and #update: .
 
 The decoupled style employs the "observer pattern" which ensures that the model can remain unaffected by changes to the view or by additional views. The primary methods of the observer pattern are #triggerEvent: and #when:send:to: . This is the preferred style for Cuis, although both styles can be found in the base.
 '
+
 provides: #'Code-Patterns'
+
 requires: { }
 ````
-## Of Interest
+## Of Interest in 'Code-Patterns'
 - Extensive line comments explaining reason for the code
 
 - How to use PluggableListMorph
@@ -180,9 +214,11 @@ requires: { }
  
 - Model is independent of the views
 
-- Example of updating all views when one view changes
+- Examples: 
+ 
+	- updating all views when one view changes
 
-- Example of changing one view having no effect on other views
+	- changing one view having no effect on other views
 
 
 - Use of #when:send:to: and #triggerEvent: for communication between view and model (Observer Pattern)
@@ -194,12 +230,17 @@ requires: { }
 #'Ropes'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Ropes
+- 
 ````Smalltalk
-description: 'Ropes: functional, immutable strings'
+description: 
+
+'Ropes: functional, immutable strings'
+
 provides: #'Ropes'
+
 requires: { #'Compression'. }
 ````
-## Of Interest
+## Of Interest in 'Ropes'
 - Thread-safe functional strings
 
 - RopeFileList, RopeTextEditor show how to subclass/specialize system tools
@@ -211,12 +252,17 @@ requires: { #'Compression'. }
 #'Morphic-Games-Solitaire'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Solitaire
+- 
 ````Smalltalk
-description: 'Freecell and Klondike Solitaire Card Games'
+description: 
+
+'Freecell and Klondike Solitaire Card Games'
+
 provides: #'Morphic-Games-Solitaire'
+
 requires: { #'Graphics-Files-Additional' }
 ````
-## Of Interest
+## Of Interest in 'Morphic-Games-Solitaire'
 - Shows the structure of a complex application with a number of classes.
 
 - Drag 'n Drop
@@ -225,11 +271,11 @@ requires: { #'Graphics-Files-Additional' }
 
 - Undo
 
-- Momento Pattern: save/restore game play
+- Memento Pattern: save/restore game play
 
 - FreeCell and Klondike games share behaviors implemented in their parent class: CardTableMorph
 
-- Rule based interactions.  E.g. CardContainerMorph>>okToPickUp: aCard
+- Rule based interactions, e.g. CardContainerMorph>>okToPickUp: aCard
 
 - Continuation Passing: Card Moves are animated asynchronously, passing in the 'next' action.  See CardTableMorph>>slideto:nSteps:delay:next:
 
@@ -244,7 +290,9 @@ requires: { #'Graphics-Files-Additional' }
 - https://github.com/dhnorton/Cuis-Smalltalk-life
 
 ````Smalltalk
-description:The game of Life is an example of a cellular automaton. It was developed by Prof. John H. Conway at the University of Cambridge. Cells are displayed on a grid, analogous to graph paper, and live or die by the following rules:
+description:
+
+'The game of Life is an example of a cellular automaton. It was developed by Prof. John H. Conway at the University of Cambridge. Cells are displayed on a grid, analogous to graph paper, and live or die by the following rules:
 
 - a live cell surrounded by 2 or 3 other live cells will continue to live
 - a live cell surrounded by 0 or 1 other live cells will die of loneliness
@@ -254,8 +302,11 @@ description:The game of Life is an example of a cellular automaton. It was devel
 #####References
 Gardner, Martin, "Mathematical Games", Scientific American, October 1970, February 1971
 
-"Some Facts of Life", Byte Magazine, December 1978
-## Of Interest
+"Some Facts of Life", Byte Magazine, December 1978'
+
+````
+
+## Of Interest in 'Life'
 - A view creating another view
 
 - Model is independent of the views
@@ -267,4 +318,5 @@ Gardner, Martin, "Mathematical Games", Scientific American, October 1970, Februa
 - Each cell of the grid is a morph
 
 - Need for popup menu signaled by grid morphs
-### More to come..
+
+# More packages to come...
