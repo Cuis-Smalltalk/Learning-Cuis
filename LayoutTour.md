@@ -36,9 +36,6 @@ In Linux, I open a command line window.
 OK. I am running a Cuis image with a Workspace and have required Feature #'Morphic-Misc1".
 
 Let's create a LayoutMorph to see what it does.
-
-![Cuis Window](LayoutTour/Cuis-001.png)
-
 ````Smalltalk
 	Mylayout := LayoutMorph newRow.
 ````
@@ -223,6 +220,3 @@ LayoutMorphs can be nested and given their own LayoutSpecs.
 
 
 In Part 2 on Layouts, we will look at the code for setting up the edit panels themselves.
-
-
-
