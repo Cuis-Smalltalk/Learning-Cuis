@@ -28,10 +28,10 @@ Of course, this won't work very well unless you actually have the packaged code 
 What I do is maintain a Cuis directory where I clone git repositories for all Cuis-Smalltalk-* features.
 
 In Linux, I open a command line window.
-  cd Cuis
-  git clone https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
-  cd Cuis-Smalltalk-Dev
-  <open a cuis image>
+-  cd ~/Cuis
+-  git clone https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
+-  cd Cuis-Smalltalk-Dev
+-  <open a cuis image>
 
 OK. I am running a Cuis image with a Workspace and have required Feature #'Morphic-Misc1".
 
