@@ -86,7 +86,7 @@ the #color: message would have been sent to the RectangleLikeMorph class, the ta
   RectangleLikeMorph new :: color: Color blue
 ````
 on the other hand sends #color: to the result of (RectangleLikeMorph new), which is a new instance of a RectangleLikeMorph.
-  Using a cascade with #yourself allows us to get the target receiver, the RectangleLikeMorph, which is then the argument to #addMorph: message sent to out LayoutMorph.
+  Using a cascade with #yourself allows us to get the target receiver, the RectangleLikeMorph, which is then the argument to #addMorph: message sent to our LayoutMorph.
 
 Whew!  OK.  No more shortcuts.  But these two shortcuts, cascade and chain, are very useful.
 
