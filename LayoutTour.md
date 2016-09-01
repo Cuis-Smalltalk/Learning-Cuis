@@ -31,7 +31,7 @@ In Linux, I open a command line window.
 -  cd ~/Cuis
 -  git clone https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
 -  cd Cuis-Smalltalk-Dev
--  <open a cuis image>
+-  "open a cuis image"
 
 OK. I am running a Cuis image with a Workspace and have required Feature #'Morphic-Misc1".
 
@@ -114,13 +114,13 @@ We have a blue rectangle, a yellow ellipse, and a cuis image in a row.
 
 Command-click on the larger, skyBlue rectangle to get its "construction halo". 
 
-v![Cuis Window](LayoutTour/Cuis-006.png)
+![Cuis Window](LayoutTour/Cuis-006.png)
 
 Click on the blue circle at top left to get a "context menu" for the LayoutMorph.
 
 ![Cuis Window](LayoutTour/Cuis-007.png)
 
-Select 'edit me (a LayoutMorph)
+Select 'edit me (a LayoutMorph)'
 
 ![Cuis Window](LayoutTour/Cuis-008.png)
 
@@ -138,7 +138,7 @@ Congratulations!  You have just centered the submorphs in the layout row!
 
 ![Cuis Window](LayoutTour/Cuis-009.png)
 
-Let's change the LayoutMorph to be a row instead of a column.  Select Direction Row and click Update.
+Let's change the LayoutMorph to be a column instead of a row.  Select Direction Column and click Update.
 
 ![Cuis Window](LayoutTour/Cuis-010.png)
 
