@@ -68,7 +68,9 @@ So the above is the same as typing:
 
 ![Cuis Window](LayoutTour/Cuis-003.png)
 
-Well, a cyan blue rectangle is not much to work with.  Let's add a few submorphs -- morphs which are contained in the cyan LayoutMorph.
+### Add submorphs
+
+Well, a skyBlue rectangle is not much to work with.  Let's add a few submorphs -- morphs which are contained in the skyBlue LayoutMorph.
 
 ````Smalltalk
 myLayout addMorph: (RectangleLikeMorph new :: color: Color blue; yourself).
@@ -108,11 +110,11 @@ Your Cuis World should look something like this.
 
 We have a blue rectangle, a yellow ellipse, and a cuis image in a row.
 
-Command-click on the larger, cyan rectangle to get its "construction halo". 
+### LayourMorph intro
 
-![Cuis Window](LayoutTour/Cuis-006.png)
+Command-click on the larger, skyBlue rectangle to get its "construction halo". 
 
-Note how the user interface allows one to select a nested (inner) morph by repeated command-clicking.
+v![Cuis Window](LayoutTour/Cuis-006.png)
 
 Click on the blue circle at top left to get a "context menu" for the LayoutMorph.
 
@@ -156,6 +158,8 @@ You should now have a 10 pixel space between the submorphs.
 
 ![Cuis Window](LayoutTour/Cuis-013.png)
 
+### LayoutSpec intro
+
 So LayoutMorphs can layout submorphs in a row or a column, position submorphs along the line of the row or column, and set spacing between the Morphs.
 
 What else can we do with layouts?
@@ -194,10 +198,6 @@ What else can we do with LayoutSpecs?
 
 Let's set the Width to a Fixed 80 pixels and the Height to 40% of the container, with a 10 pixel minimum and Update.
 
-<picture>
-
-If you 'show halo' the layout (or command-click on the cyan rectangle), you can drag the yellow circle on the lower right corner of the LayoutMorph to change its size dynamically.
-
 ![Cuis Window](LayoutTour/Cuis-018.png)
 
 So when you resize the layout, the Ellipse keeps the same width, but its height is maintained at approxumately 40% of the LayoutMorph.
@@ -209,13 +209,18 @@ Now set its Height to Proportional 50% with a minimum of 30 pixels and click Upd
 
 ![Cuis Window](LayoutTour/Cuis-019.png)
 
-Go ahead and resize the cyan LayoutMorph to see how things are kept in place.
+Go ahead and resize the skyBlue LayoutMorph to see how things are kept in place.
+
+If you 'show halo' from the layout edit panel or command-click on the skyBlue rectangle, you can drag the yellow circle on the lower right corner of the LayoutMorph to change its size dynamically.
 
 ![Cuis Window](LayoutTour/Cuis-020.png)
 
 By now I expect that you know what the buttons do and can play all day with layouts.
 
 You can use the layout and layoutSpec edit panels to test how you want your Morphs to resize within their containers.
+
+LayoutMorphs can be nested and given their own LayoutSpecs.
+
 
 In Part 2 on Layouts, we will look at the code for setting up the edit panels themselves.
 
