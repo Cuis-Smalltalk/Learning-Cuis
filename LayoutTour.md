@@ -75,7 +75,7 @@ myLayout addMorph: (RectangleLikeMorph new :: color: Color blue; yourself).
 
 ![Cuis Window](LayoutTour/Cuis-004.png)
 
-This introduces a different shortcut: '::'.  The double-colon acts like ';' except that it uses the result of the previous message send as the target of the new message send. This chortcut is called a "chain".
+This introduces a different shortcut: "::".  The double-colon acts like ";" except that it uses the result of the previous message send as the target of the new message send. This shortcut is called a "chain".
 
 If we had typed
 ````Smalltalk
