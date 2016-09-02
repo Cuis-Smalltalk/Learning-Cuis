@@ -107,7 +107,7 @@ Your Cuis World should look something like this.
 
 We have a blue rectangle, a yellow ellipse, and a cuis image in a row.
 
-### LayourMorph intro
+### LayoutMorph intro
 
 Command-click on the larger, skyBlue rectangle to get its "construction halo". 
 
