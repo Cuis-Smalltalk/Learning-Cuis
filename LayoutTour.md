@@ -5,7 +5,7 @@ This file is about how graphic entities, Morphs, may change as they are resized.
 
 A Morph which contains other Morphs may be resized and wish to maintain positional relationships between the contained Morphs.
 
-We call this maintaing the submorph "layout".  We want to lay out each morph in a way that they are well related. 
+We call this maintaining the submorph "layout".  We want to lay out each morph in a way that they are well related. 
 
 Cuis has LayoutMorphs which do this for their submorphs.
 
