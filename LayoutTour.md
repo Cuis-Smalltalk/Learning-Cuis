@@ -117,7 +117,7 @@ We have a blue rectangle, a yellow ellipse, and a cuis image in a row.
 
 ### LayoutMorph intro
 
-Command-click on the larger, skyBlue rectangle to get its "construction halo". 
+Command-click (Windows button3) on the larger, skyBlue rectangle to get its "construction halo". 
 
 ![Cuis Window](LayoutTour/Cuis-006.png)
 
@@ -129,7 +129,7 @@ Select 'edit me (a LayoutMorph)'
 
 ![Cuis Window](LayoutTour/Cuis-008.png)
 
-Let's move the LayoutEditor a bit to the right to see what is going on.  Also, click on the "push pin" in the lable area at the end of the name of the Morph who's Layout we are editing.
+Let's move the LayoutEditor a bit to the right to see what is going on.  Also, click on the "push pin" in the label area at the end of the name of the Morph whose Layout we are editing.
 
 If you don't click on the push-pin to keep the edit panel around, it will disappear when you click on either the Update or Cancel buttons.
 
@@ -171,7 +171,7 @@ What else can we do with layouts?
 
 It turns out that each submorph can tell its containing LayoutMorph how it wants to be sized and placed within its layout.
 
-Command-click on the yellow ellipse to get its halo, select the blue circle for its context menu, and select 'edit my layoutspec'.
+Command-click (Windows shift-button3) on the yellow ellipse to get its halo, select the blue circle for its context menu, and select 'edit my layoutspec'.
 
 Note that the original command-click halos the outer Morph.  Each additional click halos the next innermost Morph.  The Morph name is in a label at the bottom of the halo.
 
