@@ -19,10 +19,13 @@ If I open a Workspace in the current Cuis and print (cmd-p)
 	Smalltalk allClasses size.
 ````   
 
-- Cuis 4.2 (rev 2658) --> 497 
+- Cuis 4.2 (rev 2923) --> 474
 
 For comparison, here are the class counts for some related implementations
 
+-  Squeak 2.0 -->  509
+-  Squeak 3.0 --> 1545
+-  Squeak 3.8 --> 2321
 -  Squeak 4.4 --> 2511
 -  Squeak 4.5 --> 2175
 -  Squeak 5.0 --> 2244
@@ -30,6 +33,7 @@ For comparison, here are the class counts for some related implementations
 -  Pharo  2.0 --> 3226
 -  Pharo  3.0 --> 4020
 -  Pharo  4.0 --> 4924
+-  Pharo  5.0 --> 6170
 
 
 This project is all about learning Cuis and sharing Cuis code which others may find of interest.
