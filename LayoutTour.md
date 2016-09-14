@@ -5,7 +5,7 @@ This file is about how graphic entities, Morphs, may change as they are resized.
 
 A Morph which contains other Morphs may be resized and wish to maintain positional relationships between the contained Morphs.
 
-We call this maintaing the submorph "layout".  We want to lay out each morph in a way that they are well related. 
+We call this maintaining the submorph "layout".  We want to lay out each morph in a way that they are well related. 
 
 Cuis has LayoutMorphs which do this for their submorphs.
 
@@ -15,7 +15,7 @@ Let's see how.
 
 First we will load two tools to help us see how LayoutMorphs and LayoutSpecs are used and what they do.
 
-Cuis remains small and comprehensible in part because we have Features which can be loaded as needed.  Each Feature is in a text package which notes its requirements.  To get the editors I want I open a Cuis image, Control-click to get the World Menu, Open a Workspace, and 
+Cuis remains small and comprehensible in part because we have Features which can be loaded as needed.  Each Feature is in a text package which notes its requirements.  To get the tools I want I open a Cuis image, Control-click to get the World Menu, Open a Workspace, and 
 
 ````Smalltalk
   Feature require: #'Morphic-Misc1'.
@@ -28,23 +28,23 @@ Of course, this won't work very well unless you actually have the packaged code 
 What I do is maintain a Cuis directory where I clone git repositories for all Cuis-Smalltalk-* features.
 
 In Linux, I open a command line window.
+
 -  cd ~/Cuis
 -  git clone https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
--  cd Cuis-Smalltalk-Dev
--  "open a cuis image"
+-  cd Cuis-Smalltalk-Dev 
+-   "open a cuis image"
 
 OK. I am running a Cuis image with a Workspace and have required Feature #'Morphic-Misc1".
 
 Let's create a LayoutMorph to see what it does.
+
 ````Smalltalk
-	Mylayout := LayoutMorph newRow.
+	myLayout := LayoutMorph newRow.
 ````
 
-Note how the "syntax hilighting" in Cuis helps.  Class names are bold+black, message names are blue, symbols (#) are bold+blue.  "myLayout" is indefined (unrecognized) and shows up in red.
+Note how the "syntax hilighting" in Cuis helps.  Class names are bold+black, message names are blue, symbols (#) are bold+blue.  "myLayout" is indefined (unrecognized) and shows up in red. This is temporary. 
 
-I select the new text and type Cmd-d (DoIt) and see ... nothing.
-
-But "myLayout" is now blue.
+I select the new text and type Cmd-d (DoIt) and see ... not much has changed, except "myLayout" is now blue.
 
 ![Cuis Window](LayoutTour/Cuis-002.png)
 
@@ -57,8 +57,9 @@ myLayout morphExtent: 400@300; color: Color skyBlue; openInWorld.
 I took a shortcut here.  I sent three messages on one line.  The ';' (semicolon) character introduces a "cascade".  What a cascade does is to send messages to the original recever object.
 
 So the above is the same as typing:
+
 ````Smalltalk
-  myLayout morphExtent: 400@300.
+  myLayout morphExtent: 400@300. 
   myLayout color: Color skyBlue.
   myLayout openInWorld.
 ````
@@ -78,13 +79,17 @@ myLayout addMorph: (RectangleLikeMorph new :: color: Color blue; yourself).
 This introduces a different shortcut: "::".  The double-colon acts like ";" except that it uses the result of the previous message send as the target of the new message send. This shortcut is called a "chain".
 
 If we had typed
+
 ````Smalltalk
   RectangleLikeMorph new ; color: Color blue;
 ````
+
 the #color: message would have been sent to the RectangleLikeMorph class, the target of the original message.
+
 ````Smalltalk
   RectangleLikeMorph new :: color: Color blue
 ````
+
 on the other hand sends #color: to the result of (RectangleLikeMorph new), which is a new instance of a RectangleLikeMorph.
   Using a cascade with #yourself allows us to get the target receiver, the RectangleLikeMorph, which is then the argument to #addMorph: message sent to our LayoutMorph.
 
@@ -93,10 +98,13 @@ Whew!  OK.  No more shortcuts.  But these two shortcuts, cascade and chain, are 
 Back to layouts.
 
 Let's add a simple EllipseMorph instance
+
 ````Smalltalk
   myLayout addMorph: EllipseMorph new.
 ````
+
 Add a default ImageMorph, a cute little Cuis!
+
 ````Smalltalk
   myLayout addMorph: ImageMorph new.
 ````
@@ -109,7 +117,7 @@ We have a blue rectangle, a yellow ellipse, and a cuis image in a row.
 
 ### LayoutMorph intro
 
-Command-click on the larger, skyBlue rectangle to get its "construction halo". 
+Command-click (Windows button3) on the larger, skyBlue rectangle to get its "construction halo". 
 
 ![Cuis Window](LayoutTour/Cuis-006.png)
 
@@ -121,7 +129,7 @@ Select 'edit me (a LayoutMorph)'
 
 ![Cuis Window](LayoutTour/Cuis-008.png)
 
-Let's move the LayoutEditor a bit to the right to see what is going on.  Also, click on the "push pin" in the lable area at the end of the name of the Morph who's Layout we are editing.
+Let's move the LayoutEditor a bit to the right to see what is going on.  Also, click on the "push pin" in the label area at the end of the name of the Morph whose Layout we are editing.
 
 If you don't click on the push-pin to keep the edit panel around, it will disappear when you click on either the Update or Cancel buttons.
 
@@ -163,7 +171,7 @@ What else can we do with layouts?
 
 It turns out that each submorph can tell its containing LayoutMorph how it wants to be sized and placed within its layout.
 
-Command-click on the yellow ellipse to get its halo, select the blue circle for its context menu, and select 'edit my layoutspec'.
+Command-click (Windows shift-button3) on the yellow ellipse to get its halo, select the blue circle for its context menu, and select 'edit my layoutspec'.
 
 Note that the original command-click halos the outer Morph.  Each additional click halos the next innermost Morph.  The Morph name is in a label at the bottom of the halo.
 
