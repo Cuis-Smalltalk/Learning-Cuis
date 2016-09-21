@@ -42,7 +42,7 @@ Let's create a LayoutMorph to see what it does.
 	myLayout := LayoutMorph newRow.
 ````
 
-Note how the "syntax hilighting" in Cuis helps.  Class names are bold+black, message names are blue, symbols (#) are bold+blue.  "myLayout" is indefined (unrecognized) and shows up in red. This is temporary. 
+Note how the "syntax hilighting" in Cuis helps.  Class names are bold+black, message names are blue, symbols (#) are bold+blue.  "myLayout" is initially undefined (unrecognized) and shows up in red. This is temporary. 
 
 I select the new text and type Cmd-d (DoIt) and see ... not much has changed, except "myLayout" is now blue.
 
