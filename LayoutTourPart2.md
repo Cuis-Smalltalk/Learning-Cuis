@@ -14,7 +14,7 @@ We will start with layout of the Color Editor Panel.
 
 First we need to load the code for the Color Editor. 
 
-
+````Smalltalk
   Feature require: #'Morphic-ColorEditor'.
 ````
 
@@ -221,9 +221,3 @@ What do I mean by this?
 
 
 @@@@@
-
-
-
-
-
-
