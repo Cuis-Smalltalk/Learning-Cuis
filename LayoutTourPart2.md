@@ -14,7 +14,7 @@ We will start with layout of the Color Editor Panel.
 
 First we need to load the code for the Color Editor. 
 
-````Smalltalk
+
   Feature require: #'Morphic-ColorEditor'.
 ````
 
@@ -32,15 +32,15 @@ Thus we get a handy Color Editor.
 
 First of all, what do we have here?
 
-The goal of a good user interface is to provide visibility and control.  What is here?  What can I do with it?
+The goal of a good user interface is to provide visibility (What is here?) and control (What can I do with it?).
 
 Color is a very complex concept and specifying colors on computers has some interesting and deep complexities
 
 - https://en.wikipedia.org/wiki/HSL_and_HSV
 
-Fortunately, people have been working on this problem for some time.  One solution, used here, is to present a plane, or slice, through a color cube (e.g. R|G|B = Red|Green|Blue or H|S|B = Hue|Saturation|Brightness) and use a Slider to move the depth of the slice/plane.
+Fortunately, people have been working on the problem of color presentation and selection for some time.  One solution, used here, is to present a plane, or slice, through a color cube (e.g. R|G|B = Red|Green|Blue or H|S|B = Hue|Saturation|Brightness) and use a Slider to move the depth of the slice/plane.
 
-Also here, one can click on the (2D) plane -- see the little circle? -- and have the other elements display their values at the X/Y/Z coordinates of the (X,Y) plane and (Z) slice.
+One can click on the (2D) color plane -- see the little circle? -- and have the other elements display their values at the X/Y/Z coordinates of the (X,Y) plane and (Z) slice.
 
 In Addition to the RGB value, there is a display of the color "swatch" at that point, and the closest matching named color in a particular color dictionary (CSS3 web color names) along with the named color's RGB specification.
 
@@ -75,7 +75,7 @@ What we see under the 'GUI building' category is a method named #buildMorphicWin
 
 Here we see the row of three columns.  Cascades (';') are used to send multiple messages to the same LayoutMorph target to add the column morphs and set some attributes like color and padding.  
 
-From the code, one can assume from #addMorph: that each of the #build* methods return a Morph.  Easy enough to select the named methods ane check, but let's wait a minute on that.
+One can assume from #addMorph: messages in the code that each of the 'build' methods return a Morph.  Easy enough to select the named methods ane check, but let's wait a minute on that.
 
 Code browsers are really, really handy and we will be using them a lot, so it is useful to take the time to note some of the many ways they can help us out.
 
@@ -99,10 +99,104 @@ SystemWindow, by the way, is an important class.  Most browsers are specialized 
 
 OK. Back to ColorEditPanel>>buildMorphicWindow.
 
+Let's select 'buildColorPlaneColumn, which builds the column on the left.
 
-@@@@
+![Cuis Window](LayoutTour/Cuis-210.png)
 
-OK. Let's use an ObjectExplorer to investigate the structure of objects in the ColorEditPanel.
+I won't go into much detail here, but you can see that the first column has a #colorPane and a hexDisplayLayout which is the row of '16r[<hex-color-value>] hexRGB' morphs.
+
+![Cuis Window](LayoutTour/Cuis-211.png)
+
+As you scroll down, you will see LayoutSpecs used to set things up.  Finally, the column morph is created, the colorPane and hexDisplayLayout submorphs added, and the column morph is returned. 
+
+You can look through the other 'build' methods to see how the rest of the morphs are composed using Layouts and LayoutSpecs.
+
+
+### The Model for the Editor
+
+Back to the code browser.  I selected '-- all --' methos category, moved the cursor to the method name list and typed the character $n.
+
+When you type a letter in a browser selection list, the list scrolls to show the first name starting with that character.
+
+![Cuis Window](LayoutTour/Cuis-212.png)
+
+The #newRadioSelection method is invoked when one clicks on a radio button.  
+
+This method is a 'housekeeping' function.  It deselects the buttons which were not selected and causes the visible color  values and controls to be updated to correspond to the new state of the control.
+
+When a user interface event is generated, a message is sent to the appropriate object so that it can react.  More on events, below.  In this case, the editor is reacting to a click on a radio button. 
+
+One part of keeping the world ordered is to notify the editor's _model_ of changes.  Separating the bookkeeping for the editor or browser display and the editor or browser model  is a pattern you will see in a number of places.  
+
+This separation of display and model allows one to have multiple views onto a consistent, shared model.
+
+Let's close the browser on the ColorEditorPanel and open one on the ColorEditorModel.
+
+Going back to the Color Editor, command-click, select its menu, and select debug..->browse model class.
+
+![Cuis Window](LayoutTour/Cuis-213.png)
+
+You should now have a code browser on the ColorEditModel class.  This is a very simple model!  But it keeps the expected pattern of display/model separation.
+
+![Cuis Window](LayoutTour/Cuis-214.png)
+
+### User Interface Events
+
+I mentioned user interface events above.
+
+There are two kinds of interactions common in computing.  One is the sequential "do this then do that" algorithmic code.
+
+The other is "something happened -- deal with it".
+
+User interactions fall into this second kind of computation.
+
+One line in ColorEditPanel>>buildMorphicWindow registers 
+
+````Smalltalk
+self model when: #colorChanged send: #refreshColor to: self.
+````
+From the World Menu, Open..->Message Names
+
+Type in 'when:send:to:' (without the ' marks), press enter/cr, and you should see something like the next screen.
+
+![Cuis Window](LayoutTour/Cuis-215.png)
+
+Any Smalltalk object can be the target of an event.  When an event occurs, it gets dispatched based on the event selector message name.
+
+Looking up 'senders of colorChanged', we find:
+
+![Cuis Window](LayoutTour/Cuis-216.png)
+
+In ColorEditPanel>>buildRadioButton we see
+````Smalltalk
+rgbRadio when: #informRadioSelection 
+	 send: #newRadioSelection: 
+	 to: self.
+hsvRadio when: #informRadioSelection 
+	 send: #newRadioSelection: 
+	 to: self.
+````
+
+We already looked at ColorEditPanel>>newRadioSelection.
+
+User events such as mouse move, clicks, keyboard entry, and so on just turn into ordinary message sends.
+
+
+### The Object Explorer
+
+Let's use an ObjectExplorer to investigate the structure of objects in the ColorEditPanel.
+
+The ObjectExplorer is another handy tool which shows the structure of an object -- its instance variables and their values.
+
+In a Workspace, you can type 'anObject explore' for some Object.   For the ColorEditor, we can command-click, and use the Morph's menu to select debug..->explore morph
+
+![Cuis Window](LayoutTour/Cuis-217.png)
+
+Before I dive into the ObjectExplorer, let me talk a bit about the difference between the ObjectExplorer and the object Inspector.
+
+![Cuis Window](LayoutTour/Cuis-218.png)
+
+mini-workspace, self, opening-triangles
 
 @@@@
 

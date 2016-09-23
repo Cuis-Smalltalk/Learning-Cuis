@@ -23,6 +23,8 @@ If I open a Workspace in the current Cuis and print (cmd-p)
 
 For comparison, here are the class counts for some related implementations
 
+- Smalltalk-80 --> 236
+-  Squeak 1.1 -->  327
 -  Squeak 2.0 -->  509
 -  Squeak 3.0 --> 1545
 -  Squeak 3.8 --> 2321
