@@ -23,7 +23,7 @@ Here are the class counts for some related implementations.
 
 Cuis and Pharo both forked from Squeak around release 3.7
 
-![Class Counts](LayoutTour/ClassCounts.png)
+![Class Counts](ClassCounts.png)
 
 
 This project is all about learning Cuis and sharing Cuis code which others may find of interest.
