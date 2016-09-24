@@ -14,7 +14,7 @@ We think this makes Cuis easier to learn.
 
 One measure of a Smalltalk's size is the number of Classes which implement its code.
 
-If I open a Workspace in the current Cuis and print (cmd-p)
+One can open a Workspace in many Smalltalks and print (cmd-p)
 ````Smalltalk
 	Smalltalk allClasses size.
 ````   
@@ -24,6 +24,8 @@ Here are the class counts for some related implementations.
 Cuis and Pharo both forked from Squeak around release 3.7
 
 ![Class Counts](ClassCounts.png)
+
+As you can see, we are working hard to keep Cuis comprehensible, even as more capabilities are added.
 
 
 This project is all about learning Cuis and sharing Cuis code which others may find of interest.
