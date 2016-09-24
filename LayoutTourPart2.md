@@ -246,7 +246,7 @@ I get frames around layout for five seconds, and they they disappear.
 
 Very interesting.
 
-How about boxes around the non-layour Morphs which are being placed?
+How about boxes around the non-layout Morphs which are being placed?
 ````Smalltalk
 self showNonLayouts.
 ````
@@ -283,12 +283,14 @@ Now this I like!
 
 Let me command-click and use the yellow circle to drag the corner around.
 
-![Cuis Window](LayoutTour/Cuis-226.png)
+![Cuis Window](LayoutTour/Cuis-227.png)
 
 Wow.  This looks helpful to me.  I _see_ the layouts as they are resized.
 
 Now I have a number of ways to adjust visual relations between morphs.  I can use code browsers.  I can use the ObjectExplorer.  I can use a LayoutMorphEditPanel or LayoutSpecEditPanel.  I can #colorizeLayout's and resize containing morphs.
 
-Well, this is getting long.  I had better quit now.
+Well, this is getting long.  I had better quit now.  
+
+I hope this was helpful.
 
 Look at the code.  Have some fun with it!
