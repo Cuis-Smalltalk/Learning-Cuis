@@ -19,23 +19,11 @@ If I open a Workspace in the current Cuis and print (cmd-p)
 	Smalltalk allClasses size.
 ````   
 
-- Cuis 4.2 (rev 2923) --> 474
+Here are the class counts for some related implementations.
 
-For comparison, here are the class counts for some related implementations
+Cuis and Pharo both forked from Squeak around release 3.7
 
-- Smalltalk-80 --> 236
--  Squeak 1.1 -->  327
--  Squeak 2.0 -->  509
--  Squeak 3.0 --> 1545
--  Squeak 3.8 --> 2321
--  Squeak 4.4 --> 2511
--  Squeak 4.5 --> 2175
--  Squeak 5.0 --> 2244
--  eToys  5.0 --> 2236
--  Pharo  2.0 --> 3226
--  Pharo  3.0 --> 4020
--  Pharo  4.0 --> 4924
--  Pharo  5.0 --> 6170
+![Class Counts](LayoutTour/ClassCounts.png)
 
 
 This project is all about learning Cuis and sharing Cuis code which others may find of interest.
@@ -121,4 +109,3 @@ I suspect it would not be too much work to embed Smalltalk WorkSheets (TerseGuid
 Open a FileList after loading STE, select MorphBecomeButton.object and click on button "openSTE" to see some interesting code.
 
 Enjoy!
-
