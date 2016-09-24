@@ -228,3 +228,5 @@ LayoutMorphs can be nested and given their own LayoutSpecs.
 
 
 In Part 2 on Layouts, we will look at the code for setting up the edit panels themselves.
+
+- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/LayoutTourPart2.md
