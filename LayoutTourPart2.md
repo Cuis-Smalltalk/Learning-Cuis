@@ -5,6 +5,8 @@ In LayoutTour.md we saw how LayoutMorphs and LayoutSpecs can be used to maintain
 
 Here we explore how to set up layouts in Smalltalk code.
 
+Along the way, we will introduce some tools as well.
+
 If you have not done so already, please read part 1, which includes instructions to get required Features:
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/LayoutTour.md
 
@@ -177,7 +179,9 @@ hsvRadio when: #informRadioSelection
 
 We already looked at ColorEditPanel>>newRadioSelection.
 
-User events such as mouse move, clicks, keyboard entry, and so on just turn into ordinary message sends.  This happens mostly via a HandMorph, but hardware event processing deserves it own tutorial. 
+Attaching event handlers to objects, particularly models, allows multiple independent observers to get updates when things change without changing code in the model.  Multiple receivers (views) can get an update message for a single event.  
+
+[User events such as mouse move, clicks, keyboard entry, and so on also turn into ordinary message sends.  This happens mostly via a HandMorph, but hardware event processing deserves it own tutorial]. 
 
 
 ### The Object Explorer
@@ -202,7 +206,7 @@ We can get an Inspector on a Morph via its menu: debug->inspect morph.  Do-it on
 
 An ObjectExplorer allows one to "drill down" through submorphs of submorphs.  An Inspector shows only a single object (one level).
 
-In the mini-Workspace pane, ObjectExplorer binds #self to the value of the selected (hilighted) object. An Inspector binds #self to the object being selected no matter which instance variable is hilighted.
+In the mini-Workspace pane, ObjectExplorer binds #self to the value of the selected (hilighted) object. An Inspector binds #self to the object being inspected no matter which instance variable is hilighted.
 
 I selected the #location instance variable in each inspector asked 'self class' and clicked command-p (Print-It).  You can see the result.
 
@@ -214,7 +218,7 @@ Clicking on the triangles of #submorphs at each level, I see that the ColorEditP
 
 An interesting thing to notice is that the order of submorphs is backward to their position when drawn.  The third layout morph is the one left.
 
-![Cuis Window](LayoutTour/Cuis-219.png)
+![Cuis Window](LayoutTour/Cuis-220.png)
 
 Going down another couple of levels, I find the row of '16r[40A5D0] hexRGB.
 
@@ -226,17 +230,65 @@ At this point I like to take a step back and ask a question.
 
 _What tools do I need to help me be successful?_
 
-How do I make things visible?
+How do I make things visible?  How can I _see_ how these layouts are arranged?
 
-Let's try some experiments..
+Let's try some experiments..  I added code to Morph which you can look at.  More below.
 
-@@@
+One idea is to draw a frame around each LayoutMorph.  There happens to be a FrameMorph, so I used that.
 
-The great think about Layouts is that they provide a good deal of control.  Once they are set up, however, they can be complex to interpret.
+Shrinking the ObjectExporer and moving it aside, I type in its mini-Workspace:
+````Smalltalk
+self showLayouts.
+````
+![Cuis Window](LayoutTour/Cuis-221.png)
 
-What do I mean by this?
+I get frames around layout for five seconds, and they they disappear.
 
-@@@@@
+Very interesting.
 
+How about boxes around the non-layour Morphs which are being placed?
+````Smalltalk
+self showNonLayouts.
+````
 
-@@@@@
+![Cuis Window](LayoutTour/Cuis-222.png)
+
+Hmmm..  Not much difference.
+
+How about using _dropShadows_ to hilight the Z-order?  Give some depth to the submorphs being layed out?
+````Smalltalk
+self shadowNonLayouts.
+````
+![Cuis Window](LayoutTour/Cuis-223.png)
+
+Interesting.  How about showLayouts with shadowNonLayouts?
+
+![Cuis Window](LayoutTour/Cuis-224.png)
+
+Still not quite what I want.
+
+I'll remove the shadows now.
+````Smalltalk
+self unShadowNonLayouts.
+````
+![Cuis Window](LayoutTour/Cuis-225.png)
+
+How about tinging row layouts red and column layouts blue?
+````Smalltalk
+self colorizeLayouts.
+````
+![Cuis Window](LayoutTour/Cuis-226.png)
+
+Now this I like!
+
+Let me command-click and use the yellow circle to drag the corner around.
+
+![Cuis Window](LayoutTour/Cuis-226.png)
+
+Wow.  This looks helpful to me.  I _see_ the layouts as they are resized.
+
+Now I have a number of ways to adjust visual relations between morphs.  I can use code browsers.  I can use the ObjectExplorer.  I can use a LayoutMorphEditPanel or LayoutSpecEditPanel.  I can #colorizeLayout's and resize containing morphs.
+
+Well, this is getting long.  I had better quit now.
+
+Look at the code.  Have some fun with it!
