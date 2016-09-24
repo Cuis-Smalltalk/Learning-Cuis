@@ -13,7 +13,6 @@ If you have not done so already, please read part 1, which includes instructions
 We will start with layout of the Color Editor Panel.
 
 First we need to load the code for the Color Editor. 
-
 ````Smalltalk
   Feature require: #'Morphic-ColorEditor'.
 ````
@@ -99,11 +98,11 @@ SystemWindow, by the way, is an important class.  Most browsers are specialized 
 
 OK. Back to ColorEditPanel>>buildMorphicWindow.
 
-Let's select 'buildColorPlaneColumn, which builds the column on the left.
+Let's select 'buildColorPlaneColumn', which builds the column on the left.
 
 ![Cuis Window](LayoutTour/Cuis-210.png)
 
-I won't go into much detail here, but you can see that the first column has a #colorPane and a hexDisplayLayout which is the row of '16r[<hex-color-value>] hexRGB' morphs.
+I won't go into much detail here, but you can see that the first column has a #colorPane and a hexDisplayLayout which is the row of '16r[40A5D0] hexRGB' morphs.
 
 ![Cuis Window](LayoutTour/Cuis-211.png)
 
@@ -114,7 +113,7 @@ You can look through the other 'build' methods to see how the rest of the morphs
 
 ### The Model for the Editor
 
-Back to the code browser.  I selected '-- all --' methos category, moved the cursor to the method name list and typed the character $n.
+Back to the code browser.  I selected '-- all --' method category, moved the cursor to the method name list and typed the character $n.
 
 When you type a letter in a browser selection list, the list scrolls to show the first name starting with that character.
 
@@ -151,13 +150,12 @@ The other is "something happened -- deal with it".
 User interactions fall into this second kind of computation.
 
 One line in ColorEditPanel>>buildMorphicWindow registers 
-
 ````Smalltalk
 self model when: #colorChanged send: #refreshColor to: self.
 ````
 From the World Menu, Open..->Message Names
 
-Type in 'when:send:to:' (without the ' marks), press enter/cr, and you should see something like the next screen.
+Type in 'when:send:to:' (without the ' quote-marks), press enter/cr, and you should see something like the next screen.
 
 ![Cuis Window](LayoutTour/Cuis-215.png)
 
@@ -179,7 +177,7 @@ hsvRadio when: #informRadioSelection
 
 We already looked at ColorEditPanel>>newRadioSelection.
 
-User events such as mouse move, clicks, keyboard entry, and so on just turn into ordinary message sends.
+User events such as mouse move, clicks, keyboard entry, and so on just turn into ordinary message sends.  This happens mostly via a HandMorph, but hardware event processing deserves it own tutorial. 
 
 
 ### The Object Explorer
@@ -188,24 +186,45 @@ Let's use an ObjectExplorer to investigate the structure of objects in the Color
 
 The ObjectExplorer is another handy tool which shows the structure of an object -- its instance variables and their values.
 
-In a Workspace, you can type 'anObject explore' for some Object.   For the ColorEditor, we can command-click, and use the Morph's menu to select debug..->explore morph
+In a Workspace, you can type 'anObject explore' for any Object.   For a visible Morph, we can command-click, and use the Morph's menu to select debug..->explore morph
 
 ![Cuis Window](LayoutTour/Cuis-217.png)
 
-Before I dive into the ObjectExplorer, let me talk a bit about the difference between the ObjectExplorer and the object Inspector.
+The ObjectExplorer has a lower pane which acts as a mini-Workspace.  You can type code and Do-it (command-d).  
+
+The upper pane acts like that in the FileList window.  Clicking on a triangle shows or hides the associated structure.
+
+Before I dive too far into the ObjectExplorer, let me talk a bit about the difference between the ObjectExplorer and the object Inspector.
+
+We can get an Inspector on a Morph via its menu: debug->inspect morph.  Do-it on 'anObject inspect' in a Workspace also works.
 
 ![Cuis Window](LayoutTour/Cuis-218.png)
 
-mini-workspace, self, opening-triangles
+An ObjectExplorer allows one to "drill down" through submorphs of submorphs.  An Inspector shows only a single object (one level).
 
-@@@@
+In the mini-Workspace pane, ObjectExplorer binds #self to the value of the selected (hilighted) object. An Inspector binds #self to the object being selected no matter which instance variable is hilighted.
 
+I selected the #location instance variable in each inspector asked 'self class' and clicked command-p (Print-It).  You can see the result.
 
-Looking at the ObjectExplorer, I find that I can get easily lost in deep nests of Morphs. 
+Both tools are really useful, but right now I am interested in deep layout structure, so I will close the Inspecter and use the ObjectExplorer.
 
-I like to take a step back and ask a question.
+![Cuis Window](LayoutTour/Cuis-219.png)
 
-What tools do I need to help me be successful?
+Clicking on the triangles of #submorphs at each level, I see that the ColorEditPanel has a title and a LayoutMorph and the LayoutMorph has our three column layouts.
+
+An interesting thing to notice is that the order of submorphs is backward to their position when drawn.  The third layout morph is the one left.
+
+![Cuis Window](LayoutTour/Cuis-219.png)
+
+Going down another couple of levels, I find the row of '16r[40A5D0] hexRGB.
+
+So an ObjectExplorer is very handy tool to discover nested structure.
+
+Looking at the ObjectExplorer, I find however, that I can get easily lost in deep nests of Morphs. 
+
+At this point I like to take a step back and ask a question.
+
+_What tools do I need to help me be successful?_
 
 How do I make things visible?
 
