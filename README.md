@@ -32,11 +32,13 @@ This project is all about learning Cuis and sharing Cuis code which others may f
 
 # Beginners: 
 
+Get Cuis from https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
+
 Take a look at Quick-UI-Tour (click on file 'Quick-UI-Tour.md' above or)
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/Quick-UI-Tour.md
 
-
-Get Cuis from https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
+Take a look at how LayoutMorphs are used to maintain visual relations between graphic elements:
+- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/LayoutTour.md
 
 Look at the Terse Guide (World Menu -> Help -> Terse Guide to Cuis)
 
