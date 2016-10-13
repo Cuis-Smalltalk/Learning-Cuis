@@ -32,17 +32,23 @@ After the package has been loaded, you should be able to open a code browser and
 
 ### Initializing the IEDict Class
 
-In the Class pane, under 'IEDict' there are three buttons labled 'imstance', '?', and 'class'.  Click on class.
+In the Class pane, under 'IEDict' there are three buttons labled 'instance', '?', and 'class'.  Click on class.
 
 ![Cuis Window](SamplePkg/Sample-Package-028.png)
 
 The difference between Class and Instance is that _instance methods_ operate on individual objects which are instances of a class.  _Class methods_ operate on the class code shared by all instances.  We'll get into what this means in a bit more detail below.
 
-To keep things organized, the class browser groups menthods into categories.  We will be adding code which does _class initialization_ so we first add this category.
+To keep things organized, the class browser groups methods into categories.  We will be adding code which does _class initialization_ so we first add this category.
 
 Cmd-click on the method category pane to get its context menu and add a new category.
 
 ![Cuis Window](SamplePkg/Sample-Package-029.png)
+![Cuis Window](SamplePkg/Sample-Package-030.png)
+
+Select the new category to get a _method template_.  
+
+Note the syntax hilighting.
+
 ![Cuis Window](SamplePkg/Sample-Package-030.png)
 
 
