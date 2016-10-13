@@ -124,7 +124,7 @@ Now we can create a category 'IA-EN-Dictionary'.
 
 ![Cuis Window](SamplePkg/Sample-Package-013.png)
 
-As you might suspect, the international code for English is 'EN' and Interlinguag is 'IA'.
+As you might suspect, the international language code for English is 'EN' and the code for Interlingua is 'IA'.
 
 ### Adding a Class
 
@@ -136,7 +136,7 @@ Since our dictionary will work in both directions, Interlingua->English and Engl
 
 The class will be called 'IEDict'.
 
-We add a Class Variable, 'DictData', to hold our (what else?) dictionary data.  Note that Class Variable names are by convention capitalized.  This helps distinguish then from instance variables.
+We add a Class Variable, 'DictData', to hold our (what else?) dictionary data.  Note that _class variable_ names are by convention capitalized.  This helps distinguish then from _instance variables_.
 
 Access to a class variable is shared by all instances of that class.  An instance variable is unique to each instance of the class.
 
@@ -146,7 +146,9 @@ It is a bit subtle, but there is a thin red border around the lower pane where w
 
 The code you are looking at is just code.  It is text which will be compiled and the compiled code then invoked to create a new Smalltalk class.
 
-Cmd-click on this pane to see the context menu.  We can select 'Accept (s)'.  If we did not wish to use the menu, we could just type Cmd-s (hold down the command key and press 's').  This is why the '(s)' in 'Accept (s)'.
+Cmd-click on this pane to see the context menu.  We can select 'Accept (s)'.  
+
+If we did not wish to use the menu, we could just type Cmd-s (hold down the command key and press 's').  This is why the '(s)' in 'Accept (s)'.
 
 ![Cuis Window](SamplePkg/Sample-Package-015.png)
 
@@ -201,7 +203,7 @@ In my case, I get a Linux command shell, move the file to the Cuis-Smalltalk-Sam
 
 Our Cuis-Smalltalk-SamplePkg repository on GitHub has now been updated to contain our package.
 
-Anyone with access to this director on GutHub can now "git clone" the directory and share our code.
+Anyone with access to this director on GutHub can now "git clone" the directory and share our code, after which they can "git pull" to get our updates.
 
 All that remains to do is quit out of Cuis WITHOUT saving our changes.
 
