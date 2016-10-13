@@ -63,7 +63,8 @@ The first thing we need to look up words in a dictionary is, of course, the dict
 
 ![Cuis Window](SamplePkg/Sample-Package-032.png)
 
-There is a comment line which indicates the original source of the file, then lines of <interlingua> : <english>.
+There is a comment line which indicates the original source of the file, then lines like
+- interlingua parolas : english words
 
 Since we want a bidirectional lookup, let's save the data as an array of pairs.
 
