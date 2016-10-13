@@ -49,14 +49,27 @@ Cmd-click on the method category pane to get its context menu and add a new cate
 ![Cuis Window](SamplePkg/Sample-Package-029.png)
 ![Cuis Window](SamplePkg/Sample-Package-030.png)
 
-Select the new category to get a _method template_.  
+Select the 'class initialization' category to get a _method template_.  
 
-Note the syntax hilighting.
+Note the syntax hilighting.  The _method selector_ is in black, _comments_ are in green, _temporaries_ are in grey, unknown words in red.
+
 
 ![Cuis Window](SamplePkg/Sample-Package-031.png)
 
 
 ### Reading the Dict Data
+
+The first thing we need to look up words in a dictionary is, of course, the dictionary.  Please open a File List browser and navigate to 'iedict.txt' to see what this text file looks like.  (Cmd-click on World; World->Open->File List).
+
+![Cuis Window](SamplePkg/Sample-Package-032.png)
+
+There is a comment line which indicates the original source of the file, then lines of <interlingua> : <english>.
+
+Since we want a bidirectional lookup, let's save the data as an array of pairs.
+
+As we only need to read the file once into memory and can share the data, an IEDict class variable is a good home for the data.
+
+@@@
 
 ### Lookup
 
