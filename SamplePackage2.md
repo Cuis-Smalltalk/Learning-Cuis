@@ -49,7 +49,7 @@ Select the new category to get a _method template_.
 
 Note the syntax hilighting.
 
-![Cuis Window](SamplePkg/Sample-Package-030.png)
+![Cuis Window](SamplePkg/Sample-Package-031.png)
 
 
 ### Reading the Dict Data
