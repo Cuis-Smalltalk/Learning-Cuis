@@ -1,13 +1,13 @@
 Making a Simple Package for Cuis
 ================================
 
-This is a quick tutorial which shows the process of creating a simple package in Cuis Smalltalk and making it sharable on GitHub.
+This is a tutorial which shows the process of creating a simple package in Cuis Smalltalk and making it sharable on GitHub.
 
 ### Basic Orientation
 
 It would be good for you to read through the Cuis documentation on package based code sharing before going through this tutorial.
 
-You can find information at the web site or from within a running Cuis.
+You can find information at the web site or from within a running Cuis image.
 
 From the Cuis-Smalltalk-Dev web site:
 
@@ -210,16 +210,8 @@ All that remains to do is quit out of Cuis WITHOUT saving our changes.
 
 This is OK as we are not changing the base Cuise image.  All our work is saved in GitHub.
 
+### Part 2
 
-### Feature require: #'IA-EN-Dictionary'
-
-
-### Initializing the IEDict Class
-
-### Reading the Dict Data
-
-### Lookup
-
-
-@@@
+This tutorial is continued in
+- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage2.md
 
