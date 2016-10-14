@@ -157,9 +157,9 @@ Now we add the code to create an instance
 
 ![Cuis Window](SamplePkg/Sample-Package-039.png)
 
-IEDictWindow class>>open uses the inherited method SystemWindow class>>open:label:
+IEDictWindow class>>open uses the inherited method SystemWindow class>>open\:label\:
 
-Let's take a brief look at this.  Select the text which contains open:*label: and Cmd-m (iMplementors).
+Let's take a brief look at this.  Select the text which contains open\:\*label\: and Cmd-m (iMplementors).
 
 ![Cuis Window](SamplePkg/Sample-Package-040.png)
 
