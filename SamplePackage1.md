@@ -114,9 +114,9 @@ Command-Click on the World background to get a World Menu.
 
 ![Cuis Window](SamplePkg/Sample-Package-011.png)
 
-The upper left _pane_ in the Browser lists class _categories_.
+The upper left _pane_ in the Browser lists class categories.
 
-We want to add a new category.  Cmd-Click on this pane to gets it's context menu and select 'add item..'
+We want to add a new class category.  Cmd-Click on this pane to gets it's context menu and select 'add item..'
 
 ![Cuis Window](SamplePkg/Sample-Package-012.png)
 
@@ -132,7 +132,7 @@ We will be creating a specialized SystemWindow with its associated data _model_.
 
 This is a common pattern.  If you open a HierarchyBrowser on 'SystemWindow' you will see this a lot. (Not shown here; you can look later).
 
-Since our dictionary will work in both directions, Interlingua->English and English->Interlingua, we will NOT be using a Smalltalk dictionary here, so we can inherit directly from Object.
+Since our dictionary will work in both directions, Interlingua->English and English->Interlingua, we will NOT be using a Smalltalk dictionary here and will inherit directly from Object.
 
 The class will be called 'IEDict'.
 
@@ -158,11 +158,11 @@ Congratulations!  You have created a new Class!
 
 ### Add a Class Comment
 
-Noting the red 'THIS CLASS HAS NO COMMENT!' now is a good time to add some description of the new class.
+Noting the red 'THIS CLASS HAS NO COMMENT!', now is a good time to add some description of the new class.
 
 ![Cuis Window](SamplePkg/Sample-Package-017.png)
 
-To save the class comment, I type Cmd-s (or use the context menu selection Save).
+To (s)ave the class comment, I type Cmd-s (or use the context menu selection Accept).
 
 ![Cuis Window](SamplePkg/Sample-Package-018.png)
 
