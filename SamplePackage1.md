@@ -179,7 +179,7 @@ I open an Installed Packages browser from the World Menu -> Open.. submenu.
 
 ![Cuis Window](SamplePkg/Sample-Package-019.png)
 
-Clicking on the _new_ button, I fill in exactly the same name as I gave the system category: 'IA-EN-Dictionary'.  Copy/Paste from the class browser would work here as well.
+Clicking on the _new_ button, I fill in exactly the same name as I gave the system category: 'IA-EN-Dictionary'.  Copy/Paste from the class browser would work here as well.  I Accept the name.
 
 ![Cuis Window](SamplePkg/Sample-Package-020.png)
 
