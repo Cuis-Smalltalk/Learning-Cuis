@@ -74,7 +74,13 @@ Here is one way of doing this.
 
 ![Cuis Window](SamplePkg/Sample-Package-033.png)
 
-Did I mention that I like to make things eacy for myself?
+The text file 'iedict.txt' is read from IEDict's package file name directory.  (Cuis' FileEntry differs from Squeak's DirectoryEntry by the way.  We think it is simpler to use.)
+
+The comment line is skipped and each line is read in as a String which is split on the colon into two substrings which are stored sequentially in an Array which is available in IEDict's DictData class variable.
+
+Now a class' #initialize method is invoked when a class is filed-in/loaded.  Since we have already created the class IEDict we need to invoke IEDict>>initialize ourselves.
+
+Did I mention that I like to make things easy for myself?
 
 You may have noticed the comment 
 ````Smalltalk
@@ -82,13 +88,13 @@ You may have noticed the comment
 	IEDict initialize.
 "
 ````
-
-@@@
+One can select any text in a code browser window and DoIt (Cmd-d).  When I am changing method code and may want to invoke the method again, I just add the invocation code as a comment so that I can DoIt without having to open a Workspace.
 
 ![Cuis Window](SamplePkg/Sample-Package-034.png)
 
+Well, without a visible change it is hard to see that IEDict>>initialize succeeded.  I could open an object explorer on the IEDict class object, but since we need lookup methods in any case, why not just write them and use them to be sure we read in the dictionary?
 
-
+Did I tell you I was lazy?  ;^)
 
 ### Lookup
 
