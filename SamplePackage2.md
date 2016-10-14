@@ -78,7 +78,7 @@ The text file 'iedict.txt' is read from IEDict's package file name directory.  (
 
 The comment line is skipped and each line is read in as a String which is split on the colon into two substrings which are stored sequentially in an Array which is available in IEDict's DictData class variable.
 
-Now a class' #initialize method is invoked when a class is filed-in/loaded.  Since we have already created the class IEDict we need to invoke IEDict>>initialize ourselves.
+Now a class' #initialize method is invoked when a class is filed-in/loaded.  Since we have already created the class IEDict we need to invoke `IEDict>>initialize` ourselves.
 
 Did I mention that I like to make things easy for myself?
 
@@ -92,13 +92,13 @@ One can select any text in a code browser window and DoIt (Cmd-d).  When I am ch
 
 ![Cuis Window](SamplePkg/Sample-Package-034.png)
 
-Well, without a visible change it is hard to see that IEDict>>initialize succeeded.  I could open an object explorer on the IEDict class object, but since we need lookup methods in any case, why not just write them and use them to be sure we read in the dictionary?
+Well, without a visible change it is hard to see that `IEDict>>initialize` succeeded.  I could open an object explorer on the IEDict class object, but since we need lookup methods in any case, why not just write them and use them to be sure we read in the dictionary?
 
 Did I tell you I was lazy?  ;^)
 
 ### Lookup
 
-For lookup we use the String>>match: method.  This does "regular expression"  matching.
+For lookup we use the `String>>match:` method.  This does "regular expression"  matching.
 
 ````Smalltalk
 interlinguaContains: aString
@@ -157,7 +157,7 @@ Now we add the code to create an instance
 
 ![Cuis Window](SamplePkg/Sample-Package-039.png)
 
-IEDictWindow class>>open uses the inherited method `SystemWindow class>>open:label:`
+`IEDictWindow class>>open` uses the inherited method `SystemWindow class>>open:label:`
 
 Let's take a brief look at this.  Select the text which contains `open:*label:` and Cmd-m (iMplementors).
 
@@ -167,9 +167,9 @@ Implementors shows just one implementor: SystemWindow.
 
 ![Cuis Window](SamplePkg/Sample-Package-041.png)
 
-The SystemWindow class>>open:label: method sets the window's _model_, invokes #buildMorphicWindow, sets the label (if any), and returns the window.
+The `SystemWindow class>>open:label:` method sets the window's _model_, invokes #buildMorphicWindow, sets the label (if any), and returns the window.
 
-So our next task is to go to the _instance_ side of the class and implement IEDictWindow>>buildMorphicWindow.
+So our next task is to go to the _instance_ side of the class and implement `IEDictWindow>>buildMorphicWindow`.
 
 ![Cuis Window](SamplePkg/Sample-Package-042.png)
 
