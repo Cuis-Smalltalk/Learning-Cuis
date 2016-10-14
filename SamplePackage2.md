@@ -141,7 +141,38 @@ Well, there is a lot of good code in SystemWindow that we can reuse just by subc
 
 The IEDictWindow needs to keep track of two things: the text query and the result.
 
+These will be Morphs, graphical screen objects.
+
 ![Cuis Window](SamplePkg/Sample-Package-037.png)
 
+### Opening a IEDictWindow (a new instance)
 
-@@@
+We want to open a new IEDictWindow by asking its class to make one.
+
+The first step is to add a method category to the class side
+
+![Cuis Window](SamplePkg/Sample-Package-038.png)
+
+Now we add the code to create an instance
+
+![Cuis Window](SamplePkg/Sample-Package-039.png)
+
+IEDictWindow class>>open uses the inherited method SystemWindow class>>open:label:
+
+Let's take a brief look at this.  Select the text which contains open:*label: and Cmd-m (iMplementors).
+
+![Cuis Window](SamplePkg/Sample-Package-040.png)
+
+Implementors shows just one implementor: SystemWindow.
+
+![Cuis Window](SamplePkg/Sample-Package-041.png)
+
+The SystemWindow class>>open:label: method sets the window's _model_, invokes #buildMorphicWindow, sets the label (if any), and returns the window.
+
+So our next task is to go to the _instance_ side of the class and implement IEDictWindow>>buildMorphicWindow.
+
+![Cuis Window](SamplePkg/Sample-Package-042.png)
+
+..which we will do in Part 3 of this tutorial
+- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage3.md
+
