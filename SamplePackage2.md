@@ -125,8 +125,23 @@ We need to
 - "git commit"
 - "git push"
 
+You remember how to open the package browser and "save", right?
+
+Here is the last time I will bore you with a non-Smalltalk screen shot
+
 ![Cuis Window](SamplePkg/Sample-Package-035.png)
 
 ### IEDictWindow
+
+OK.  Now to make a window to show our stuff.
+
+How do we do this?
+
+Well, there is a lot of good code in SystemWindow that we can reuse just by subclassing.  Did I tell you I was lazy?  ;^)
+
+The IEDictWindow needs to keep track of two things: the text query and the result.
+
+![Cuis Window](SamplePkg/Sample-Package-037.png)
+
 
 @@@
