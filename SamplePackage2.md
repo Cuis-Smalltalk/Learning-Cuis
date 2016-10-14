@@ -98,5 +98,35 @@ Did I tell you I was lazy?  ;^)
 
 ### Lookup
 
+For lookup we use the String>>match: method.  This does "regular expression"  matching.
+
+````Smalltalk
+interlinguaContains: aString
+	"Answer all definition pairs which contain aString looking in the Interlingua side"
+
+	| matchStr |
+	matchStr :=  ('*' , aString , '*' ) .
+	
+	^DictData select: [ :pairArray | matchStr match: (pairArray at: 1) ]
+````
+
+Lookup functions for our four buttons are just slight variations on the above.
+
+Cmd-p (print) will show the result in a Workspace.
+
+![Cuis Window](SamplePkg/Sample-Package-036.png)
+
+### Wash, rinse, repeat
+
+Now is a good time to save our work.  (The power goes out here in winter in high winds, so I save my work frequently).
+
+We need to 
+- Save the Package
+- "git commit"
+- "git push"
+
+![Cuis Window](SamplePkg/Sample-Package-035.png)
+
+### IEDictWindow
 
 @@@
