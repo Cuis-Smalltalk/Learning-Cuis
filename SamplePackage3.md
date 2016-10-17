@@ -132,6 +132,55 @@ Of course, after you do this it would be a good idea to do a "git commit" "git p
 
 ![Cuis Window](SamplePkg/Sample-Package-049.png)
 
+### makeButtonArea
+
+````Smelltalk
+makeButtonArea
+	"Answer a LayoutMorph with our four buttons -- a column of two rows"
+	
+	|  buttonHeight buttonLayout interlinguaButtonLayout englishButtonLayout buttonArea |
+	buttonHeight := self textSizeUnit * 2.
+	buttonLayout := LayoutSpec proportionalWidth: 0.3 fixedHeight: buttonHeight.
+	
+	interlinguaButtonLayout := LayoutMorph newRow. "a row of two buttons"
+
+	interlinguaButtonLayout 
+		padding: #center; 
+		separation: 2;
+		addMorph: 
+			(PluggableButtonMorph 
+				model: self 
+				action: #interlinguaContainsClick  
+				label: 'Interlingua Contains')  layoutSpec: buttonLayout;
+		addMorph: 
+			(PluggableButtonMorph 
+				model: self 
+				action: #interlinguaStartsClick  
+				label: 'Interlingua Starts') layoutSpec: buttonLayout.
+
+	englishButtonLayout := LayoutMorph newRow. "a row of two buttons"
+									.
+	englishButtonLayout 
+		padding: #center; 
+		separation: 2;
+		addMorph: 
+			(PluggableButtonMorph 
+				model: self 
+				action: #englishContainsClick  
+				label: 'English Contains') layoutSpec: buttonLayout;				
+		addMorph: 
+			(PluggableButtonMorph 
+				model: self
+				action: #englishStartsClick  
+				label: 'English Starts') layoutSpec: buttonLayout.
+
+	buttonArea := LayoutMorph newColumn.
+	^ buttonArea 
+			layoutSpec: (LayoutSpec proportionalWidth: 1; fixedHeight: 4 * self textSizeUnit);
+			addMorph: interlinguaButtonLayout ;
+			addMorph: englishButtonLayout ;
+			yourself
+````
 
 
 @@@
