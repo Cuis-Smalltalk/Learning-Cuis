@@ -102,6 +102,36 @@ This is a more serious problem.
 
 Time to bail out (cancel) and load the required code!
 
+What has happened is this.  Cuis keeps a small kernel by moving optional code into packages.  This means that the core is smaller and easier to understand.  It also means that we can learn each package Feature incrementally as we need them.
+
+As Cuis gets simpler sometimes code we use and rely on gets moved somewhere else!  That happened to me here.  The OneLineEditorMorph was moved into a package in the Packages directory with a Feature name of `#'Morphic-Widgets-Extras`.
+
+You can do a text search to find such classes.  In a Linux shell this would be `grep OneLineEd --files-with-matches */*.st` but each OS has some text search method. 
+
+![Cuis Window](SamplePkg/Sample-Package-046.png)
+
+After loading the Morphic-Widgets-Extras feature, we can Accept the code.  Note that the word `OneLineEditorMorph` turns from red to bold and black to indicate it is a known class name.
+
+Also, you can use a FileList to open a Package Browser to view code in a package without loading it into you image.
+
+This sometimes helps me decide if a package has something I want.
+
+![Cuis Window](SamplePkg/Sample-Package-047.png)
+
+When using something from another package, we say that other package is _required_ for out package to work.  The system does not know this. We need to open an Installed Packages browser and click on the 'add requirement' button.
+
+Note that we only get to select from loaded packages.
+
+The Cuis-Base selection requires a particular version/revision of the base image.  You can delete a previous requirement and select this again to get a new Cuis-Base revision requirement if you need the something provided in the latest Cuis release.
+
+![Cuis Window](SamplePkg/Sample-Package-048.png)
+
+In any case, after adding a Feature Requirement, you need to save your package.  
+
+Of course, after you do this it would be a good idea to do a "git commit" "git push" as well!  (not shown)
+
+![Cuis Window](SamplePkg/Sample-Package-049.png)
+
 
 
 @@@
