@@ -22,7 +22,7 @@ Looking at the desired result, I see a column of
 
 So let's write this down.
 
-![Cuis Window](SamplePkg/Sample-Package-043.png)
+![Cuis Window](SamplePkg/Sample-Package-042.png)
 
 Note that when I Accept this method, I get repeated warnings about undefined methods and options to change the text to known methods.
 
