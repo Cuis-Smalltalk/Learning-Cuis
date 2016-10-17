@@ -118,7 +118,7 @@ This sometimes helps me decide if a package has something I want.
 
 ![Cuis Window](SamplePkg/Sample-Package-047.png)
 
-When using something from another package, we say that other package is _required_ for out package to work.  The system does not know this. We need to open an Installed Packages browser and click on the 'add requirement' button.
+When using something from another package, we say that other package is _required_ for our package to work.  The system does not know this. We need to open an Installed Packages browser and click on the 'add requirement' button.
 
 Note that we only get to select from loaded packages.
 
