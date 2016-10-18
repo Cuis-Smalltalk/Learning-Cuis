@@ -178,7 +178,7 @@ open
 
 Open an new IEDictWindow and...
 
-![Cuis Window](SamplePkg/Sample-Package-069.png)
+![Cuis Window](SamplePkg/Sample-Package-0691.png)
 
 Super!!
 
@@ -292,7 +292,7 @@ in le global communication!
 '
 ````
 
-![Cuis Window](SamplePkg/Sample-Package-073.png)
+![Cuis Window](SamplePkg/Sample-Package-074.png)
 
 ### Check Our Work
 
