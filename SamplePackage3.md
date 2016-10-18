@@ -365,11 +365,6 @@ englishStartsClick
 	
 	self searchResult:  (IEDict englishStarts: (self searchString)).
 	self resultIndex: 0.
-englishStartsClick
-	
-	self searchResult:  (IEDict englishStarts: (self searchString)).
-	self resultIndex: 0.
-
 ````
 
 Finally, we need to format our search results from an array of pairs to a string.
