@@ -453,7 +453,7 @@ searchResult: newResult
 	self triggerEvent: #newSearchResult
 ````
 
-And how to register the he IEDictWindow has an interest in events?
+And how to register that the IEDictWindow has an interest in events?
 
 Let's put this in the buildMorphicWindow method
 
@@ -475,7 +475,7 @@ buildMorphicWindow
 	^ self
 ````
 
-Now IEDictWindow need a `searchResultChanged` method added to its `events` methods
+Now IEDictWindow needs a `searchResultChanged` method added to its `events` methods
 
 ````Smalltalk
 searchResultsChanged
@@ -494,9 +494,10 @@ Wow!!  The buttons work!!
 This could be good!
 
 
-In part4 we will look at refinements
+In part 4 we will look at refinements
 - A bit better color
-- Font resize when the font preference changed
+- Font resize when the font preference changes
 - Adding a selection to the Open menu.
 
+On to 
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage4.md
