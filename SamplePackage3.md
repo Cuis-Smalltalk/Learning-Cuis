@@ -302,7 +302,7 @@ The first thing I need to do is add instance variables so that out IEDict model 
 
 I also need to add method class `accessing` and the methods to get and set the values for these.
 
-### method category `accessing`
+### method category: `accessing`
 
 ````Smalltalk
 searchString
@@ -318,7 +318,7 @@ searchString: aRegularExpressionString
 
 Likewise for searchResult and resultIndex.
 
-### method category `initialization`
+### method category: `initialization`
 
 ````Smalltalk
 initialize
@@ -329,7 +329,7 @@ initialize
 	resultIndex  := 0.
 ````
 
-### method category `ui support`
+### method category: `ui support`
 
 OK.  Here it gets interesting.
 
