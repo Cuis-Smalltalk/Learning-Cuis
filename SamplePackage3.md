@@ -444,7 +444,59 @@ When is there an interesting event?
 
 In the case of IEDict, it is when a search takes place and a new result is obtained.
 
+So IEDict needs to announce an event when there is a new search result.
+
+````Smalltalk
+searchResult: newResult
+
+	searchResult := newResult.
+	self triggerEvent: #newSearchResult
+````
+
+And how to register the he IEDictWindow has an interest in events?
+
+Let's put this in the buildMorphicWindow method
+
+````Smalltalk
+buildMorphicWindow
+	"Build and lay out the window and answer it."
+
+	self layoutMorph 
+		beColumn;  "the default"
+		separation: self defaultSeparation;
+		layoutSpec: LayoutSpec useAll;
+		addMorph: self makeEntryArea;
+		addMorph: self makeButtonArea;
+		addMorph: self makeResultsArea.
+		
+	model when: #newSearchResult send: #searchResultsChanged to: self.
+	model interlinguaContainsClick. "set initial text"
+	
+	^ self
+````
+
+Now IEDictWindow need a `searchResultChanged` method added to its `events` methods
+
+````Smalltalk
+searchResultsChanged
+	"Display updated search results"
+	
+	resultMorph updateList 
+````
+
+OK.  Let's click on some buttons!!
 
 ![Cuis Window](SamplePkg/Sample-Package-058.png)
 ![Cuis Window](SamplePkg/Sample-Package-059.png)
-@@@
+
+Wow!!  The buttons work!!
+
+This could be good!
+
+
+In part4 we will look at refinements
+- A bit better color
+- Font resize when the font preference changed
+- Adding a selection to the Open menu.
+
+- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage4.md
