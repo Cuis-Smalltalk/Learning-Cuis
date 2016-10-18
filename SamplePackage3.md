@@ -395,19 +395,12 @@ Ah.  We need `accessing` methods in IEDictWindow as well.
 
 ````Smalltalk
 entryTextMorph
-	
 	^entryTextMorph
-````
 
-````Smalltalk
 promptMorph
-
 	^ promptMorph
-````
 
-````Smalltalk
 resultMorph
-
 	^ resultMorph
 ````
 
