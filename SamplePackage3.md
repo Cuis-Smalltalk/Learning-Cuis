@@ -68,7 +68,7 @@ makeEntryArea
 		yourself
 ````
 
-The height of this LayoutMorph is calculated based on the text size.  One can change the text size via World menu-->Preferences-->Font Sizes.  Don't worry about this for now.  It takes some experinenting to get it right.  More on this later..
+The height of this LayoutMorph is calculated based on the text size.  One can change the text size via World menu-->Preferences-->Font Sizes.  Don't worry about this for now.  It takes some experimenting to get it right.  More on this later..
 
 We have to set up how the window fields change when resized.  Part of this is by using LayoutSpec's.  We actually measure the size of the promptMorph's string to set this here.
 
@@ -253,7 +253,7 @@ The resultMorph is a PluggableListMorph which takes up most of the window real e
 
 This means that we have to add these three methods to IEDict.  Let's wait a bit on this.
 
-You already pasted and accepted `makeResultsArea` method, right? ;^)
+You already pasted and accepted `makeResultsArea` method, right?
 
 
 ### IEDictWindow open
@@ -294,7 +294,7 @@ Ah!  I have to add the access methods to IEDict.
 
 I guess it is time to do this now.
 
-Note that I don't have to define everything up front.  It is OK to leave some holes to be filled and just let the sysyem tell me when I find them.
+Note that I don't have to define everything up front.  It is OK to leave some holes to be filled and just let the sysyem tell me when I try and use them.
 
 ### IEDict instance variables
 

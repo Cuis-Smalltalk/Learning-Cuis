@@ -137,7 +137,7 @@ OK.  Now to make a window to show our stuff.
 
 How do we do this?
 
-Well, there is a lot of good code in SystemWindow that we can reuse just by subclassing.  Did I tell you I was lazy?  ;^)
+Well, there is a lot of good code in SystemWindow that we can reuse just by subclassing.  (Did I tell you I was lazy?)
 
 The IEDictWindow needs to keep track of two things: the text query and the result.
 
@@ -175,4 +175,3 @@ So our next task is to go to the _instance_ side of the class and implement `IED
 
 ..which we will do in Part 3 of this tutorial
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage3.md
-

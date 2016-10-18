@@ -12,7 +12,7 @@ There are several reasons for this.
 
 For one thing, when one has dictionaries or other useful browsers it is good to have them available where they can be found.
 
-Another reason is that I keep opening an IEDictWindow and I want to make this easy.  (Did I tell you I was lazy?  ;^)
+Another reason is that I keep opening an IEDictWindow and I want to make this easy.  (Did I tell you I was lazy?)
 
 Also, adding a menu item is easy.  Just add a method to the class side of your browser class.  In our case, IEDictWindow class.
 
@@ -266,16 +266,28 @@ Interlingua is a bit odd, so I add one here to the IEDict class.
 whyMe
 	"Answer what you always wanted to know..."
 
-	^'Interlingua is an auxiliary language made from common elements of the romance languages and English. The language has been in use since the 1950''s and is very readable.
+	^'Interlingua is an auxiliary language made from common elements of 
+the romance languages and English. The language has been in use since the 1950''s 
+and is very readable.
 
 You can find out much more at http://www.interlingua.com
 	
-The dictionary presented here is based on a 30,000 entry dictionary available from Paul Denisowski (paul@denisowski.org)  at  
+The dictionary presented here is based on a 30,000 entry dictionary available 
+from Paul Denisowski (paul@denisowski.org)  at  
 	http://www.denisowski.org/Interlingua/Interlingua.html
 
 Interlingua Sample:
 	
-Pro personas qui es familiar con le vocabulario panoccidental Interlingua es comprensibile a prime vista. Per un texto in Interlingua on pote attinger un grande publico multinational cultivate. Pro altere personas Interlingua offere un utile introduction al tresor de vocabulos scientific, technic e cultural. Illo anque facilita le lectura de linguas romanic. Interlingua pote esser un profitabile factor supplementari in studios linguistic. Le internationalitate del vocabulario e le simplicitate del grammatica possibilisa al lector o studiante tosto occupar le position de un active usator de Interlingua.
+Pro personas qui es familiar con le vocabulario panoccidental Interlingua es 
+comprensibile a prime vista. Per un texto in Interlingua on pote attinger un 
+grande publico multinational cultivate. Pro altere personas Interlingua 
+offere un utile introduction al tresor de vocabulos scientific, technic e 
+cultural. Illo anque facilita le lectura de linguas romanic. Interlingua pote 
+esser un profitabile factor supplementari in studios linguistic. 
+
+Le internationalitate del vocabulario e le simplicitate del grammatica 
+possibilisa al lector o studiante tosto occupar le position de un active 
+usator de Interlingua.
 ...
 Lingua natural
 e musical
@@ -309,4 +321,3 @@ Did we remember to _require_ all packages we depend on?
 Ben obra!!
 
 ![Cuis Window](SamplePkg/Sample-Package-075.png)
-
