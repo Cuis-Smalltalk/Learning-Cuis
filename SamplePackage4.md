@@ -300,7 +300,7 @@ OK.  Time to save our package, "git commit", "git push".
 
 Open a new image.
 
-`Feature require: #''`
+`Feature require: #'IA-EN-Dictionary'.`
 
 And check our work.
 
