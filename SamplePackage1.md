@@ -205,7 +205,7 @@ In my case, I get a Linux command shell, move the file to the Cuis-Smalltalk-Sam
 
 Our Cuis-Smalltalk-SamplePkg repository on GitHub has now been updated to contain our package.
 
-Anyone with access to this director on GutHub can now "git clone" the directory and share our code, after which they can "git pull" to get our updates.
+Anyone with access to this directory web page on GutHub can now "git clone" the directory and share our code, after which they can "git pull" to get our updates.
 
 All that remains to do is quit out of Cuis WITHOUT saving our changes.
 
