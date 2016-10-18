@@ -494,7 +494,7 @@ Wow!!  The buttons work!!
 This could be good!
 
 
-In part 4 we will look at refinements
+In part 4 we will look at refinements:
 - A bit better color
 - Font resize when the font preference changes
 - Adding a selection to the Open menu.
