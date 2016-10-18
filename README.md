@@ -45,6 +45,9 @@ Look at the Terse Guide (World Menu -> Help -> Terse Guide to Cuis)
 Look at documentation available for other wonderful Smalltalk implementations
 - http://squeak.org/documentation/
 
+Take a detailed tour which creates a Package and a GitHub repository for it
+- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage1.md
+
 Subscribe and ask questions at the Cuis developers email list
 - http://jvuletich.org/mailman/listinfo/cuis_jvuletich.org
 - cuis-dev@cuis-smalltalk.org
