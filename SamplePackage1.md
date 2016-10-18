@@ -41,6 +41,8 @@ The first thing is to think of a good, descriptive-but-not-too-long name.
 
 The convention for Cuis is to start all names with 'Cuis-Smalltalk-'.  This allows tools to have a common searching convention for finding packages.
 
+Note that I am creating a repository in Cuis-Smalltalk-Learners.  You will want to create a repository within your own GitHub account.
+
 ![Cuis Window](SamplePkg/Sample-Package-001.png)
 
 Shareable Cuis code by convention uses the MIT open source licence.
@@ -93,10 +95,10 @@ Pressing enter (carriage return) is the same as clicking on button labeled  'Int
 
 Having decided this, the first thing I did was add the Interlingta->English dictionary to the local Git repository.
 
-[1] copy the file into the local repository
-[2] "git add" to make the repository aware of the file
-[3] "git commit" to declare the file as ready for update
-[4] "git push" to actually update the repository on GitHub from the local version.
+- [1] copy the file into the local repository
+- [2] "git add" to make the repository aware of the file
+- [3] "git commit" to declare the file as ready for update
+- [4] "git push" to actually update the repository on GitHub from the local version.
 
 Here is what this lookes like in a Linux shell:
 
@@ -216,4 +218,3 @@ This is OK as we are not changing the base Cuise image.  All our work is saved i
 
 This tutorial is continued in
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage2.md
-
