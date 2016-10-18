@@ -187,6 +187,124 @@ Now we know we can play with colors to get whatever we want want.
 
 ### Font Resize
 
+World menu->Preferences->Font Sizes lets one select a font size which works well with one's screen size and resolution -- or to set large for a demo or talk.
+
+If you play with these for a bit, you will see that most windows do pretty much the right thing.
+
+We want our window to do the right thing as well.
+
+This means that our basic window size should be scaled based on the current font.
+
+One way to do this is by changing the window size so that it looks right and asking it for it's unscaled size.
+
+![Cuis Window](SamplePkg/Sample-Package-069.png)
+
+I did that here by DoIt (Cmd-d) on an Inspector opened on the IEDictWindow where I asked the question
+````Smalltalk
+(self morphExtent / self textSizeUnit) rounded.
+````
+
+Now I can add a method to the `geometry` category
+````Smalltalk
+initialExtent
+
+	^ (30 @ 16) * self textSizeUnit 
+````
+
+When we select a font size and open an IEDictWindow, it scales itself to the font we use.
+
+![Cuis Window](SamplePkg/Sample-Package-070.png)
+
+However, if we change the font now the window does not look so good.
+
+![Cuis Window](SamplePkg/Sample-Package-071.png)
+
+To fix this, we need to look at how fonts are updated when the font preference changes.
+
+In this case, I bring up a Message Names browser.  (World menu->Open->Message Names) and type 'fontpref', hit return, and look at the SystemWindow method that deals with this.
+
+![Cuis Window](SamplePkg/Sample-Package-072.png)
+
+I also look at some of the other fontPreferenceChanged methods to see how they handle this method.
+
+Basically, Morphs which draw Strings know how to update their fonts.  However, window Morphs do their own layouts and only the windows know how to update this when things change.
+
+So we can adjust in our own fontPreferenceChanged method.
+
+````Smalltalk
+fontPreferenceChanged
+
+  super fontPreferenceChanged.
+  self promptMorph 
+		layoutSpec: (LayoutSpec 
+						proportionalWidth: 0.3; 
+						fixedWidth: 
+							(self promptMorph measureContents x)).
+  self layoutMorph submorphs last "text entry layout"
+	layoutSpec: (LayoutSpec
+					proportionalWidth: 1 
+					fixedHeight: self defaultSeparation * 2 + self textSizeUnit).
+					
+	self morphExtent: (self morphExtent max: self initialExtent).
+````
+
+Let's try again.  Set the font preference to Small, open an IEDictWindow, set to Huge.
+
+![Cuis Window](SamplePkg/Sample-Package-073.png)
+
+Ah!  Much better!  Celebrate success!
+
+I did not update the button layouts when the font preference changed.  Feel free to do so.  (Did I tell you I was lazy?) 
+
+### Add documentation method whyMe
+
+I sometimes add a documentation method with the name `whyMe` to an important class which returns a string.
+
+Interlingua is a bit odd, so I add one here to the IEDict class.
+
+```` Smalltalk
+whyMe
+	"Answer what you always wanted to know..."
+
+	^'Interlingua is an auxiliary language made from common elements of the romance languages and English. The language has been in use since the 1950''s and is very readable.
+
+You can find out much more at http://www.interlingua.com
+	
+The dictionary presented here is based on a 30,000 entry dictionary available from Paul Denisowski (paul@denisowski.org)  at  
+	http://www.denisowski.org/Interlingua/Interlingua.html
+
+Interlingua Sample:
+	
+Pro personas qui es familiar con le vocabulario panoccidental Interlingua es comprensibile a prime vista. Per un texto in Interlingua on pote attinger un grande publico multinational cultivate. Pro altere personas Interlingua offere un utile introduction al tresor de vocabulos scientific, technic e cultural. Illo anque facilita le lectura de linguas romanic. Interlingua pote esser un profitabile factor supplementari in studios linguistic. Le internationalitate del vocabulario e le simplicitate del grammatica possibilisa al lector o studiante tosto occupar le position de un active usator de Interlingua.
+...
+Lingua natural
+e musical
+de parolas international
+e un grammatica phenomenal!
+
+Comprehensibile facilemente
+in le mundo per tote le gente:
+apprender lo es un acto intelligente!
+
+Le medio de comprehension
+pro le solution del confusion
+in le global communication!
+'
+````
+
+![Cuis Window](SamplePkg/Sample-Package-073.png)
 
 ### Check Our Work
+
+OK.  Time to save our package, "git commit", "git push".
+
+Open a new image.
+
+`Feature require: #''`
+
+And check our work.
+
+Did we remember to _require_ all packages we depend on?
+
+Ben obra!!
 
