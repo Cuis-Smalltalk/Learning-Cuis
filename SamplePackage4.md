@@ -12,7 +12,7 @@ There are several reasons for this.
 
 For one thing, when one has dictionaries or other useful browsers it is good to have them available where they can be found.
 
-ANother reason is that I keep opening an IEDictWindow and I want to make this easy.  Did I tell you I was lazy?  ;^)
+Another reason is that I keep opening an IEDictWindow and I want to make this easy.  (Did I tell you I was lazy?  ;^)
 
 Also, adding a menu item is easy.  Just add a method to the class side of your browser class.  In our case, IEDictWindow class.
 
@@ -47,7 +47,10 @@ worldMenuForOpenGroup
 
 Hey, do I like easy!
 
-### A bit of color
+You can hilight `worldMenuForOpenGroup` and Cmd-n (seNders) or Cmd-m (iMplementors) to see how menus get built.
+
+
+### A bit of Color
 
 OK. Let's fix the color a bit.  I want a different background color.
 
