@@ -86,6 +86,8 @@ Here is what the text above looks like when pasted in the code editor (just sele
 
 ![Cuis Window](SamplePkg/Sample-Package-043.png)
 
+Boy, there is a lot of red here!  Not to worry.  The code browser will help us out.
+
 When I Cmd-s (Accept), I find that I have some fixes to make.
 
 ![Cuis Window](SamplePkg/Sample-Package-044.png)
@@ -112,7 +114,7 @@ You can do a text search to find such classes.  In a Linux shell this would be `
 
 After loading the Morphic-Widgets-Extras feature, we can Accept the code.  Note that the word `OneLineEditorMorph` turns from red to bold and black to indicate it is a known class name.
 
-Also, you can use a FileList to open a Package Browser to view code in a package without loading it into you image.
+Also, you can use a FileList to open a Package Browser to view code in a package without loading it into your image.
 
 This sometimes helps me decide if a package has something I want.
 
@@ -126,15 +128,19 @@ The Cuis-Base selection requires a particular version/revision of the base image
 
 ![Cuis Window](SamplePkg/Sample-Package-048.png)
 
-In any case, after adding a Feature Requirement, you need to save your package.  
+In any case, after adding the `Morphic-Widgets-Extras` Feature Requirement, we need to save our package.  
 
-Of course, after you do this it would be a good idea to do a "git commit" "git push" as well!  (not shown)
+Of course, after we do this it would be a good idea to do a "git commit" "git push" as well!  (not shown)
 
 ![Cuis Window](SamplePkg/Sample-Package-049.png)
 
 ### makeButtonArea
 
-````Smelltalk
+The next layout we need to make is for the button area.
+
+The buttons should be the same size, so they can share a single LayoutSpec. 
+
+````Smalltalk
 makeButtonArea
 	"Answer a LayoutMorph with our four buttons -- a column of two rows"
 	
@@ -182,5 +188,263 @@ makeButtonArea
 			yourself
 ````
 
+This is a somewhat long method which I can break up later if it bothers me.  Right now, the code is simple enough to keep together.
 
+When a PluggableButtonMorph gets clicked on, it invokes the action on its model.  In this case the IEDictWindow wants the event so that it can set the IEDict's searchString before asking for new results.
+
+We'll paste this code in and accept it.
+
+![Cuis Window](SamplePkg/Sample-Package-050.png)
+
+Now, before I forget, is a good time to add the button actions.
+
+![Cuis Window](SamplePkg/Sample-Package-051.png)
+
+````Smalltalk
+interlinguaContainsClick
+
+	self model searchString: self searchString; interlinguaContainsClick
+````
+
+````Smalltalk
+interlinguaStartsClick
+
+	self model searchString: self searchString; interlinguaStartsClick
+````
+
+````Smalltalk
+englishContainsClick
+
+	self model searchString: self searchString; englishContainsClick
+````
+
+````Smalltalk
+englishStartsClick
+
+	self model searchString: self searchString; englishStartsClick
+````
+
+All of thes methods just set the model's searchString and tell the model to handle the event.
+
+### makeResultsArea
+
+I need to re-select the 'GUI building' method category and add makeResultsArea.
+
+````Smalltalk
+makeResultsArea
+	"Answer a LayoutMoph containing the results of the query"
+	
+	resultMorph := (PluggableListMorph
+		model: model 
+		listGetter: #resultAsList
+		indexGetter: #resultIndex
+		indexSetter: #resultIndex:
+		mainView: self
+		menuGetter: nil
+		keystrokeAction: nil).
+		
+	^ resultMorph 
+		layoutSpec: (LayoutSpec proportionalWidth: 1.0 proportionalHeight: 0.98);  
+		color: (Theme current textHighlight);
+		yourself
+````
+
+The resultMorph is a PluggableListMorph which takes up most of the window real estate.  It asks the model (an IEDict instance) for `resultAsList` and gets and sets an index.
+
+This means that we have to add these three methods to IEDict.  Let's wait a bit on this.
+
+You already pasted and accepted `makeResultsArea` method, right? ;^)
+
+
+### IEDictWindow open
+
+So let's try opening a IEDictWindow!
+
+Many ways to do this.  Since I already typed the text into the IEDictWindow class comment, I go there, select the text and (Cmd-d) DoIt.
+
+![Cuis Window](SamplePkg/Sample-Package-052.png)
+
+![Cuis Window](SamplePkg/Sample-Package-053.png)
+
+Ah, need to write `defaultSeparation`.  Thinking back, I also need the `textSizeUnit`.
+
+These kinds of methods typically go in a method class `geometry`
+
+
+````Smalltalk
+defaultSeparation
+	"Answer the number of pixels between fields/layouts"
+	
+	^ 5 "pixels"
+````
+
+
+````Smalltalk
+textSizeUnit
+	"Answer the scaling factor for sizing; note  method #fontPreferenceChanged"
+
+	^ AbstractFont default height
+````
+
+OK.  Try again and...
+
+![Cuis Window](SamplePkg/Sample-Package-054.png)
+
+Ah!  I have to add the access methods to IEDict.
+
+I guess it is time to do this now.
+
+Note that I don't have to define everything up front.  It is OK to leave some holes to be filled and just let the sysyem tell me when I find them.
+
+### IEDict instance variables
+
+The first thing I need to do is add instance variables so that out IEDict model instance knows and keeps track of its searchString, searchResult, and resultIndex.
+
+I also need to add method class `accessing` and the methods to get and set the values for these.
+
+### method category `accessing`
+
+````Smalltalk
+searchString
+	
+	^ searchString
+````
+
+````Smalltalk
+searchString: aRegularExpressionString
+	
+	searchString := aRegularExpressionString
+````
+
+Likewise for searchResult and resultIndex.
+
+### method category `initialization`
+
+````Smalltalk
+initialize
+
+	super initialize.
+	searchString := 'salute'.
+	searchResult := #().
+	resultIndex  := 0.
+````
+
+### method category `ui support`
+
+OK.  Here it gets interesting.
+
+Remember the four methods used by our buttons?
+
+They just make use of the search functions we already defined.
+
+````Smalltalk
+interlinguaContainsClick
+	
+	self searchResult:  (IEDict interlinguaContains: (self searchString)).
+	self resultIndex: 0.
+````
+
+````Smalltalk
+interlinguaStartsClick
+	
+	self searchResult:  (IEDict interlinguaStarts: (self searchString)).
+	self resultIndex: 0.
+
+````
+
+````Smalltalk
+englishContainsClick
+	
+	self searchResult:  (IEDict englishContains: (self searchString)).
+	self resultIndex: 0.
+
+````
+
+````Smalltalk
+englishStartsClick
+	
+	self searchResult:  (IEDict englishStarts: (self searchString)).
+	self resultIndex: 0.
+englishStartsClick
+	
+	self searchResult:  (IEDict englishStarts: (self searchString)).
+	self resultIndex: 0.
+
+````
+
+Finally, we need to format our search results from an array of pairs to a string.
+
+
+````Smalltalk
+resultAsList
+	"Answer a list of form 'this <---> that' "
+	
+	^ self searchResult collect:[ :elt | (elt at: 1) , ' <---> ', (elt at: 2) ]
+````
+
+### A Window!
+
+Try yet again and...
+
+![Cuis Window](SamplePkg/Sample-Package-056.png)
+
+Yay!!  Be sure to celebrate each success!
+
+Not bad looking, except for a bit of color.
+
+Let's click on a button and...
+
+![Cuis Window](SamplePkg/Sample-Package-057.png)
+
+Ah.  We need `accessing` methods in IEDictWindow as well.
+
+````Smalltalk
+entryTextMorph
+	
+	^entryTextMorph
+````
+
+````Smalltalk
+promptMorph
+
+	^ promptMorph
+````
+
+````Smalltalk
+resultMorph
+
+	^ resultMorph
+````
+
+And importantly:
+
+````Smalltalk
+searchString
+
+	^ entryTextMorph contents asString 
+````
+
+Now we can click on the buttons without bringing up the debugger, but something is missing!  The results!
+
+How do we fix this?
+
+We have to go back to the idea of separating a _model_ from a _view_ onto that model.
+
+The basic idea is that these are separated so that one can have multiple views of the same model.  The model, to be separate, should ***not*** have to know anything about views.
+
+So how does a view know when to update its display of the model's information?
+
+The answer to that is _events_.
+
+When something changes in a model, it just announces an event.  Any view (any object, really) can register as interested in an event.
+
+The model says "something happened, deal with it" without knowing who, if anyone, is listening.
+
+When is there an interesting event?
+
+In the case of IEDict, it is when a search takes place and a new result is obtained.
+
+
+![Cuis Window](SamplePkg/Sample-Package-058.png)
+![Cuis Window](SamplePkg/Sample-Package-059.png)
 @@@
