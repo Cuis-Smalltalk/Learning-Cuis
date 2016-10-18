@@ -225,11 +225,11 @@ In this case, I bring up a Message Names browser.  (World menu->Open->Message Na
 
 ![Cuis Window](SamplePkg/Sample-Package-072.png)
 
-I also look at some of the other fontPreferenceChanged methods to see how they handle this method.
+I also look at some of the other fontPreferenceChanged methods to see how they handle a font resize.
 
-Basically, Morphs which draw Strings know how to update their fonts.  However, window Morphs do their own layouts and only the windows know how to update this when things change.
+Basically, Morphs which draw Strings know how to update their fonts.  However, window Morphs do their own layouts and only the windows know how to update their layouts when things change.
 
-So we can adjust in our own fontPreferenceChanged method.
+We can adjust to a new font size in our own fontPreferenceChanged method.
 
 ````Smalltalk
 fontPreferenceChanged
