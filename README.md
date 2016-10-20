@@ -4,7 +4,7 @@ Greetings and Welcome!!
 
 Smalltalk is a wonderful way of doing things in software and Cuis is a particular implementation of this language and its environment.
 
-Cuis shares much with other Smalltalk implementations and shares much of its implementation mechanics with the Squeak and Pharo environments.
+Cuis shares ideas with other Smalltalk implementations and shares much of its implementation mechanics with the Squeak and Pharo environments.
 
 Smalltalk is a big world, which you can use to do just about anything that can be done with a computer.
 
@@ -14,47 +14,47 @@ We think this makes Cuis easier to learn.
 
 One measure of a Smalltalk's size is the number of Classes which implement its code.
 
-One can open a Workspace in many Smalltalks and print (cmd-p)
+If you open a Workspace in many Smalltalks, you can type and print (cmd-p)
 ````Smalltalk
 	Smalltalk allClasses size.
 ````   
 
-Here are the class counts for some related implementations.
+Here are the ***class counts*** for some related implementations.
 
 Cuis and Pharo both forked from Squeak around release 3.7
 
 ![Class Counts](ClassCounts.png)
 
-As you can see, we are working hard to keep Cuis comprehensible, even as more capabilities are added.
+We are working hard to keep Cuis small and easy to learn, even as more capabilities are added.
 
 
 This project is all about learning Cuis and sharing Cuis code which others may find of interest.
 
 # Beginners: 
 
-Get Cuis from https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
+***Get Cuis*** from https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
 
-Take a look at Quick-UI-Tour (click on file 'Quick-UI-Tour.md' above or)
+Take a look at ***Quick-UI-Tour*** (click on file 'Quick-UI-Tour.md' above or)
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/Quick-UI-Tour.md
 
-Take a look at how LayoutMorphs are used to maintain visual relations between graphic elements:
+Take a look at how ***LayoutMorphs*** are used to maintain visual relations between graphic elements:
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/LayoutTour.md
 
-Look at the Terse Guide (World Menu -> Help -> Terse Guide to Cuis)
+Look at the ***Terse Guide*** (World Menu -> Help -> Terse Guide to Cuis)
 
-Look at documentation available for other wonderful Smalltalk implementations
+Look at ***documentation*** available for other wonderful Smalltalk implementations
 - http://squeak.org/documentation/
 
-Take a detailed tour which creates a Package and a GitHub repository for it
+Take a ***detailed tour*** which creates a Package and a GitHub repository for it
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage1.md
 
-Subscribe and ask questions at the Cuis developers email list
+***Subscribe*** and ask questions at the ***Cuis developers email*** list
 - http://jvuletich.org/mailman/listinfo/cuis_jvuletich.org
 - cuis-dev@cuis-smalltalk.org
 
 Software 'code' is meant to be read as well as written.  Well written software is something we all work on getting better at.  There are some cool Cuis packages on GitHib.
 
-Look at the repositories in GitHub with names starting 'Cuis-Smalltalk'.  Many of these have a 'RoughGuide.md' file which points out code topics/techniques of interest.
+Look at the ***repositories in GitHub*** with names starting 'Cuis-Smalltalk'.  Many of these have a 'RoughGuide.md' file which points out code topics/techniques of interest.
 
 Many interesting Features are described in 'PackageRef.md' above:
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/PackageRef.md
@@ -82,7 +82,7 @@ Select the code and "do-it" (cmd-d).
 
 If all went well, you should be able to open a ColorEditor via the World Menu -> New morph.. -> ColorEditor -> ColorEditorPanel
 
-Enjoy!
+***Enjoy!***
 
 
 
