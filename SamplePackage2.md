@@ -166,17 +166,37 @@ Let's look at the stack with the debugger to see where we went wrong.
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-034.png)
 
-@@@
+Ah. What happened is this.  Instead of cut+paste, I typed in the code.  When I did this, I typed `asFileName` rather than `fullFileName`.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-044.png)
+Fortunately, this is Smalltalk so is easy to fix.
+
+I just 
+- edit the code in place
+- save (Accept) it
+- click the Restart button to back up the computation to the start of this stack frame (the start of this method)
+- click the Proceed button to continue from here
+
+We fix things and continue without unwinding the stack!  8^)
+
+
+![Cuis Window](SamplePkg/IA-EN-Dict-035.png)
+
+![Cuis Window](SamplePkg/IA-EN-Dict-036.png)
+
+![Cuis Window](SamplePkg/IA-EN-Dict-037.png)
 
 Well, without a visible change it is hard to see that `IEDict>>initialize` succeeded.  I could open an object explorer on the IEDict class object, but since we need lookup methods in any case, why not just write them and use them to be sure we read in the dictionary?
 
+Did I mention I was lazy?
 
 
 ### Lookup
 
+We create a `lookup` method category in the IEDict class and add four methods.
+
 For lookup we use the `String>>match:` method.  This does "regular expression"  matching.
+
+These methods look alike with minor variations and are easy.  Did I mention that I like easy?
 
 ````Smalltalk
 interlinguaContains: aString
@@ -186,17 +206,53 @@ interlinguaContains: aString
 	matchStr :=  ('*' , aString , '*' ) .
 	
 	^DictData select: [ :pairArray | matchStr match: (pairArray at: 1) ]
+
+
+interlinguaStarts: aString
+	"Answer all definition pairs which starts with aString looking in the Interlingua side"
+
+	| matchStr |
+	matchStr :=  aString , '*'  .
+	
+	^DictData select: [ :pairArray | matchStr match: (pairArray at: 1) ]
+
+
+englishContains: aString
+	"Answer all definition pairs which contain aString looking in the English side"
+
+	| matchStr |
+	matchStr :=  ('*' , aString , '*' ) .
+	
+	^DictData select: [ :pairArray | matchStr match: (pairArray at: 2) ]
+
+
+englishStarts: aString
+	"Answer all definition pairs which starts with aString looking in the English side"
+
+	| matchStr |
+	matchStr :=  aString , '*'  .
+	
+	^DictData select: [ :pairArray | matchStr match: (pairArray at: 2) ]
 ````
 
-Lookup functions for our four buttons are just slight variations on the above.
+### Quicklook Testing in a Workspace
+
+````Smalltalk
+IEDict englishStarts: 'core'.
+````
 
 Cmd-p (print) will show the result in a Workspace.
 
-![Cuis Window](SamplePkg/Sample-Package-036.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-038.png)
+
+You can make up tests for the other methods yourself.
+
+Hey, you can't make me do all the work.  Did I tell you I was lazy?
+
 
 ### Wash, rinse, repeat
 
-Now is a good time to save our work.  (The power goes out here in winter in high winds, so I save my work frequently).
+Now is a good time to save our work.  (The power goes out here in winter in high winds, so _I_ save my work frequently).
 
 We need to 
 - Save the Package
@@ -207,7 +263,8 @@ You remember how to open the package browser and "save", right?
 
 Here is the last time I will bore you with a non-Smalltalk screen shot
 
-![Cuis Window](SamplePkg/Sample-Package-035.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-040.png)
+
 
 ### IEDictWindow
 
@@ -223,6 +280,7 @@ These will be Morphs, graphical screen objects.
 
 ![Cuis Window](SamplePkg/Sample-Package-037.png)
 
+
 ### Opening a IEDictWindow (a new instance)
 
 We want to open a new IEDictWindow by asking its class to make one.
@@ -231,9 +289,11 @@ The first step is to add a method category to the class side
 
 ![Cuis Window](SamplePkg/Sample-Package-038.png)
 
+
 Now we add the code to create an instance
 
 ![Cuis Window](SamplePkg/Sample-Package-039.png)
+
 
 `IEDictWindow class>>open` uses the inherited method `SystemWindow class>>open:label:`
 
@@ -241,15 +301,18 @@ Let's take a brief look at this.  Select the text which contains `open:*label:` 
 
 ![Cuis Window](SamplePkg/Sample-Package-040.png)
 
+
 Implementors shows just one implementor: SystemWindow.
 
 ![Cuis Window](SamplePkg/Sample-Package-041.png)
+
 
 The `SystemWindow class>>open:label:` method sets the window's _model_, invokes #buildMorphicWindow, sets the label (if any), and returns the window.
 
 So our next task is to go to the _instance_ side of the class and implement `IEDictWindow>>buildMorphicWindow`.
 
 ![Cuis Window](SamplePkg/Sample-Package-042.png)
+
 
 ..which we will do in Part 3 of this tutorial
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage3.md
