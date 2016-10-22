@@ -92,8 +92,6 @@ As we only need to read the file once into memory and can share the data, an IED
 
 Here is one way of doing this.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-030.png)
-
 ````Smalltalk
 initialize
 	"Read in my data"
@@ -117,6 +115,18 @@ initialize
 	] 
 ````
 
+![Cuis Window](SamplePkg/IA-EN-Dict-030.png)
+
+
+When I Accept this, I am adding code for the first time since the image started, so the code browser asks who I am.  This is so that my initials get placed into the code's meta-data.  
+
+There is a `versions` button in the code browser which lets you see previous versions of the current method.  You can select a previous version and _revert_ to it if you need to back off a change.
+
+If you are unknown to the code browser, you may be asked to add your initials.  Please do so!
+
+![Cuis Window](SamplePkg/IA-EN-Dict-031.png)
+
+
 The text file 'iedict.txt' is read from IEDict's package file name directory.  (Cuis' FileEntry differs from Squeak's DirectoryEntry by the way.  We think it is simpler to use.)
 
 The comment line is skipped and each line is read in as a String which is split on the colon into two substrings which are stored sequentially in an Array which is available in IEDict's DictData class variable.
@@ -124,6 +134,9 @@ The comment line is skipped and each line is read in as a String which is split 
 Now a class' `initialize` method is invoked when a class is filed-in/loaded.  Since we have already created the class IEDict we need to invoke `IEDict>>initialize` ourselves.
 
 Did I mention that I like to make things easy for myself?
+
+
+### Class initialization
 
 You may have noticed the comment 
 ````Smalltalk
@@ -133,11 +146,29 @@ You may have noticed the comment
 ````
 One can select any text in a code browser window and DoIt (Cmd-d).  When I am changing method code and may want to invoke the method again, I just add the invocation code as a comment so that I can DoIt without having to open a Workspace.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-031.png)
+Did I tell you I was lazy?  ;^)
+
+We DoIt and..
+
+![Cuis Window](SamplePkg/IA-EN-Dict-032.png)
+
+![Cuis Window](SamplePkg/IA-EN-Dict-033.png)
+
+Oops!
+
+Well, I guess we are not perfect.  (You already knew that? ;^)
+
+Let's look at the stack with the debugger to see where we went wrong.
+
+![Cuis Window](SamplePkg/IA-EN-Dict-034.png)
+
+@@@
+
+![Cuis Window](SamplePkg/IA-EN-Dict-044.png)
 
 Well, without a visible change it is hard to see that `IEDict>>initialize` succeeded.  I could open an object explorer on the IEDict class object, but since we need lookup methods in any case, why not just write them and use them to be sure we read in the dictionary?
 
-Did I tell you I was lazy?  ;^)
+
 
 ### Lookup
 
