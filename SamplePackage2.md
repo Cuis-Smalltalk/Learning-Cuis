@@ -252,7 +252,7 @@ Hey, you can't make me do all the work.  Did I tell you I was lazy?
 
 ### Wash, rinse, repeat
 
-Now is a good time to save our work.  (The power goes out here in winter in high winds, so _I_ save my work frequently).
+Now is a good time to save our work.  (The power goes out here in winter in high winds, so I save my work frequently).
 
 We need to 
 - Save the Package
@@ -274,7 +274,8 @@ How do we do this?
 
 Well, there is a lot of good code in SystemWindow that we can reuse just by subclassing.  (Did I tell you I was lazy?)
 
-The IEDictWindow needs to keep track of two things: the text query and the result.
+
+An `IEDictWindow` needs to keep track of two things: the text query and the result.
 
 These will be Morphs, graphical screen objects.
 
