@@ -32,15 +32,16 @@ Feature require: #'IA-EN-Dictionary'
 
 Note that Cuis does _syntax hilighting_ as you type.  Very useful, this.
 
-- _Feature_ is the name of a class
-- _require:_ is a message selector on the Feature class
-- _#'IA-EN-Dictionary'_ is a _symbol_
+- `Feature` is the name of a class
+- `require:` is a message selector on the Feature class
+- `#'IA-EN-Dictionary'` is a _symbol_
 
 You also have _word completion_.  If you start typing a word, e.g. 'Fea', then type TAB, you get a context based temporary select list of possible completions.
 
 You can ignore these or select one of them and press enter/CR to complete the word you want.
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-023.png)
+
 
 In a Workspace you can select a line of code and either Cmd-click for the context menu and select DoIt or press Cmd-d to compile and run the code.
 
@@ -63,22 +64,24 @@ To keep things organized, the class browser groups methods into categories.  We 
 
 Cmd-click on the method category pane to get its context menu and add a new method category.
 
-![Cuis Window](SamplePkg/Sample-Package-029.png)
-![Cuis Window](SamplePkg/Sample-Package-030.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-026.png)
+
+![Cuis Window](SamplePkg/IA-EN-Dict-027.png)
+
 
 Select the 'class initialization' category to get a _method template_.  
 
 Note the syntax hilighting.  The _method selector_ is in black, _comments_ are in green, _temporaries_ are in grey, unknown words in red.
 
 
-![Cuis Window](SamplePkg/Sample-Package-031.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-028.png)
 
 
 ### Reading the Dict Data
 
 The first thing we need to look up words in a dictionary is, of course, the dictionary.  Please open a File List browser and navigate to 'iedict.txt' to see what this text file looks like.  (Cmd-click on World; World->Open->File List).
 
-![Cuis Window](SamplePkg/Sample-Package-032.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-029.png)
 
 There is a comment line which indicates the original source of the file, then lines like
 - interlingua parolas : english words
@@ -89,13 +92,36 @@ As we only need to read the file once into memory and can share the data, an IED
 
 Here is one way of doing this.
 
-![Cuis Window](SamplePkg/Sample-Package-033.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-030.png)
+
+````Smalltalk
+initialize
+	"Read in my data"
+"
+	IEDict initialize.
+"
+	| curIndex aLine |
+	DictData := Array new: 30811. "We know the exact size (wc -l iedict.txt) less 1"
+
+	(self package asFileName asFileEntry parent  // 'iedict.txt') readStreamDo: [ :fileStream |
+		fileStream nextLine. "Skip initial comment line"
+		curIndex := 1.
+		aLine := fileStream nextLine. 
+		[aLine isNil] whileFalse: [
+			DictData at: curIndex 
+				put: ((aLine findBetweenSubStrs: ':') 
+					collect: [:str| str withBlanksTrimmed]). 
+			aLine := fileStream nextLine. 
+			curIndex := 1 + curIndex.
+		]
+	] 
+````
 
 The text file 'iedict.txt' is read from IEDict's package file name directory.  (Cuis' FileEntry differs from Squeak's DirectoryEntry by the way.  We think it is simpler to use.)
 
 The comment line is skipped and each line is read in as a String which is split on the colon into two substrings which are stored sequentially in an Array which is available in IEDict's DictData class variable.
 
-Now a class' #initialize method is invoked when a class is filed-in/loaded.  Since we have already created the class IEDict we need to invoke `IEDict>>initialize` ourselves.
+Now a class' `initialize` method is invoked when a class is filed-in/loaded.  Since we have already created the class IEDict we need to invoke `IEDict>>initialize` ourselves.
 
 Did I mention that I like to make things easy for myself?
 
@@ -107,7 +133,7 @@ You may have noticed the comment
 ````
 One can select any text in a code browser window and DoIt (Cmd-d).  When I am changing method code and may want to invoke the method again, I just add the invocation code as a comment so that I can DoIt without having to open a Workspace.
 
-![Cuis Window](SamplePkg/Sample-Package-034.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-031.png)
 
 Well, without a visible change it is hard to see that `IEDict>>initialize` succeeded.  I could open an object explorer on the IEDict class object, but since we need lookup methods in any case, why not just write them and use them to be sure we read in the dictionary?
 
