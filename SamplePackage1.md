@@ -141,15 +141,15 @@ We will be creating a specialized SystemWindow with its associated data _model_.
 
 This is a common pattern.  If you open a HierarchyBrowser on 'SystemWindow' you will see this a lot. (Not shown here; you can look later).
 
-Since our dictionary will work in both directions, Interlingua->English and English->Interlingua, we will NOT be using a Smalltalk dictionary here and will inherit directly from Object.
+Since our dictionary will work in both directions, Interlingua->English and English->Interlingua, we will NOT be using a Smalltalk dictionary here but  will inherit directly from Object.
 
-The class will be called 'IEDict'.
+The class will be called `IEDict`.
 
-We add a Class Variable, 'DictData', to hold our (what else?) dictionary data.  Note that _class variable_ names are by convention capitalized.  This helps distinguish then from _instance variables_.
+We add a Class Variable, `DictData`, to hold our (what else?) dictionary data.  Note that _class variable_ names are by convention capitalized.  This helps distinguish then from _instance variables_.
 
 Access to a class variable is shared by all instances of that class.  An instance variable is unique to each instance of the class.
 
-It is a bit subtle, but there is a thin red border around the lower pane where we typed in the #IEDict definition fields.  This means that we have started an edit, but not yet saved it.
+It is a bit subtle, but there is a thin red border around the lower pane where we typed in the `IEDict` definition fields.  This means that we have started an edit, but not yet saved it.
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-012.png)
 
@@ -208,13 +208,13 @@ I can open a File Browser to check that the package was created.
 
 I find a file 'IA-EN-Dictionary.pck.st' was created in the directory where the Cuis image file was found 'Cuis-Smalltalk-Dev'.
 
-This package text file contains the code and some _meta-data_ about the code and looks fine.  However, THE PACKAGE FILE IS NOT IN THE 'Cuis-Smalltalk-SamplePkg' DIRECTORY.
+This package text file contains the code and some _meta-data_ about the code and looks fine.  However, the package file is ***not*** in the 'Cuis-Smalltalk-SamplePkg' directory.
 
 Gotta fix this!
 
 In my case, I get a Linux command shell, move the file to the Cuis-Smalltalk-SamplePkg directory, "git add", "git commit", "git push".
 
-![Cuis Window](SamplePkg/Sample-Package-023.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-020.png)
 
 Our Cuis-Smalltalk-SamplePkg repository on GitHub has now been updated to contain our package.
 
@@ -222,8 +222,8 @@ Anyone with access to this directory web page on GutHub can now "git clone" the 
 
 All that remains to do is quit out of Cuis WITHOUT saving our changes.
 
-![Cuis Window](SamplePkg/Sample-Package-024.png)
-![Cuis Window](SamplePkg/Sample-Package-025.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-021.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-022.png)
 
 This is OK as we are not changing the base Cuise image.  All our work is saved in GitHub.
 
