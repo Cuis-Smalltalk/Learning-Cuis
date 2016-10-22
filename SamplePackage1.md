@@ -141,7 +141,7 @@ We will be creating a specialized SystemWindow with its associated data _model_.
 
 This is a common pattern.  If you open a HierarchyBrowser on 'SystemWindow' you will see this a lot. (Not shown here; you can look later).
 
-Since our dictionary will work in both directions, Interlingua->English and English->Interlingua, we will NOT be using a Smalltalk dictionary here but  will inherit directly from Object.
+Since our dictionary will work in both directions, Interlingua->English and English->Interlingua, we will NOT be using a Smalltalk dictionary here but  it directly from Object.
 
 The class will be called `IEDict`.
 
@@ -208,15 +208,15 @@ I can open a File Browser to check that the package was created.
 
 I find a file 'IA-EN-Dictionary.pck.st' was created in the directory where the Cuis image file was found 'Cuis-Smalltalk-Dev'.
 
-This package text file contains the code and some _meta-data_ about the code and looks fine.  However, the package file is ***not*** in the 'Cuis-Smalltalk-SamplePkg' directory.
+This package text file contains the code and some _meta-data_ about the code and looks fine.  However, the package file is ***not*** in the 'Cuis-Smalltalk-IA-EN-Dictionary' directory.
 
 Gotta fix this!
 
-In my case, I get a Linux command shell, move the file to the Cuis-Smalltalk-SamplePkg directory, "git add", "git commit", "git push".
+In my case, I get a Linux command shell, move the file to the Cuis-Smalltalk-IA-EN-Dictionary directory, "git add", "git commit", "git push".
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-020.png)
 
-Our Cuis-Smalltalk-SamplePkg repository on GitHub has now been updated to contain our package.
+Our Cuis-Smalltalk-IA-EN-Dictionary repository on GitHub has now been updated to contain our package.
 
 Anyone with access to this directory web page on GutHub can now "git clone" the directory and share our code, after which they can "git pull" to get our updates.
 
