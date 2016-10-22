@@ -153,9 +153,10 @@ Note: you can hilight `Theme`, Cmd-b (Browse the class) to look at various color
 - https://github.com/KenDickey/Cuis-Smalltalk-ColorEditor
 
 
-Trying this out...
+Open a new IEDictWindow and...
 
 ![Cuis Window](SamplePkg/Sample-Package-068.png)
+
 
 This is starting to look pretty good.
 
@@ -180,6 +181,7 @@ Open an new IEDictWindow and...
 
 ![Cuis Window](SamplePkg/Sample-Package-0691.png)
 
+
 Super!!
 
 Now we know we can play with colors to get whatever we want want.
@@ -187,11 +189,11 @@ Now we know we can play with colors to get whatever we want want.
 
 ### Font Resize
 
-World menu->Preferences->Font Sizes lets one select a font size which works well with one's screen size and resolution -- or to set large for a demo or talk.
+World menu->Preferences->Font Sizes lets one select a font size which works well with one's screen size and resolution -- or to set a large font for a demo or talk.
 
 If you play with these for a bit, you will see that most windows do pretty much the right thing.
 
-We want our window to do the right thing as well.
+We want our IEDictWindow to do the right thing as well.
 
 This means that our basic window size should be scaled based on the current font.
 
@@ -199,12 +201,13 @@ One way to do this is by changing the window size so that it looks right and ask
 
 ![Cuis Window](SamplePkg/Sample-Package-069.png)
 
+
 I did that here by DoIt (Cmd-d) on an Inspector opened on the IEDictWindow where I asked the question
 ````Smalltalk
 (self morphExtent / self textSizeUnit) rounded.
 ````
 
-Now I can add a method to the `geometry` category
+Now I know enough to add a method to the `geometry` category
 ````Smalltalk
 initialExtent
 
