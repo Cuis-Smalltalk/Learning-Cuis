@@ -18,7 +18,9 @@ Within a running Cuis image, use Cmd-Click (the Command key depends on your Oper
 
 ![Cuis Window](SamplePkg/Sample-Package-0001.png)`
 
+
 ![Cuis Window](SamplePkg/Sample-Package-0002.png)
+
 
 We will be following the recipies for developing with packages.
 
@@ -45,6 +47,7 @@ Note that I am creating a repository in Cuis-Smalltalk-Learners.  You will want 
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-001.png)
 
+
 Shareable Cuis code by convention uses the MIT open source licence.
 
 I typically create a default README.md file as well.
@@ -61,6 +64,7 @@ I am a Linux user, so I use the command line.
 Being lazy, I "Copy" the github name from the web page.
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-004.png)
+
 
 I can now "git clone", paste the name, and get a local copy of my shiny new repository.
 
@@ -91,9 +95,16 @@ Having decided this, the first thing I did was add the Interlingta->English dict
 - [3] "git commit" to declare the file as ready for update
 - [4] "git push" to actually update the repository on GitHub from the local version.
 
-Here is what this lookes like in a Linux shell:
+Here is what this looks like in a Linux shell:
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-006.png)
+
+![Cuis Window](SamplePkg/IA-EN-Dict-007.png)
+
+
+I can check this by refreshing the repository web page.
+
+![Cuis Window](SamplePkg/IA-EN-Dict-008.png)
 
 
 ### Creating a Cuis Category
@@ -106,19 +117,23 @@ Command-Click on the World background to get a World Menu.
 
  World->Open..->Browser
 
-![Cuis Window](SamplePkg/Sample-Package-011.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-009.png)
+
 
 The upper left _pane_ in the Browser lists class categories.
 
 We want to add a new class category.  Cmd-Click on this pane to gets it's context menu and select 'add item..'
 
-![Cuis Window](SamplePkg/Sample-Package-012.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-010.png)
+
 
 Now we can create a category 'IA-EN-Dictionary'.  
 
-![Cuis Window](SamplePkg/Sample-Package-013.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-011.png)
+
 
 As you might suspect, the international language code for English is 'EN' and the code for Interlingua is 'IA'.
+
 
 ### Adding a Class
 
@@ -136,7 +151,8 @@ Access to a class variable is shared by all instances of that class.  An instanc
 
 It is a bit subtle, but there is a thin red border around the lower pane where we typed in the #IEDict definition fields.  This means that we have started an edit, but not yet saved it.
 
-![Cuis Window](SamplePkg/Sample-Package-014.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-012.png)
+
 
 The code you are looking at is just code.  It is text which will be compiled and the compiled code then invoked to create a new Smalltalk class.
 
@@ -144,21 +160,22 @@ Cmd-click on this pane to see the context menu.  We can select 'Accept (s)'.
 
 If we did not wish to use the menu, we could just type Cmd-s (hold down the command key and press 's').  This is why the '(s)' in 'Accept (s)'.
 
-![Cuis Window](SamplePkg/Sample-Package-015.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-013.png)
+
 
 Congratulations!  You have created a new Class!
 
-![Cuis Window](SamplePkg/Sample-Package-016.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-014.png)
+
 
 ### Add a Class Comment
 
 Noting the red 'THIS CLASS HAS NO COMMENT!', now is a good time to add some description of the new class.
 
-![Cuis Window](SamplePkg/Sample-Package-017.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-015.png)
+
 
 To (s)ave the class comment, I type Cmd-s (or use the context menu selection Accept).
-
-![Cuis Window](SamplePkg/Sample-Package-018.png)
 
 
 ### Creating a Package and adding it to GitHub.
@@ -171,19 +188,23 @@ The first thing to do is to create a Package which can be added to our GitHub  r
 
 I open an Installed Packages browser from the World Menu -> Open.. submenu.
 
-![Cuis Window](SamplePkg/Sample-Package-019.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-016.png)
+
 
 Clicking on the _new_ button, I fill in exactly the same name as I gave the system category: 'IA-EN-Dictionary'.  Copy/Paste from the class browser would work here as well.  I Accept the name.
 
-![Cuis Window](SamplePkg/Sample-Package-020.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-017.png)
+
 
 Now I just fill in the package comment and click the 'save' button.
 
-![Cuis Window](SamplePkg/Sample-Package-021.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-018.png)
+
 
 I can open a File Browser to check that the package was created.
 
-![Cuis Window](SamplePkg/Sample-Package-022.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-019.png)
+
 
 I find a file 'IA-EN-Dictionary.pck.st' was created in the directory where the Cuis image file was found 'Cuis-Smalltalk-Dev'.
 
