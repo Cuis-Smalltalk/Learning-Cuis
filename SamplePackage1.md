@@ -88,7 +88,7 @@ The way this works is
 
 Pressing enter (carriage return) is the same as clicking on button labeled  'Interlingua Contains'.
 
-Having decided this, the first thing I did was add the Interlingta->English dictionary to the local Git repository.
+Having decided this, the first thing I did was add the Interlingua->English dictionary to the local Git repository.
 
 - [1] copy the file into the local repository
 - [2] "git add" to make the repository aware of the file
