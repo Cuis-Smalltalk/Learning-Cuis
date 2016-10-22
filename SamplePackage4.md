@@ -202,7 +202,7 @@ One way to do this is by changing the window size so that it looks right and ask
 ![Cuis Window](SamplePkg/Sample-Package-069.png)
 
 
-I did that here by DoIt (Cmd-d) on an Inspector opened on the IEDictWindow where I asked the question
+I did that here by PrintIt (Cmd-p) on an Inspector opened on the IEDictWindow where I asked the question
 ````Smalltalk
 (self morphExtent / self textSizeUnit) rounded.
 ````
@@ -218,9 +218,11 @@ When we select a font size and open an IEDictWindow, it scales itself to the fon
 
 ![Cuis Window](SamplePkg/Sample-Package-070.png)
 
-However, if we change the font now the window does not look so good.
+
+However, if we change the font now, the window does not look so good.
 
 ![Cuis Window](SamplePkg/Sample-Package-071.png)
+
 
 To fix this, we need to look at how fonts are updated when the font preference changes.
 
@@ -321,6 +323,9 @@ And check our work.
 
 Did we remember to _require_ all packages we depend on?
 
-Ben obra!!
-
 ![Cuis Window](SamplePkg/Sample-Package-075.png)
+
+
+***Ben obra!!***
+
+
