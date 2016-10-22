@@ -1,7 +1,7 @@
 Making a Simple Package for Cuis
 ================================
 
-This is a tutorial which shows the process of creating a simple package in Cuis Smalltalk and making it sharable on GitHub.
+This is a tutorial which shows in detail the process of creating a simple package in Cuis Smalltalk and making it sharable on GitHub.
 
 ### Basic Orientation
 
@@ -39,48 +39,39 @@ We like easy.  We can deal with easy.  ;^)
 
 The first thing is to think of a good, descriptive-but-not-too-long name.
 
-The convention for Cuis is to start all names with 'Cuis-Smalltalk-'.  This allows tools to have a common searching convention for finding packages.
+The convention for Cuis is to start all repository names with 'Cuis-Smalltalk-'.  This allows tools to have a common searching convention for finding packages.
 
 Note that I am creating a repository in Cuis-Smalltalk-Learners.  You will want to create a repository within your own GitHub account.
 
-![Cuis Window](SamplePkg/Sample-Package-001.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-001.png)
 
 Shareable Cuis code by convention uses the MIT open source licence.
 
 I typically create a default README.md file as well.
 
-![Cuis Window](SamplePkg/Sample-Package-002.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-002.png)
 
-![Cuis Window](SamplePkg/Sample-Package-003.png)
-
-One thing which you might observe in these tutorials is that I am a poor typist.
-
-The first thing I notice is that I have to fix the package name!
-
-I could delete the repository and start over, but fortunately GitHub settings allows me to fix this.
-
-![Cuis Window](SamplePkg/Sample-Package-004.png)
 
 OK.  Now that I have a repository set up, I can clone it and add files.
 
-![Cuis Window](SamplePkg/Sample-Package-005.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-003.png)
 
 I am a Linux user, so I use the command line.
 
 Being lazy, I "Copy" the github name from the web page.
 
-![Cuis Window](SamplePkg/Sample-Package-006.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-004.png)
 
 I can now "git clone", paste the name, and get a local copy of my shiny new repository.
 
-![Cuis Window](SamplePkg/Sample-Package-007.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-005.png)
 
-![Cuis Window](SamplePkg/Sample-Package-008.png)
 
 ### Add a new file to a Git repository
 
 For this tutorial I wanted an example where a small amount of code gives useful tool.
- I have been thinking of rewriting one of my earliest Cuis projects which I think fits this goal: an Interlingua<->English word lookup.
+
+I have been thinking of rewriting one of my earliest Cuis projects which I think fits this goal: an Interlingua<->English word lookup.
 
 This is how this current lookup window appears:
 
@@ -102,7 +93,8 @@ Having decided this, the first thing I did was add the Interlingta->English dict
 
 Here is what this lookes like in a Linux shell:
 
-![Cuis Window](SamplePkg/Sample-Package-010.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-006.png)
+
 
 ### Creating a Cuis Category
 
