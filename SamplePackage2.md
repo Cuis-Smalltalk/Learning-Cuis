@@ -4,6 +4,22 @@ Making a Simple Package for Cuis -- Part 2
 This is a continuation of
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage1.md
 
+
+### Package loading
+
+You should know how Cuis finds packages to load.
+
+First, Cuis looks in the folder the image is running from, then in its subfolders/subdirectories 'Packages' and 'CompatibilityPackages'.  Then it looks in the parent directory of 'Cuis-Smalltalk-Dev' for directories with names starting 'Cuis-Smalltalk-'.  
+
+So the best thing is for all directories/folders named 'Cuis-Smalltalk-*' to be in the same common directory.  If this directory is named 'Cuis' then there should be a 'Cuis/Cuis-Smalltalk-Dev' and a 'Cuis/Cuis-Smalltalk-IA-EN-Dictionary'.  If this is not the case, you must make it so.
+
+To avoid confusion, make sure your `IA-EN-Dictionary.pck.st` file ***is*** in folder/directory 'Cuis-Smalltalk-IA-EN-Dictionary' and that there is  ***not*** a `IA-EN-Dictionary.pck.st` in 'Cuis-Smalltalk-Dev'.
+
+Also, if you have a 'Cuis-Smalltalk-SamplePkg' directory, you might rename it to something like 'SamplePackage'.
+
+This will ensure that there is only one `IA-EN-Dictionary` feature to find when Cuis looks for a package with this feature.
+
+
 ### Feature require: #'IA-EN-Dictionary'
 
 We start with a "fresh" Cuis development image.
@@ -24,21 +40,22 @@ You also have _word completion_.  If you start typing a word, e.g. 'Fea', then t
 
 You can ignore these or select one of them and press enter/CR to complete the word you want.
 
-![Cuis Window](SamplePkg/Sample-Package-026.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-023.png)
 
 In a Workspace you can select a line of code and either Cmd-click for the context menu and select DoIt or press Cmd-d to compile and run the code.
 
-If the package loads, skip this paragraph and go to the next one.  First, make sure all words are spelled properly and try DoIt again.  Otherwise, you now need to learn how package code is searched for in Cuis. First, Cuis looks in the folder the image is running from, then in its subfolders/subdirectories 'Packages' and 'CompatibilityPackages'.  Then it looks in the parent directory of 'Cuis-Smalltalk-Dev' for directories with names starting 'Cuis-Smalltalk-'.  So the best thing is for all directories/folders named 'Cuis-Smalltalk-*' to be in the same common directory.  If this directory is named 'Cuis' then there should be a 'Cuis/Cuis-Smalltalk-Dev' and a 'Cuis/Cuis-Smalltalk-SamplePkg'.  If this is not the case, make it so and try again.  If there is still a problem, please ask on the Cuis mailing list http://cuis-smalltalk.org/mailman/listinfo/cuis-dev_cuis-smalltalk.org
+If the package loads, skip this paragraph and go to the next one. Otherwise, make sure all words are spelled properly and try DoIt again. If there is still a problem, please ask for help on the Cuis mailing list http://cuis-smalltalk.org/mailman/listinfo/cuis-dev_cuis-smalltalk.org
 
-After the package has been loaded, you should be able to open a code browser and select the category and the IEDict class.  You can also move the mouse to the class  category pane of the code browser, Cmd-click to get the context menu, select Find (or just Cmd-f) type 'IEDict' and you will get to the class code.
+After the package has been loaded, you should be able to open a code browser, scroll to and select the category and the IEDict class.  You can also move the mouse to the _class category_ pane of the code browser, Cmd-click to get the context menu, select Find (or just Cmd-f) type 'IEDict' and you should get to the class code.
 
-![Cuis Window](SamplePkg/Sample-Package-027.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-024.png)
+
 
 ### Initializing the IEDict Class
 
 In the Class pane, under 'IEDict' there are three buttons labled 'instance', '?', and 'class'.  Click on 'class'.
 
-![Cuis Window](SamplePkg/Sample-Package-028.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-025.png)
 
 The difference between Class and Instance is that _instance methods_ operate on individual objects which are instances of a class.  _Class methods_ operate on the class code shared by all instances.  We'll get into what this means in a bit more detail below.
 
