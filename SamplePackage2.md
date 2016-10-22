@@ -107,8 +107,8 @@ initialize
 		aLine := fileStream nextLine. 
 		[aLine isNil] whileFalse: [
 			DictData at: curIndex 
-				put: ((aLine findBetweenSubStrs: ':') 
-					collect: [:str| str withBlanksTrimmed]). 
+				  put: ((aLine findBetweenSubStrs: ':') 
+						collect: [:str| str withBlanksTrimmed]). 
 			aLine := fileStream nextLine. 
 			curIndex := 1 + curIndex.
 		]
@@ -120,9 +120,13 @@ initialize
 
 When I Accept this, I am adding code for the first time since the image started, so the code browser asks who I am.  This is so that my initials get placed into the code's meta-data.  
 
+If you are unknown to the code browser, you may be asked to add your initials.  Please do so!
+
 There is a `versions` button in the code browser which lets you see previous versions of the current method.  You can select a previous version and _revert_ to it if you need to back off a change.
 
-If you are unknown to the code browser, you may be asked to add your initials.  Please do so!
+The versions show who is the author of each version.  You know who to ask for help if it is not you!
+
+
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-031.png)
 
@@ -132,8 +136,6 @@ The text file 'iedict.txt' is read from IEDict's package file name directory.  (
 The comment line is skipped and each line is read in as a String which is split on the colon into two substrings which are stored sequentially in an Array which is available in IEDict's DictData class variable.
 
 Now a class' `initialize` method is invoked when a class is filed-in/loaded.  Since we have already created the class IEDict we need to invoke `IEDict>>initialize` ourselves.
-
-Did I mention that I like to make things easy for myself?
 
 
 ### Class initialization
@@ -146,11 +148,13 @@ You may have noticed the comment
 ````
 One can select any text in a code browser window and DoIt (Cmd-d).  When I am changing method code and may want to invoke the method again, I just add the invocation code as a comment so that I can DoIt without having to open a Workspace.
 
-Did I tell you I was lazy?  ;^)
+Did I mention that I like to make things easy for myself?
 
-We DoIt and..
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-032.png)
+
+
+We DoIt and..
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-033.png)
 
