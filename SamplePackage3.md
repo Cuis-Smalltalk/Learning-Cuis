@@ -134,6 +134,7 @@ Of course, after we do this it would be a good idea to do a "git commit" "git pu
 
 ![Cuis Window](SamplePkg/Sample-Package-049.png)
 
+
 ### makeButtonArea
 
 The next layout we need to make is for the button area.
@@ -196,35 +197,35 @@ We'll paste this code in and accept it.
 
 ![Cuis Window](SamplePkg/Sample-Package-050.png)
 
-Now, before I forget, is a good time to add the button actions.
+
+Now, before I forget, is a good time to add event methods for the button actions.
 
 ![Cuis Window](SamplePkg/Sample-Package-051.png)
+
 
 ````Smalltalk
 interlinguaContainsClick
 
 	self model searchString: self searchString; interlinguaContainsClick
-````
 
-````Smalltalk
+
 interlinguaStartsClick
 
 	self model searchString: self searchString; interlinguaStartsClick
-````
 
-````Smalltalk
+
 englishContainsClick
 
 	self model searchString: self searchString; englishContainsClick
-````
 
-````Smalltalk
+
 englishStartsClick
 
 	self model searchString: self searchString; englishStartsClick
 ````
 
-All of thes methods just set the model's searchString and tell the model to handle the event.
+Each of these methods just set the model's searchString and tell the model to handle the event.
+
 
 ### makeResultsArea
 
@@ -383,7 +384,9 @@ Try yet again and...
 
 ![Cuis Window](SamplePkg/Sample-Package-056.png)
 
-Yay!!  Be sure to celebrate each success!
+Yay!!  
+
+Be sure to celebrate each success!
 
 Not bad looking, except for a bit of color.
 
@@ -414,11 +417,13 @@ searchString
 
 Now we can click on the buttons without bringing up the debugger, but something is missing!  The results!
 
+
 How do we fix this?
 
 We have to go back to the idea of separating a _model_ from a _view_ onto that model.
 
 The basic idea is that these are separated so that one can have multiple views of the same model.  The model, to be separate, should ***not*** have to know anything about views.
+
 
 So how does a view know when to update its display of the model's information?
 
@@ -427,6 +432,7 @@ The answer to that is _events_.
 When something changes in a model, it just announces an event.  Any view (any object, really) can register as interested in an event.
 
 The model says "something happened, deal with it" without knowing who, if anyone, is listening.
+
 
 When is there an interesting event?
 
