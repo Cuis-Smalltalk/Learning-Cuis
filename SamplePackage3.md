@@ -112,9 +112,9 @@ You can do a text search to find such classes.  In a Linux shell this would be `
 
 ![Cuis Window](SamplePkg/Sample-Package-046.png)
 
-After loading the Morphic-Widgets-Extras feature, we can Accept the code.  Note that the word `OneLineEditorMorph` turns from red to bold and black to indicate it is a known class name.
+After loading the Morphic-Widgets-Extras feature, we can Accept the code.  Note that the word `OneLineEditorMorph` turns from red to black to indicate it is a known class name.
 
-Also, you can use a FileList to open a Package Browser to view code in a package without loading it into your image.
+Also, you can use a FileList to open a Package Browser to view code in a package ***without loading it*** into your image.
 
 This sometimes helps me decide if a package has something I want.
 
