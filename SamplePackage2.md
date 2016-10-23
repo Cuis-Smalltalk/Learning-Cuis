@@ -308,7 +308,7 @@ Implementors shows just one implementor: SystemWindow.
 ![Cuis Window](SamplePkg/Sample-Package-041.png)
 
 
-The `SystemWindow class>>open:label:` method sets the window's _model_, invokes #buildMorphicWindow, sets the label (if any), and returns the window.
+The `SystemWindow class>>open:label:` method sets the window's _model_, invokes `buildMorphicWindow`, sets the label (if any), and returns the window.
 
 So our next task is to go to the _instance_ side of the class and implement `IEDictWindow>>buildMorphicWindow`.
 
