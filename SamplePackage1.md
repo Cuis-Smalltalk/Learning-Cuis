@@ -84,7 +84,7 @@ This is how this current lookup window appears:
 The way this works is
 
 - Enter a word, or part of a word. 
-- Either press <enter> or click on one of the four buttons.
+- Either press Enter/Carriage Return or click on one of the four buttons.
 
 Pressing enter (carriage return) is the same as clicking on button labeled  'Interlingua Contains'.
 
@@ -141,7 +141,7 @@ We will be creating a specialized SystemWindow with its associated data _model_.
 
 This is a common pattern.  If you open a HierarchyBrowser on 'SystemWindow' you will see this a lot. (Not shown here; you can look later).
 
-Since our dictionary will work in both directions, Interlingua->English and English->Interlingua, we will NOT be using a Smalltalk dictionary here but  it directly from Object.
+Since our dictionary will work in both directions, Interlingua->English and English->Interlingua, we will NOT be using a Smalltalk dictionary here but will inherit directly from Object.
 
 The class will be called `IEDict`.
 
