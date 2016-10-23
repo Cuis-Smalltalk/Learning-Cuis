@@ -92,7 +92,7 @@ Now to open an new window from the Open menu and ...
 
 Nothing happened?  Huh?
 
-This just goes to show that we need to flexible and numble enough to deal with the unexpected.
+This just goes to show that we need to flexible and nimble enough to deal with the unexpected.
 
 Let's look around a bit.
 
@@ -160,7 +160,7 @@ Open a new IEDictWindow and...
 
 This is starting to look pretty good.
 
-Now, rather than change the `SystemWindow>>openInWorld` method, I am going to set some color values ***after*** `openInWorld` rather than before.
+Now, rather than change the `SystemWindow>>openInWorld` method, I am going to set some color values ***after*** `openInWorld` has been invoked.
 
 We can do this in `IEDictWindow class>>open`
 ````Smalltalk
@@ -207,7 +207,7 @@ I did that here by PrintIt (Cmd-p) on an Inspector opened on the IEDictWindow wh
 (self morphExtent / self textSizeUnit) rounded.
 ````
 
-Now I know enough to add a method to the `geometry` category
+This gets us the unscaled extent. Now We know enough to add a method to the `geometry` category
 ````Smalltalk
 initialExtent
 
@@ -234,7 +234,7 @@ I also look at some of the other fontPreferenceChanged methods to see how they h
 
 Basically, Morphs which draw Strings know how to update their fonts.  However, window Morphs do their own layouts and only the windows know how to update their layouts when things change.
 
-We can adjust to a new font size in our own fontPreferenceChanged method.
+We can adjust to a new font size in our own fontPreferenceChanged event method.
 
 ````Smalltalk
 fontPreferenceChanged
@@ -250,7 +250,7 @@ fontPreferenceChanged
 					proportionalWidth: 1 
 					fixedHeight: self defaultSeparation * 2 + self textSizeUnit).
 					
-	self morphExtent: (self morphExtent max: self initialExtent).
+  self morphExtent: (self morphExtent max: self initialExtent).
 ````
 
 Let's try again.  Set the font preference to Small, open an IEDictWindow, set to Huge.
@@ -327,5 +327,3 @@ Did we remember to _require_ all packages we depend on?
 
 
 ***Ben obra!!***
-
-
