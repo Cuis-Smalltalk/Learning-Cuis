@@ -295,7 +295,7 @@ Ah!  I have to add the access methods to IEDict.
 
 I guess it is time to do this now.
 
-Note that I don't have to define everything up front.  It is OK to leave some holes to be filled and just let the sysyem tell me when I try and use them.
+Note that I don't have to define everything up front.  It is OK to leave some holes to be filled and just let the system tell me when I try and use them.
 
 ### IEDict instance variables
 
