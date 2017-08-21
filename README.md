@@ -58,18 +58,21 @@ Look at the ***repositories in GitHub*** with names starting 'Cuis-Smalltalk'.  
 
 Look at the ***package reference***
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/PackageRef.md
+
 Examples of Cuis Smalltalk with interesting Features are described in 'PackageRef.md' including:
---Morphic-ColorEditor
---ClassCommentBrowser
---Crypto-NaCl
---Interlingua-English-Lookup
---Morphic-Misc1
---... -NamedColors
---Code-Patterns
---Ropes
---Morphic-Games-Solitaire
---Life
---Construction
+
+* Morphic-ColorEditor
+* ClassCommentBrowser
+* Crypto-NaCl
+* Interlingua-English-Lookup
+* Morphic-Misc1
+* ... -NamedColors
+* Code-Patterns
+* Ropes
+* Morphic-Games-Solitaire
+* Life
+* Construction
+
 
 
 I find it best to "git clone" repositories in a common directory, in my case named 'Cuis'.
