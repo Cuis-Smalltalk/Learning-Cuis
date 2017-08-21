@@ -54,10 +54,22 @@ Take a ***detailed tour*** which creates a Package and a GitHub repository for i
 
 Software 'code' is meant to be read as well as written.  Well written software is something we all work on getting better at.  There are some cool Cuis packages on GitHib.
 
-Look at the ***repositories in GitHub*** with names starting 'Cuis-Smalltalk'.  Many of these have a 'RoughGuide.md' file which points out code topics/techniques of interest.
+Look at the ***repositories in GitHub*** with names starting 'Cuis-Smalltalk'.  Many of these have a 'RoughGuide.md' file which points out code topics and techniques of interest.
 
-Many interesting Features are described in 'PackageRef.md' above:
+Look at the ***package reference***
 - https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/PackageRef.md
+Examples of Cuis Smalltalk with interesting Features are described in 'PackageRef.md' including:
+--Morphic-ColorEditor
+--ClassCommentBrowser
+--Crypto-NaCl
+--Interlingua-English-Lookup
+--Morphic-Misc1
+--... -NamedColors
+--Code-Patterns
+--Ropes
+--Morphic-Games-Solitaire
+--Life
+--Construction
 
 
 I find it best to "git clone" repositories in a common directory, in my case named 'Cuis'.
