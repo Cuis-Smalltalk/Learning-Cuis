@@ -4,7 +4,7 @@ Also, do a search on GitHub for repositories containing 'Cuis-Smalltalk' . The p
 
 
 
-#'Morphic-ColorEditor'
+# 'Morphic-ColorEditor'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-ColorEditor
 - 
@@ -38,7 +38,7 @@ requires: { #'Cuis-Base'. #'Morphic-Misc1'.
 
 
 
-#'ClassCommentBrowser'
+# 'ClassCommentBrowser'
 
 - https://github.com/dhnorton/Cuis-Smalltalk-comments
 - 
@@ -60,7 +60,7 @@ requires: {}
 
 
 
-#'Crypto-NaCl'
+# 'Crypto-NaCl'
 - https://github.com/KenDickey/Cuis-Smalltalk-Crypto-NaCl
 -
 
@@ -78,7 +78,7 @@ requires: { #'FFI. }
 
 
 
-#'Interlingua-English-Lookup'
+# 'Interlingua-English-Lookup'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Ia-En
 - 
@@ -101,7 +101,7 @@ requires: { }
 
 
 
-#'Morphic-Misc1'
+# 'Morphic-Misc1'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
 - 
@@ -158,12 +158,12 @@ To prevent such morphs from showing up in the New Morph Menu, add a class side m
 
 You may also wish to add a class method #initializedInstance to return something special when a new Morph is created from the New Morph Menu.  Look at the code in UpdatingStringMorph class>>initializedInstance for an example.
 
-#'... -NamedColors'
-##'XKCD-NamedColors'
-##'NBSISCC-NamedColors'
-##'CSS2-NamedColors'
-##'CSS3-NamedColors'
-##'Crayon-NamedColors'
+# '... -NamedColors'
+* 'XKCD-NamedColors'
+* 'NBSISCC-NamedColors'
+* 'CSS2-NamedColors'
+* 'CSS3-NamedColors'
+* 'Crayon-NamedColors'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-NamedColors
 - 
@@ -186,7 +186,7 @@ requires: { }
 
 
 
-#'Code-Patterns'
+# 'Code-Patterns'
 
 - https://github.com/dhnorton/Cuis-Smalltalk-patterns
 -
@@ -226,7 +226,7 @@ requires: { }
 
 
 
-#'Ropes'
+# 'Ropes'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Ropes
 - 
@@ -248,7 +248,7 @@ requires: { #'Compression'. }
 
 
 
-#'Morphic-Games-Solitaire'
+# 'Morphic-Games-Solitaire'
 
 - https://github.com/KenDickey/Cuis-Smalltalk-Solitaire
 - 
@@ -284,7 +284,7 @@ requires: { #'Graphics-Files-Additional' }
 
 - FreeCell and Klondike register with the FileList to restore saved game files.
 
-#'Life'
+# 'Life'
 
 - https://github.com/dhnorton/Cuis-Smalltalk-life
 -
@@ -319,11 +319,26 @@ Gardner, Martin, "Mathematical Games", Scientific American, October 1970, Februa
 
 - Need for popup menu signaled by grid morphs
 
-#'Construction'
+# 'Construction'
 - https://github.com/dhnorton/Cuis-Smalltalk-contractor
 -
+````Smalltalk
+description: 
+
+'Simulates the Construction Game'
+
+Feature require: #Construction
+
+'World->Open...->File List->Cuis-Smalltalk-contractor'
+
+'installPackg Construction.pck.st'
+
+provides: { #'Game-Model'. #'Game-Graphics'. #'Construction-Model'. #'Construction-Graphics'. } 
+
+requires: { #'Morphic-Widgets-Extras' }
+````
+
 ## Of Interest in 'Construction'
-- Simulation of the Construction Game
 - Automatic and interactive board tours
 - No limits on equipment quantities
 - History of player's progress
