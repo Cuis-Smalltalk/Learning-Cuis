@@ -319,4 +319,22 @@ Gardner, Martin, "Mathematical Games", Scientific American, October 1970, Februa
 
 - Need for popup menu signaled by grid morphs
 
+#'Construction'
+- https://github.com/dhnorton/Cuis-Smalltalk-contractor
+-
+## Of Interest in 'Construction'
+- Simulation of the Construction Game
+- Automatic and interactive board tours
+- No limits on equipment quantities
+- History of player's progress
+- Statistics
+- Optional views to assist decision making
+- Players automatically informed of doubled state
+- Computer is banker, auctioneer, and auditor
+- Auditing is continuous
+- Rules enforced consistently
+- Rudimentary animation of the die and movement of tokens
+
+
+
 # More packages to come...
