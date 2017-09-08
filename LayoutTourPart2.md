@@ -261,7 +261,7 @@ Not everyone likes dropShadows, so the code for this is packaged as a separate c
 
 Now we should be able to use dropShadows with our Morphs.
 
-In the WorkSpace..
+In the ObjectExplorer workspace pane..
 
 ````Smalltalk
 self shadowNonLayouts.
