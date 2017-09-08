@@ -256,6 +256,13 @@ self showNonLayouts.
 Hmmm..  Not much difference.
 
 How about using _dropShadows_ to hilight the Z-order?  Give some depth to the submorphs being layed out?
+
+Not everyone likes dropShadows, so the code for this is packaged as a separate change set.  To include this change set, open a FileList (World menu > Open..> FileList), select file "DropShadow.cs.st" and click on the _install_ button.  Then close the FileList window. 
+
+Now we should be able to use dropShadows with our Morphs.
+
+In the WorkSpace..
+
 ````Smalltalk
 self shadowNonLayouts.
 ````
