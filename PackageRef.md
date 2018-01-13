@@ -40,7 +40,7 @@ requires: { #'Cuis-Base'. #'Morphic-Misc1'.
 
 # 'ClassCommentBrowser'
 
-- https://github.com/dhnorton/Cuis-Smalltalk-comments
+- */Cuis-Smalltalk-Dev/Packages/ClassCommentBrowser.pck.st
 - 
 ````Smalltalk
 description: 
