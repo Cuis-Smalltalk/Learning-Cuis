@@ -333,9 +333,9 @@ Feature require: #Construction
 
 'installPackg Construction.pck.st'
 
-provides: { #'Game-Model'. #'Game-Graphics'. #'Construction-Model'. #'Construction-Graphics'. } 
+provides: { #'Construction-Model'. #'Construction-Graphics'. } 
 
-requires: { #'Morphic-Widgets-Extras' }
+requires: { #'Morphic-Widgets-Extras'. #'Game' }
 ````
 
 ## Of Interest in 'Construction'
