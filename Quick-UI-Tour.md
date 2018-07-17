@@ -22,7 +22,14 @@ You can start an image, do things with it and throw it away or save the image an
 
 If you cmd-click on the desktop, you will see a World Menu.  
 
-The command button "cmd-" may be a control ("ctrl") key [Linux], a window key [Windows], an apple key [MacOS], or some other command key based on your keyboard and operating system.
+The command button "cmd-" may be a control ("ctrl") key [Linux], an apple key [MacOS], or some other command key based on your keyboard and operating system.
+
+A three button mouse has
+-  button 1 = left mouse button = select
+-  button 2 = right mouse button = menu
+-  button 3 = center mouse buttom = halo
+
+For most platforms mouse 2 = ctrl-click and mouse 3 = shift-ctrl-click.
 
 A World Menu can be used for one-shot selections.  Just click on your selection, the action takes place and the menu disappears.  If you want to keep the menu up to make several selections, click on the push-pin icon in the upper right-hand corner.  The icon will disappear and the menu will stay up until you dismiss it by clicking on the circle-x close button in the upper left-hand corner.
 
