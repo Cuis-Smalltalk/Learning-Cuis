@@ -29,7 +29,8 @@ A three button mouse has
 -  button 2 = right mouse button = menu
 -  button 3 = center mouse buttom = halo
 
-For most platforms mouse 2 = ctrl-click and mouse 3 = shift-ctrl-click.
+If your mouse or touchpad has less than buttons, then you can use 
+ctrl-click for button 3 and ctrl-shif-click for button 2.
 
 A World Menu can be used for one-shot selections.  Just click on your selection, the action takes place and the menu disappears.  If you want to keep the menu up to make several selections, click on the push-pin icon in the upper right-hand corner.  The icon will disappear and the menu will stay up until you dismiss it by clicking on the circle-x close button in the upper left-hand corner.
 
