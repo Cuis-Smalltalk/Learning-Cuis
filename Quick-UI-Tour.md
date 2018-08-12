@@ -133,7 +133,7 @@ Here I did a silly thing.  I typed the code to add the number 3 to a text string
 
 When this happens I get a textual view of the "code stack" showing what the system was doing when things broke.
 
-![Debugging](UITour/Cuis13-Debugging.png)
+![Debugging](UITour/Cuis13-Debuger.png)
 
 I can move down the stack by selecting a frame just below the active one.  Clicking on the lower left pane shows the value for self, the String object which gets the message.
 
