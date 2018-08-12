@@ -133,15 +133,15 @@ Here I did a silly thing.  I typed the code to add the number 3 to a text string
 
 When this happens I get a textual view of the "code stack" showing what the system was doing when things broke.
 
-![Debugging](UITour/Cuis13-Debugger.png)
+![Debug13](UITour/Cuis13-Debugging.png)
 
 I can move down the stack by selecting a frame just below the active one.  Clicking on the lower left pane shows the value for self, the String object which gets the message.
 
-![Debug-Plus](UITour/Cuis14-Debugging.png)
+![Debug14](UITour/Cuis14-Debugging.png)
 
 Clicking on the next frame down (the "+" frame) shows what the fuss is about and I see the method code for "+" in the String class.
 
-![Debug-Plus](UITour/Cuis15-Debugging.png)
+![Debug15](UITour/Cuis15-Debugging.png)
 
 At this point I am just going to close the debugger and ignore this as adding a string and a number really is a silly thing to do.  But I could have written or changed some code and them re-executed the stack frame to continue the computation -- without unwinding the stack! 
 
