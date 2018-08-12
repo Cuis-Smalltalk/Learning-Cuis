@@ -48,7 +48,7 @@ Also available from the Help Menu is the Terse Guide to Cuis.
 
 The Terse Guide has many topics and shows code usages.  
 
-Every time you re-visit a topic, the page is created again.  So you can write code here and "DoIt" (cmd-d) or "PrintIt" (cmd-p) to see results.
+You can select or change code in the Terse Guide pages and "DoIt" (cmd-d) or "PrintIt" (cmd-p) to see results.  Every time you re-visit a topic, the page is created again, so feel free to play.
 
 ![SystemBrowser](UITour/Cuis05-SystemBrowser.png)
 
@@ -75,6 +75,8 @@ Scroll down and click on the Packages triangle.
 ![FileList](UITour/Cuis07b-FileList.png)
 
 Clicking on a Directory shows File names in the right hand pane.  Clicking on a File entry shows its contents in the lower pane.
+
+Here I clicked on the "Media" directory and the "Graphics-Files-Additional.pck.st" package file. 
 
 The File List is context sensitive.  Viewing a text file or an image file or a file with Smalltalk Package code gives you different option buttons.
 
