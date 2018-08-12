@@ -64,11 +64,15 @@ As you type, the system does "syntax hilighting" which gives clues to class and 
 
 Again, you can select code and DoIt (cmd-d) or PrintIt (cmd-p) to get results.
 
-![FileList](UITour/Cuis07-FileList.png)
+![FileList](UITour/Cuis07a-FileList.png)
 
 When you click on World Menu -> Open.. -> File List you get a multi-pane file browser.
 
 The upper left pane shows a tree-view of the file system.  You click on the small triangles to show/hide subtrees.
+
+Scroll down and click on the Packages triangle.
+
+![FileList](UITour/Cuis07b-FileList.png)
 
 Clicking on a Directory shows File names in the right hand pane.  Clicking on a File entry shows its contents in the lower pane.
 
@@ -115,17 +119,7 @@ One can click on a Morph's "instance variables" to see their values, and in turn
 
 You can also write code in the lower pane in which "self" is bound to the object clicked on in the upper left pane.  So one can do things like changing the setting of the "color" instance variable.
 
-![Worspace-Code](UITour/Cuis12-Worspace-Code.png)
-
-Another way to change a value is to send a message to an object using a Workspace.
-
-![Workspace-Menu](UITour/Cuis13-Workspace-Menu.png)
-
-To get a reference to a morph, one has to turn on "morphs dropped on me create a variable reference" option in the Workspace.  You do this using the blue triange to select the Workspace Menu and click on the box at the left of the selection.
-
-If you then drag the EllipseMorph onto the workspace (hold down the mouse key, drag the ellipse, let the key up over the Workspace) then a text reference to the ellipse ("ellipsemorph618") is created.  You can then send messages to the ellipse.
-
-![Debugger](UITour/Cuis14-Debugger.png)
+![Debugger](UITour/Cuis12-CodeBug.png)
 
 We learn by making mistakes and correcting them.
 
@@ -135,15 +129,15 @@ We like to make mistakes cheap and easy to fix.
 
 Here I did a silly thing.  I typed the code to add the number 3 to a text string and pressed cmd-d (DoIt).  And guess what?  Things broke!
 
-When this happens I get a textual view of the "code stack" showing what the system was doing when things broke and three options.  "Proceed" means "try this again".  "Abandon" means "forget it, sorry I asked".  "Debug" means "open a Debugger and let me play with this, maybe I can fix it".
+When this happens I get a textual view of the "code stack" showing what the system was doing when things broke.
 
-![Debugging](UITour/Cuis15-Debugging.png)
+![Debugging](UITour/Cuis13-Debugging.png)
 
-I chose the Debug option and clicked on the "DoIt" stack frame which shows the code I was trying to run.
+I can move down the stack by selecting a frame just below the active one.  Clicking on the lower left pane shows the value for self, the String object which gets the message.
 
-![Debug-Plus](UITour/Cuis16-Debug-Plus.png)
+![Debug-Plus](UITour/Cuis14-Debugging.png)
 
-I then clicked on "+" frame above to see what the fuss is about and see the method code for "+" in the String class.
+Clicking on the next frame down (the "+" frame) shows what the fuss is about and I see the method code for "+" in the String class.
 
 At this point I am just going to close the debugger and ignore this as adding a string and a number really is a silly thing to do.  But I could have written or changed some code and them re-executed the stack frame to continue the computation -- without unwinding the stack! 
 
