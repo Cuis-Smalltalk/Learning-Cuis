@@ -250,7 +250,7 @@ requires: { #'Compression'. }
 
 # 'Morphic-Games-Solitaire'
 
-- https://github.com/KenDickey/Cuis-Smalltalk-Solitaire
+- https://github.com/Cuis-Smalltalk/Games/tree/master/Solitaire
 - 
 ````Smalltalk
 description: 
@@ -286,7 +286,7 @@ requires: { #'Graphics-Files-Additional' }
 
 # 'Life'
 
-- https://github.com/dhnorton/Cuis-Smalltalk-life
+- https://github.com/Cuis-Smalltalk/Games/tree/master/Life
 -
 ````Smalltalk
 description:
@@ -320,7 +320,7 @@ Gardner, Martin, "Mathematical Games", Scientific American, October 1970, Februa
 - Need for popup menu signaled by grid morphs
 
 # 'Construction'
-- https://github.com/dhnorton/Cuis-Smalltalk-contractor
+- https://github.com/Cuis-Smalltalk/Games/tree/master/Construction
 -
 ````Smalltalk
 description: 
