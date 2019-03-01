@@ -186,9 +186,9 @@ requires: { }
 
 
 
-# 'Code-Patterns'
+# 'Patterns'
 
-- https://github.com/dhnorton/Cuis-Smalltalk-patterns
+- https://github.com/Cuis-Smalltalk/CodeExamples/tree/master/Patterns
 -
 ````Smalltalk
 description: 
@@ -200,11 +200,11 @@ The coupled style employs the "dependency mechanism" and exposes the model to ch
 The decoupled style employs the "observer pattern" which ensures that the model can remain unaffected by changes to the view or by additional views. The primary methods of the observer pattern are #triggerEvent: and #when:send:to: . This is the preferred style for Cuis, although both styles can be found in the base.
 '
 
-provides: #'Code-Patterns'
+provides: #'Patterns'
 
 requires: { }
 ````
-## Of Interest in 'Code-Patterns'
+## Of Interest in 'Patterns'
 - Extensive line comments explaining reason for the code
 
 - How to use PluggableListMorph
@@ -248,7 +248,7 @@ requires: { #'Compression'. }
 
 
 
-# 'Morphic-Games-Solitaire'
+# 'Solitaire'
 
 - https://github.com/Cuis-Smalltalk/Games/tree/master/Solitaire
 - 
