@@ -261,7 +261,7 @@ provides: #'Morphic-Games-Solitaire'
 
 requires: { #'Graphics-Files-Additional' }
 ````
-## Of Interest in 'Morphic-Games-Solitaire'
+## Of Interest in 'Solitaire'
 - Shows the structure of a complex application with a number of classes.
 
 - Drag 'n Drop
