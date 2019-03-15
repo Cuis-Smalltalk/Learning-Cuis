@@ -4,7 +4,7 @@ Greetings and Welcome!!
 
 Smalltalk is a wonderful way of doing things in software and Cuis is a particular implementation of this language and its environment.
 
-Cuis shares ideas with other Smalltalk implementations and shares much of its implementation mechanics with the Squeak and Pharo environments.
+Cuis shares ideas with other Smalltalk implementations and shares much of its implementation mechanics with the [Squeak](http://www.squeak.org) and [Pharo](http://www.pharo.org/) environments.
 
 Smalltalk is a big world, which you can use to do just about anything that can be done with a computer.
 
