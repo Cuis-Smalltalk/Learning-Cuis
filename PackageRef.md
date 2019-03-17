@@ -329,9 +329,9 @@ description:
 
 Feature require: #Construction
 
-'World->Open...->File List->Cuis-Smalltalk-contractor'
+'World->Open...->File List->Cuis-Smalltalk/Games/Construction'
 
-'installPackg Construction.pck.st'
+'installPackage Construction.pck.st'
 
 provides: { #'Construction-Model'. #'Construction-Graphics'. } 
 
@@ -349,6 +349,29 @@ requires: { #'Morphic-Widgets-Extras'. #'Game' }
 - Auditing is continuous
 - Rules enforced consistently
 - Rudimentary animation of the die and movement of tokens
+
+# 'TrafficLight'
+- https://github.com/Cuis-Smalltalk/CodeExamples/tree/master/TrafficLight
+-
+````Smalltalk
+description: 
+
+'Simulates a traffic light'
+
+Feature require: #TrafficLight
+
+'World->Open...->File List->Cuis-Smalltalk/CodeExamples/TrafficLight'
+
+'installPackage TrafficLight.pck.st'
+
+provides: { #'TrafficLight-Model'. #'TrafficLight-Views' } 
+
+````
+
+## Of Interest in 'TrafficLight'
+- Compare use of Dependency Mechanism and Observer Pattern
+- When one light turns on the others turn off
+- Views independent of the model
 
 
 
