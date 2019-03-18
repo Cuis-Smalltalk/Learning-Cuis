@@ -188,7 +188,7 @@ requires: { }
 
 # 'Patterns'
 
-- https://github.com/Cuis-Smalltalk/CodeExamples/tree/master/Patterns
+- https://github.com/Cuis-Smalltalk/CodeExamples
 -
 ````Smalltalk
 description: 
@@ -199,6 +199,8 @@ The coupled style employs the "dependency mechanism" and exposes the model to ch
 
 The decoupled style employs the "observer pattern" which ensures that the model can remain unaffected by changes to the view or by additional views. The primary methods of the observer pattern are #triggerEvent: and #when:send:to: . This is the preferred style for Cuis, although both styles can be found in the base.
 '
+
+Feature require: 'Patterns'
 
 provides: #'Patterns'
 
@@ -250,7 +252,7 @@ requires: { #'Compression'. }
 
 # 'Solitaire'
 
-- https://github.com/Cuis-Smalltalk/Games/tree/master/Solitaire
+- https://github.com/Cuis-Smalltalk/Games
 - 
 ````Smalltalk
 description: 
@@ -286,7 +288,7 @@ requires: { #'Graphics-Files-Additional' }
 
 # 'Life'
 
-- https://github.com/Cuis-Smalltalk/Games/tree/master/Life
+- https://github.com/Cuis-Smalltalk/Games
 -
 ````Smalltalk
 description:
@@ -304,6 +306,8 @@ Gardner, Martin, "Mathematical Games", Scientific American, October 1970, Februa
 
 "Some Facts of Life", Byte Magazine, December 1978'
 
+Feature require: 'Life'
+
 ````
 
 ## Of Interest in 'Life'
@@ -320,7 +324,7 @@ Gardner, Martin, "Mathematical Games", Scientific American, October 1970, Februa
 - Need for popup menu signaled by grid morphs
 
 # 'Construction'
-- https://github.com/Cuis-Smalltalk/Games/tree/master/Construction
+- https://github.com/Cuis-Smalltalk/Games
 -
 ````Smalltalk
 description: 
@@ -351,7 +355,7 @@ requires: { #'Morphic-Widgets-Extras'. #'Game' }
 - Rudimentary animation of the die and movement of tokens
 
 # 'TrafficLight'
-- https://github.com/Cuis-Smalltalk/CodeExamples/tree/master/TrafficLight
+- https://github.com/Cuis-Smalltalk/CodeExamples
 -
 ````Smalltalk
 description: 
