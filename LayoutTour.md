@@ -229,4 +229,4 @@ LayoutMorphs can be nested and given their own LayoutSpecs.
 
 In Part 2 on Layouts, we will look at the code for setting up layouts and exploring them.
 
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/LayoutTourPart2.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/LayoutTourPart2.md

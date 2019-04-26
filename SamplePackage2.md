@@ -2,7 +2,7 @@ Making a Simple Package for Cuis -- Part 2
 ================================
 
 This is a continuation of
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage1.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage1.md
 
 
 ### Package loading
@@ -316,4 +316,4 @@ So our next task is to go to the _instance_ side of the class and implement `IED
 
 
 ..which we will do in Part 3 of this tutorial
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage3.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage3.md

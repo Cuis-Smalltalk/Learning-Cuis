@@ -230,4 +230,4 @@ This is OK as we are not changing the base Cuise image.  All our work is saved i
 ### Part 2
 
 This tutorial is continued in
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage2.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage2.md

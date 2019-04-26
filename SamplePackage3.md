@@ -2,7 +2,7 @@ Making a Simple Package for Cuis -- Part 3
 ================================
 
 This is a continuation of
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage2.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage2.md
 
 ### Context
 
@@ -13,7 +13,7 @@ To review:
 ![Cuis Window](SamplePkg/Sample-Package-009.png)
 
 We will use Layouts as described in the Layout Tutorial
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/LayoutTour.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/LayoutTour.md
 
 ### buildMorphicWindow
 
@@ -494,4 +494,4 @@ In part 4 we will look at refinements:
 - Adding a selection to the Open menu.
 
 On to 
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage4.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage4.md
