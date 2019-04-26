@@ -35,10 +35,10 @@ This project is all about learning Cuis and sharing Cuis code which others may f
 ***Get Cuis*** from https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
 
 Take a look at ***Quick-UI-Tour*** (click on file 'Quick-UI-Tour.md' above or)
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/Quick-UI-Tour.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/Quick-UI-Tour.md
 
 Take a look at how ***LayoutMorphs*** are used to maintain visual relations between graphic elements:
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/LayoutTour.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/LayoutTour.md
 
 Look at the ***Terse Guide*** (World Menu -> Help -> Terse Guide to Cuis)
 
@@ -46,7 +46,7 @@ Look at ***documentation*** available for other wonderful Smalltalk implementati
 - http://squeak.org/documentation/
 
 Take a ***detailed tour*** which creates a Package and a GitHub repository for it
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/SamplePackage1.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage1.md
 
 ***Subscribe*** and ask questions at the ***Cuis developers email*** list
 - http://jvuletich.org/mailman/listinfo/cuis_jvuletich.org
@@ -57,7 +57,7 @@ Software 'code' is meant to be read as well as written.  Well written software i
 Look at the ***repositories in GitHub*** with names starting 'Cuis-Smalltalk'.  Many of these have a 'RoughGuide.md' file which points out code topics and techniques of interest.
 
 Look at the ***package reference***
-- https://github.com/Cuis-Smalltalk-Learning/Learning-Cuis/blob/master/PackageRef.md
+- https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/PackageRef.md
 
 Examples of Cuis Smalltalk with interesting Features are described in 'PackageRef.md' including:
 
