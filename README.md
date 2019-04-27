@@ -27,6 +27,7 @@ Cuis and Pharo both forked from Squeak around release 3.7
 
 We are working hard to keep Cuis small and easy to learn, even as more capabilities are added.
 
+![Cuis Lifts Above its Weight](CuisLiftsAboveItsWeight.jpeg)
 
 This project is all about learning Cuis and sharing Cuis code which others may find of interest.
 
