@@ -50,8 +50,8 @@ Take a ***detailed tour*** which creates a Package and a GitHub repository for i
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage1.md
 
 ***Subscribe*** and ask questions at the ***Cuis developers email*** list
-- http://jvuletich.org/mailman/listinfo/cuis_jvuletich.org
-- cuis-dev@cuis-smalltalk.org
+- https://lists.cuis.st/mailman/listinfo/cuis-dev
+- cuis-dev@lists.cuis.st
 
 Software 'code' is meant to be read as well as written.  Well written software is something we all work on getting better at.  There are some cool Cuis packages on GitHib.
 
