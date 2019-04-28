@@ -6,7 +6,7 @@ Also, do a search on GitHub for repositories containing 'Cuis-Smalltalk' . The p
 
 # 'Morphic-ColorEditor'
 
-- https://github.com/KenDickey/Cuis-Smalltalk-ColorEditor
+- https://github.com/Cuis-Smalltalk/Morphic/tree/master/ColorEditor
 - 
 ````Smalltalk
 description: 
@@ -80,7 +80,7 @@ requires: { #'FFI. }
 
 # 'Interlingua-English-Lookup'
 
-- https://github.com/KenDickey/Cuis-Smalltalk-Ia-En
+- https://github.com/Cuis-Smalltalk/CodeExamples/tree/master/IA-EN-Dictionary
 - 
 ````Smalltalk
 description: 
@@ -103,7 +103,7 @@ requires: { }
 
 # 'Morphic-Misc1'
 
-- https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
+- https://github.com/Cuis-Smalltalk/Morphic/tree/master/Morphic-Misc1
 - 
 ````Smalltalk
 description: 
@@ -165,7 +165,7 @@ You may also wish to add a class method #initializedInstance to return something
 * 'CSS3-NamedColors'
 * 'Crayon-NamedColors'
 
-- https://github.com/KenDickey/Cuis-Smalltalk-NamedColors
+- https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev/Packages/Features/NamedColors
 - 
 ````Smalltalk
 description: 
@@ -230,7 +230,7 @@ requires: { }
 
 # 'Ropes'
 
-- https://github.com/KenDickey/Cuis-Smalltalk-Ropes
+- https://github.com/Cuis-Smalltalk/EnhancedText/tree/master/Ropes
 - 
 ````Smalltalk
 description: 
@@ -252,7 +252,7 @@ requires: { #'Compression'. }
 
 # 'Solitaire'
 
-- https://github.com/Cuis-Smalltalk/Games
+- https://github.com/Cuis-Smalltalk/Games/tree/master/Solitaire
 - 
 ````Smalltalk
 description: 

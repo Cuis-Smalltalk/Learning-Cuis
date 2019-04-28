@@ -30,7 +30,7 @@ What I do is maintain a Cuis directory where I clone git repositories for all Cu
 In Linux, I open a command line window.
 
 -  cd ~/Cuis
--  git clone https://github.com/KenDickey/Cuis-Smalltalk-Morphic-Misc1
+-  git clone https://github.com/Cuis-Smalltalk/Morphic
 -  cd Cuis-Smalltalk-Dev 
 -   "open a cuis image"
 
