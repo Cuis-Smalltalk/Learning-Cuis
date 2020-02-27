@@ -57,6 +57,9 @@ Software 'code' is meant to be read as well as written.  Well written software i
 
 Look at the ***repositories in GitHub*** with names starting 'Cuis-Smalltalk'.  Many of these have a 'RoughGuide.md' file which points out code topics and techniques of interest.
 
+View videos on the Cuis Smalltalk YouTube Channel
+- https://www.youtube.com/playlist?list=PLbevs6Mp0MMMaR5gSYzJQXQ56OplFSCJk
+
 Look at the ***package reference***
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/PackageRef.md
 
