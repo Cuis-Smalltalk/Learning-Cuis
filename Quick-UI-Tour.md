@@ -8,7 +8,7 @@ Smalltalk defined Object Oriented.  All computation is done by objects sending m
 
 Cuis shares with other Smalltalk implementations the characteristic that all objects are live.  All objects can be inspected and changed while they are executing.
 
-There are many great tools waiting to be used.  This tour gives an introduction to a few  of the most important ones. 
+There are many great tools waiting to be used.  This tour gives an introduction to a few of the most important ones.
 
 ![Cuis Window](UITour/Cuis01.png)
 
@@ -20,17 +20,16 @@ You can start an image, do things with it and throw it away or save the image an
 
 ![WorldMenu](UITour/Cuis02-WorldMenu.png)
 
-If you cmd-click on the desktop, you will see a World Menu.  
+If you right-click or cmd-click on the desktop, you will see a World Menu.
 
-The command button "cmd-" may be a control ("ctrl") key [Linux], an apple key [MacOS], or some other command key based on your keyboard and operating system.
+The command button "cmd-" may be a control ("ctrl") key [Linux], an Apple key [MacOS], or some other command key based on your keyboard and operating system.
 
-A three button mouse has
+A three button mouse has:
 -  button 1 = left mouse button = select
 -  button 2 = right mouse button = menu
 -  button 3 = center mouse buttom = halo
 
-If your mouse or touchpad has less than buttons, then you can use 
-ctrl-click for button 3 and ctrl-shif-click for button 2.
+If your mouse or touchpad has less than three buttons, then you can use ctrl-click for button 3 and ctrl-shift-click for button 2.
 
 A World Menu can be used for one-shot selections.  Just click on your selection, the action takes place and the menu disappears.  If you want to keep the menu up to make several selections, click on the push-pin icon in the upper right-hand corner.  The icon will disappear and the menu will stay up until you dismiss it by clicking on the circle-x close button in the upper left-hand corner.
 
@@ -60,7 +59,7 @@ The panes are arranged by Category (upper left), Class, Topic, and Method (the c
 
 Clicking World Menu -> Open.. -> Workspace  brings up a Workspace window for you to type and run code.
 
-As you type, the system does "syntax hilighting" which gives clues to class and method names.  If you start typing a method name, you can hit the Tab key which will usually give you a "select list" of possible message name completions.
+As you type, the system does syntax highlighting which gives clues to class and method names.  If you start typing a method name, you can hit the Tab key which will usually give you a "select list" of possible message name completions.
 
 Again, you can select code and DoIt (cmd-d) or PrintIt (cmd-p) to get results.
 
@@ -76,7 +75,7 @@ Scroll down and click on the Packages triangle.
 
 Clicking on a Directory shows File names in the right hand pane.  Clicking on a File entry shows its contents in the lower pane.
 
-Here I clicked on the "Media" directory and the "Graphics-Files-Additional.pck.st" package file. 
+Here I clicked on the "Features" directory and the "Graphics-Files-Additional.pck.st" package file.
 
 The File List is context sensitive.  Viewing a text file or an image file or a file with Smalltalk Package code gives you different option buttons.
 
