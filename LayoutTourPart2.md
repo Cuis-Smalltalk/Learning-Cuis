@@ -106,9 +106,13 @@ Let's select 'buildColorPlaneColumn', which builds the column on the left.
 
 I won't go into much detail here, but you can see that the first column has a #colorPane and a hexDisplayLayout which is the row of '16r[40A5D0] hexRGB' morphs.
 
+(Note that part of the LayoutSpec interface has changed since I wrote this.  The code now changed ```minorDirectionPadding: left``` ->  ```offAxisEdgeWeight: #rowTop```)
+
 ![Cuis Window](LayoutTour/Cuis-211.png)
 
-As you scroll down, you will see LayoutSpecs used to set things up.  Finally, the column morph is created, the colorPane and hexDisplayLayout submorphs added, and the column morph is returned. 
+As you scroll down, you will see LayoutSpecs used to set things up.  Finally, the column morph is created, the colorPane and hexDisplayLayout submorphs added, and the column morph is returned.
+
+(Note that part of the LayoutMorph interface has changed since I wrote this.  The code now changed ```padding: #top;``` ->  ```axisEdgeWeight: #columnTop;```)
 
 You can look through the other 'build' methods to see how the rest of the morphs are composed using Layouts and LayoutSpecs.
 
@@ -232,7 +236,7 @@ _What tools do I need to help me be successful?_
 
 How do I make things visible?  How can I _see_ how these layouts are arranged?
 
-Let's try some experiments..  I added code to Morph which you can look at.  More below.
+Let's try some experiments.  I added code to Morph which you can look at.  More below.
 
 One idea is to draw a frame around each LayoutMorph.  There happens to be a FrameMorph, so I used that.
 
