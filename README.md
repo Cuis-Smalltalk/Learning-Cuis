@@ -78,20 +78,21 @@ Examples of Cuis Smalltalk with interesting Features are described in 'PackageRe
 * Construction
 
 
-
 I find it best to "git clone" repositories in a common directory, in my case named 'Cuis-Smalltalk'.
 
-For example, to get a copy of the ColorEditor in your image, you first must clone the Cuis-Smalltalk-ColorEditor and (from its 'README.md' file) its dependent repositories Cuis-Smalltalk-Morphic-Misc1 and Cuis-Smalltalk-NamedColors.
+You can get the standard repositories using a script in 'Cuis-Smalltalk-Dev'.
 
-Assuming you did a "git clone https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev" into a directory named 'Cuis'.
+This is how it looks using Linux.
 
 ````
-cd Cuis
-git clone https://github.com/Cuis-Smalltalk/Morphic
+mkdir Cuis-Smalltalk
+cd Cuis-Smalltalk
+git clone https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
+Cuis-Smalltalk-Dev/clonePackageRepos.sh
 cd Cuis-Smalltalk-Dev
 squeak Cuis<version>.image
 ````
-In a workspace
+Ask for a feature a workspace
 ````Smalltalk
   Feature require: #'Morphic-ColorEditor'.
 ````
