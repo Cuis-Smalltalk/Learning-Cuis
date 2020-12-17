@@ -79,7 +79,7 @@ Examples of Cuis Smalltalk with interesting Features are described in 'PackageRe
 
 
 
-I find it best to "git clone" repositories in a common directory, in my case named 'Cuis'.
+I find it best to "git clone" repositories in a common directory, in my case named 'Cuis-Smalltalk'.
 
 For example, to get a copy of the ColorEditor in your image, you first must clone the Cuis-Smalltalk-ColorEditor and (from its 'README.md' file) its dependent repositories Cuis-Smalltalk-Morphic-Misc1 and Cuis-Smalltalk-NamedColors.
 
