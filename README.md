@@ -100,6 +100,12 @@ Select the code and "do-it" (cmd-d).
 
 If all went well, you should be able to open a ColorEditor via the World Menu -> New morph.. -> ColorEditor -> ColorEditorPanel
 
+To keep repositories up to date, periodically:
+````
+cd Cuis-Smalltalk/Cuis-Smalltalk-Dev
+./pullAllRepos.sh
+````
+
 ***Enjoy!***
 
 
