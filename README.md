@@ -38,6 +38,9 @@ This project is all about learning Cuis and sharing Cuis code which others may f
 Take a look at ***Quick-UI-Tour*** (click on file 'Quick-UI-Tour.md' above or)
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/Quick-UI-Tour.md
 
+Read TheCuisBook (work in progress, but quite readable)
+- https://cuis-smalltalk.github.io/TheCuisBook/
+
 Take a look at how ***LayoutMorphs*** are used to maintain visual relations between graphic elements:
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/LayoutTour.md
 
@@ -90,9 +93,9 @@ cd Cuis-Smalltalk
 git clone https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev
 Cuis-Smalltalk-Dev/clonePackageRepos.sh
 cd Cuis-Smalltalk-Dev
-squeak Cuis<version>.image
+squeak Cuis<version>.image "squeak is name of OpenSmalltalk VM"
 ````
-Ask for a feature a workspace
+Ask for a feature in a workspace
 ````Smalltalk
   Feature require: #'Morphic-ColorEditor'.
 ````
