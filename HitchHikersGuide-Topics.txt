@@ -1,0 +1,88 @@
+=====================================
+Hitch Hiker's Guide to Cuis Smalltalk
+=====================================
+
+Hiking around the image.  Just as with any trail guide, you can take the hikes in any order.
+
+
+Collected stories..
+
+--------------
+Social Context
+--------------
+
+- Community in SpaceTime
+  + User community; Commoning & the Commons
+  + Humanizing computers rather than mechanizing humans
+  + Smalltalk object ecosystem as community support & conduit
+  + In the larger picture: restabalizing the climate
+
+
+---------
+Face Time
+---------
+
+- The Smalltalk Language
+  + Objects & Messages
+  + Syntax on a Postrcard
+  + Kinds of Objects
+    = Scalars: Numbers; Colors; Strings
+    = Composits: Points; Rects; Morphs
+    = Collections & Iterators
+
+- The Morphic UI
+  + Pixels: Bits on the Screen
+  + Graphic Composition
+    = Drawing: Z-Order & Damage Rectangles
+  + How Graphic Objects know themselves
+  + The drawing cycle
+    = Time & Timers
+    = CPS & simple animations
+
+- MetaProgramming & UI Tools
+  + Inspector; Explorer
+  + Class Browser
+  + Package Browser
+  + File List
+    = File System
+    = Loading formatted files 
+	Text; Code; Images; Compression; Unicode
+
+- Correspondence between source and machine code
+  + The Smalltalk Dictionary
+  + Code views in the Browser
+
+----------------
+Under the Covers
+----------------
+
+- Object Layout
+  + Instance Vars, Arrays
+  + Boxing: Immediates, BigNums; Colors
+  + Hashing: Dictionaries & Symbols
+  + Object Headers & Garbage Collection
+
+- Evaluation
+  + Selectors & Method Dictionaries
+  + Method Dispatch; PICs
+  + Scanner; Parser; Compiler
+  + ByteCode; JIT; Native; FFI
+
+- MutlThreading 
+  + Stacks & VCPUs
+  + Thread-local dynamic variable context
+  + Concurrency: Single Core; MultiCore; Cloud & Swarm
+  + Interrupts to Events
+
+- Debug
+  + Trancript Trace
+  + Breakpoints
+  + Workspace + Ctrl-D
+  + Exceptions, Control Flow & Recovery
+
+- Source Code Management
+  + Images; How to save & restore sets of live Objects; clone vs copy
+  + Change Files; Packages
+  + SCM systems: GIT; Chunk vs Tonel
+
+
