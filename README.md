@@ -38,7 +38,7 @@ This project is all about learning Cuis and sharing Cuis code which others may f
 Take a look at ***Quick-UI-Tour*** (click on file 'Quick-UI-Tour.md' above or)
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/Quick-UI-Tour.md
 
-Read TheCuisBook !!
+Read ***TheCuisBook*** !!
 - https://cuis-smalltalk.github.io/TheCuisBook/
 
 Take a look at how ***LayoutMorphs*** are used to maintain visual relations between graphic elements:
