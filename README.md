@@ -38,7 +38,7 @@ This project is all about learning Cuis and sharing Cuis code which others may f
 Take a look at ***Quick-UI-Tour*** (click on file 'Quick-UI-Tour.md' above or)
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/Quick-UI-Tour.md
 
-Read TheCuisBook (work in progress, but quite readable)
+Read TheCuisBook !!
 - https://cuis-smalltalk.github.io/TheCuisBook/
 
 Take a look at how ***LayoutMorphs*** are used to maintain visual relations between graphic elements:
@@ -48,6 +48,7 @@ Look at the ***Terse Guide*** (World Menu -> Help -> Terse Guide to Cuis)
 
 Look at ***documentation*** available for other wonderful Smalltalk implementations
 - http://squeak.org/documentation/
+- http://stephane.ducasse.free.fr/FreeBooks.html
 
 Take a ***detailed tour*** which creates a Package and a GitHub repository for it
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage1.md
