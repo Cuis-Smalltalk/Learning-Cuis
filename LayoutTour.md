@@ -1,27 +1,27 @@
 Exploring morph layouts in Cuis
 ===============================
 
-This file is about how graphic entities, Morphs, may change as they are resized.
+This file is about how graphic entities, **Morphs**, may change as they are resized.
 
 A Morph which contains other Morphs may be resized and wish to maintain positional relationships between the contained Morphs.
 
 We call this maintaining the submorph "layout".  We want to lay out each morph in a way that they are well related. 
 
-Cuis has LayoutMorphs which do this for their submorphs.
+Cuis has **LayoutMorphs** which do this for their submorphs.
 
 Let's see how.
 
 ### Getting the layout edit panels
 
-First we will load two tools to help us see how LayoutMorphs and LayoutSpecs are used and what they do.
+First we will load two tools to help us see how **LayoutMorphs** and **LayoutSpecs** are used and what they do.
 
-Cuis remains small and comprehensible in part because we have Features which can be loaded as needed.  Each Feature is in a text package which notes its requirements.  To get the tools I want I open a Cuis image, Control-click to get the World Menu, Open a Workspace, and 
+Cuis remains small and comprehensible in part because we have **Features** which can be loaded as needed.  Each Feature is in a text package which notes its requirements.  To get the tools I want I open a Cuis image, Control-click to get the World Menu, Open a Workspace, and 
 
 ````Smalltalk
-  Feature require: #'Morphic-Misc1'.
+  Feature require: 'Morphic-Misc1'.
 ````
 
-![Cuis Window](LayoutTour/Cuis-001.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-1.png" width=65%>
 
 Of course, this won't work very well unless you actually have the packaged code for this Feature.
 
@@ -39,14 +39,16 @@ OK. I am running a Cuis image with a Workspace and have required Feature #'Morph
 Let's create a LayoutMorph to see what it does.
 
 ````Smalltalk
-	myLayout := LayoutMorph newRow.
+	myLayout _ LayoutMorph newRow.
 ````
+
+Note how the **underscore character** gets represented in Cuis as a backward pointing arrow. This is a nice way to keep assignment completely separated from the equality concept. Alternatively, instead of `_` you can type `:=` as in Pascal. 
 
 Note how the "syntax hilighting" in Cuis helps.  Class names are bold+black, message names are blue, symbols (#) are bold+blue.  "myLayout" is initially undefined (unrecognized) and shows up in red. This is temporary. 
 
 I select the new text and type Cmd-d (DoIt) and see ... not much has changed, except "myLayout" is now blue.
 
-![Cuis Window](LayoutTour/Cuis-002.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-2.png" width=65%>
 
 Ah!  Let me open it in the current Cuis World.  The Cuis backdrop is a PasteUpMorph which we call the World.
 
@@ -54,7 +56,7 @@ Ah!  Let me open it in the current Cuis World.  The Cuis backdrop is a PasteUpMo
 myLayout morphExtent: 400@300; color: Color skyBlue; openInWorld.
 ````
 
-I took a shortcut here.  I sent three messages on one line.  The ';' (semicolon) character introduces a "cascade".  What a cascade does is to send messages to the original recever object.
+I took a shortcut here.  I sent three messages on one line.  The ';' (semicolon) character introduces a **cascade**.  What a cascade does is to send messages to the original recever object.
 
 So the above is the same as typing:
 
@@ -64,40 +66,42 @@ So the above is the same as typing:
   myLayout openInWorld.
 ````
 
-![Cuis Window](LayoutTour/Cuis-003.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-3.png" width=65%>
+
 
 ### Add submorphs
 
 Well, a skyBlue rectangle is not much to work with.  Let's add a few submorphs -- morphs which are contained in the skyBlue LayoutMorph.
 
 ````Smalltalk
-myLayout addMorph: (RectangleLikeMorph new :: color: Color blue; yourself).
+myLayout addMorph: (WidgetMorph new :: color: Color blue; yourself).
 ````
 
-![Cuis Window](LayoutTour/Cuis-004.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-4.png" width=65%>
 
-This introduces a different shortcut: "::".  The double-colon acts like ";" except that it uses the result of the previous message send as the target of the new message send. This shortcut is called a "chain".
+
+This introduces a different shortcut: "::".  The double-colon acts like ";" except that it uses the result of the previous message send as the target of the new message send. This shortcut is called a **chain**.
 
 If we had typed
 
 ````Smalltalk
-  RectangleLikeMorph new ; color: Color blue;
+  WidgetMorph new ; color: Color blue;
 ````
 
-the #color: message would have been sent to the RectangleLikeMorph class, the target of the original message.
+the #color: message would have been sent to the **WidgetMorph** class, the target of the original message.
 
 ````Smalltalk
-  RectangleLikeMorph new :: color: Color blue
+  WidgetMorph new :: color: Color blue
 ````
 
-on the other hand sends #color: to the result of (RectangleLikeMorph new), which is a new instance of a RectangleLikeMorph.
-  Using a cascade with #yourself allows us to get the target receiver, the RectangleLikeMorph, which is then the argument to #addMorph: message sent to our LayoutMorph.
+on the other hand sends #color: to the result of (WidgetMorph new), which is a new instance of a WidgetMorph.
+  Using a cascade with #yourself allows us to get the target receiver, the WidgetMorph, which is then the argument to #addMorph: message sent to our LayoutMorph.
 
 Whew!  OK.  No more shortcuts.  But these two shortcuts, cascade and chain, are very useful.
 
 Back to layouts.
 
-Let's add a simple EllipseMorph instance
+Let's add a simple **EllipseMorph** instance
 
 ````Smalltalk
   myLayout addMorph: EllipseMorph new.
@@ -111,23 +115,26 @@ Add a default ImageMorph, a cute little Cuis!
 
 Your Cuis World should look something like this.
 
-![Cuis Window](LayoutTour/Cuis-005.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-5.png" width=65%>
 
 We have a blue rectangle, a yellow ellipse, and a cuis image in a row.
 
 ### LayoutMorph intro
 
-Command-click (Windows button3) on the larger, skyBlue rectangle to get its "construction halo". 
+Command-click (Windows button3, or click the mouse wheel) on the larger, skyBlue rectangle to get its **construction halo**. 
 
-![Cuis Window](LayoutTour/Cuis-006.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-6.png" width=65%>
 
-Click on the blue circle at top left to get a "context menu" for the LayoutMorph.
 
-![Cuis Window](LayoutTour/Cuis-007.png)
+Click on the blue circle at top left to get a **context menu** for the LayoutMorph.
+
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-7.png" width=65%>
+
 
 Select 'edit me (a LayoutMorph)'
 
-![Cuis Window](LayoutTour/Cuis-008.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-8.png" width=65%>
+
 
 Let's move the LayoutEditor a bit to the right to see what is going on.  Also, click on the "push pin" in the label area at the end of the name of the Morph whose Layout we are editing.
 
@@ -135,33 +142,36 @@ If you don't click on the push-pin to keep the edit panel around, it will disapp
 
 This is great for "one shot" changes, but we will be trying a number of things and getting a new edit panel each time would be tiring.
 
-In the Padding area of the layout edit panel, click on the Center circle.  This is a "radio button" selection.  Only one of the circles can be selected at any one time -- just like pushing the station select button on an old time radio.
+In the EdgeWeight area of the layout edit panel, click on the Center circle.  This is a "radio button" selection.  Only one of the circles can be selected at any one time -- just like pushing the station select button on an old time radio.
 
 Ok.  Now click the Update button below.
 
 Congratulations!  You have just centered the submorphs in the layout row!
 
-![Cuis Window](LayoutTour/Cuis-009.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-9.png" width=65%>
+
 
 Let's change the LayoutMorph to be a column instead of a row.  Select Direction Column and click Update.
 
-![Cuis Window](LayoutTour/Cuis-010.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-10.png" width=65%>
 
-How about Padding Top and Update.
 
-![Cuis Window](LayoutTour/Cuis-011.png)
+How about EdgeWeight Top and Update.
 
-Padding Botton and Update.
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-11.png" width=65%>
 
-![Cuis Window](LayoutTour/Cuis-012.png)
 
-If you click on the box to the right of the X or Y, you can backspace (erase) the value and type a new one.  Put '10' in each box and press the enter key.
+EdgeWeight Botton and Update.
+
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-12.png" width=65%>
+
+If you put your mouse pointer over the box on the right of X or Y its content will highlight. Type a value and it will overwrite what is already there. Put '10' in each box.
 
 The press Update.
 
 You should now have a 10 pixel space between the submorphs.
 
-![Cuis Window](LayoutTour/Cuis-013.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-13.png" width=65%>
 
 ### LayoutSpec intro
 
@@ -179,23 +189,23 @@ Move the LayoutSpec edit panel to one side and click on its push-pin.
 
 You should have a World which looks something like the following
 
-![Cuis Window](LayoutTour/Cuis-014.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-14.png" width=65%>
 
-In the Padding section of the EllipseMorph's layout edit panel, click on 'Left/Top' and click on the Update button.
+In the offAxis EdgeWeight section of the EllipseMorph's layout edit panel, click on 'Left/Top' and click on the Update button.
 
-![Cuis Window](LayoutTour/Cuis-015.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-15.png" width=65%>
 
 Aha!  The LayoutMorph places its submorphs in a Column along the center line, but a submorph can specify where it wants to be placed along the cross axis.
 
-By the way, we are starting to get a number of edit panels up.  It can get confusing to remember the funny instance names for the morphs we are applying edit changes to.  If you click on the 'Show Halo' button, or if you click on the 'gear' icon on the title bar, the construction halo for the Morph being edited will appear. 
+By the way, we are starting to get a number of edit panels up.  It can get confusing to remember the funny instance names for the morphs we are applying edit changes to.  If you click on the 'Show Halo' button, or if you click on the 'arrowUp' icon on the title bar, the construction halo for the Morph being edited will appear. 
 
-![Cuis Window](LayoutTour/Cuis-016.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-16.png" width=65%>
 
 So it is always easy to find out who is being edited.
 
 OK.  Let's change the column back into a row.  Click on Row radio button in the layout edit panel and Update to see the other orientation. What do you think will happen?
 
-![Cuis Window](LayoutTour/Cuis-017.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-17.png" width=65%>
 
 You guessed it. The ellipse is now on the top of the row instead of the left of the column.
 
@@ -203,7 +213,7 @@ What else can we do with LayoutSpecs?
 
 Let's set the Width to a Fixed 80 pixels and the Height to 40% of the container, with a 10 pixel minimum and Update.
 
-![Cuis Window](LayoutTour/Cuis-018.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-18.png" width=65%>
 
 So when you resize the layout, the Ellipse keeps the same width, but its height is maintained at approxumately 40% of the LayoutMorph.
 
@@ -212,13 +222,13 @@ Command click on the blue rectangle, select 'edit my layoutspec' from its contex
 Now set its Height to Proportional 50% with a minimum of 30 pixels and click Update.  Perhaps a Proportional Width of
 80% and min 30 pixels.
 
-![Cuis Window](LayoutTour/Cuis-019.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-19.png" width=65%>
 
 Go ahead and resize the skyBlue LayoutMorph to see how things are kept in place.
 
 If you 'show halo' from the layout edit panel or command-click on the skyBlue rectangle, you can drag the yellow circle on the lower right corner of the LayoutMorph to change its size dynamically.
 
-![Cuis Window](LayoutTour/Cuis-020.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-20.png" width=65%>
 
 By now I expect that you know what the buttons do and can play all day with layouts.
 
