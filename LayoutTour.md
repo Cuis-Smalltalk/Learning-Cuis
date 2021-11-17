@@ -21,7 +21,7 @@ Cuis remains small and comprehensible in part because we have **Features** which
   Feature require: 'Morphic-Misc1'.
 ````
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-1.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-1.png" width=65%>
 
 Of course, this won't work very well unless you actually have the packaged code for this Feature.
 
@@ -48,7 +48,7 @@ Note how the "syntax hilighting" in Cuis helps.  Class names are bold+black, mes
 
 I select the new text and type Cmd-d (DoIt) and see ... not much has changed, except "myLayout" is now blue.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-2.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-2.png" width=65%>
 
 Ah!  Let me open it in the current Cuis World.  The Cuis backdrop is a PasteUpMorph which we call the World.
 
@@ -66,7 +66,8 @@ So the above is the same as typing:
   myLayout openInWorld.
 ````
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-3.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-3.png" width=65%>
+
 
 ### Add submorphs
 
@@ -76,7 +77,8 @@ Well, a skyBlue rectangle is not much to work with.  Let's add a few submorphs -
 myLayout addMorph: (WidgetMorph new :: color: Color blue; yourself).
 ````
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-4.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-4.png" width=65%>
+
 
 This introduces a different shortcut: "::".  The double-colon acts like ";" except that it uses the result of the previous message send as the target of the new message send. This shortcut is called a **chain**.
 
@@ -113,7 +115,7 @@ Add a default ImageMorph, a cute little Cuis!
 
 Your Cuis World should look something like this.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-5.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-5.png" width=65%>
 
 We have a blue rectangle, a yellow ellipse, and a cuis image in a row.
 
@@ -121,15 +123,18 @@ We have a blue rectangle, a yellow ellipse, and a cuis image in a row.
 
 Command-click (Windows button3, or click the mouse wheel) on the larger, skyBlue rectangle to get its **construction halo**. 
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-6.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-6.png" width=65%>
+
 
 Click on the blue circle at top left to get a **context menu** for the LayoutMorph.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-7.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-7.png" width=65%>
+
 
 Select 'edit me (a LayoutMorph)'
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-8.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-8.png" width=65%>
+
 
 Let's move the LayoutEditor a bit to the right to see what is going on.  Also, click on the "push pin" in the label area at the end of the name of the Morph whose Layout we are editing.
 
@@ -143,19 +148,22 @@ Ok.  Now click the Update button below.
 
 Congratulations!  You have just centered the submorphs in the layout row!
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-9.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-9.png" width=65%>
+
 
 Let's change the LayoutMorph to be a column instead of a row.  Select Direction Column and click Update.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-10.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-10.png" width=65%>
+
 
 How about EdgeWeight Top and Update.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-11.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-11.png" width=65%>
+
 
 EdgeWeight Botton and Update.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-12.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-12.png" width=65%>
 
 If you put your mouse pointer over the box on the right of X or Y its content will highlight. Type a value and it will overwrite what is already there. Put '10' in each box.
 
@@ -163,7 +171,7 @@ The press Update.
 
 You should now have a 10 pixel space between the submorphs.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-13.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-13.png" width=65%>
 
 ### LayoutSpec intro
 
@@ -181,23 +189,23 @@ Move the LayoutSpec edit panel to one side and click on its push-pin.
 
 You should have a World which looks something like the following
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-14.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-14.png" width=65%>
 
 In the offAxis EdgeWeight section of the EllipseMorph's layout edit panel, click on 'Left/Top' and click on the Update button.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-15.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-15.png" width=65%>
 
 Aha!  The LayoutMorph places its submorphs in a Column along the center line, but a submorph can specify where it wants to be placed along the cross axis.
 
 By the way, we are starting to get a number of edit panels up.  It can get confusing to remember the funny instance names for the morphs we are applying edit changes to.  If you click on the 'Show Halo' button, or if you click on the 'arrowUp' icon on the title bar, the construction halo for the Morph being edited will appear. 
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-16.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-16.png" width=65%>
 
 So it is always easy to find out who is being edited.
 
 OK.  Let's change the column back into a row.  Click on Row radio button in the layout edit panel and Update to see the other orientation. What do you think will happen?
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-17.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-17.png" width=65%>
 
 You guessed it. The ellipse is now on the top of the row instead of the left of the column.
 
@@ -205,7 +213,7 @@ What else can we do with LayoutSpecs?
 
 Let's set the Width to a Fixed 80 pixels and the Height to 40% of the container, with a 10 pixel minimum and Update.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-18.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-18.png" width=65%>
 
 So when you resize the layout, the Ellipse keeps the same width, but its height is maintained at approxumately 40% of the LayoutMorph.
 
@@ -214,13 +222,13 @@ Command click on the blue rectangle, select 'edit my layoutspec' from its contex
 Now set its Height to Proportional 50% with a minimum of 30 pixels and click Update.  Perhaps a Proportional Width of
 80% and min 30 pixels.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-19.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-19.png" width=65%>
 
 Go ahead and resize the skyBlue LayoutMorph to see how things are kept in place.
 
 If you 'show halo' from the layout edit panel or command-click on the skyBlue rectangle, you can drag the yellow circle on the lower right corner of the LayoutMorph to change its size dynamically.
 
-![Cuis Window](LayoutTour/layout-1-img-17-nov-2021/img-20.png)
+<img src="LayoutTour/layout-1-img-17-nov-2021/img-20.png" width=65%>
 
 By now I expect that you know what the buttons do and can play all day with layouts.
 
