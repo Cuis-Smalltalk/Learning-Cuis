@@ -76,7 +76,7 @@ What we see under the 'GUI building' category is a method named #buildMorphicWin
 
 Here we see the row of three columns.  Cascades (';') are used to send multiple messages to the same LayoutMorph target to add the column morphs and set some attributes like color and padding.  
 
-One can assume from #addMorph: messages in the code that each of the 'build' methods return a Morph.  Easy enough to select the named methods ane check, but let's wait a minute on that.
+One can assume from #addMorph: messages in the code that each of the 'build' methods return a Morph.  Easy enough to select the named methods and check, but let's wait a minute on that.
 
 Code browsers are really, really handy and we will be using them a lot, so it is useful to take the time to note some of the many ways they can help us out.
 
