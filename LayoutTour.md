@@ -3,6 +3,8 @@ Exploring morph layouts in Cuis
 
 This file is about how graphic entities, **Morphs**, may change as they are resized.
 
+**NOTE: The examples here were done in Cuis 5; Cuis 6 is current and includes Vector Graphics and changes to the Morphic hierarchy.  Update is in progress.**
+
 A Morph which contains other Morphs may be resized and wish to maintain positional relationships between the contained Morphs.
 
 We call this maintaining the submorph "layout".  We want to lay out each morph in a way that they are well related. 
