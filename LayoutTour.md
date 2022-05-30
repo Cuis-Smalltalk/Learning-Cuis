@@ -30,8 +30,6 @@ Of course, this won't work very well unless you actually have the packaged code 
 We assume you have Cuis set up as per
 https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev#setting-up-cuis-in-your-machine
 
-What I do is maintain a Cuis directory where I clone git repositories for all Cuis-Smalltalk-* features.
-
 OK. I am running a Cuis image with a Workspace and have required Feature #'Layout-Edit-Panels.
 
 Let's create a LayoutMorph to see what it does.
