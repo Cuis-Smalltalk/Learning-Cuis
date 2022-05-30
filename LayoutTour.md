@@ -3,7 +3,7 @@ Exploring morph layouts in Cuis
 
 This file is about how graphic entities, **Morphs**, may change as they are resized.
 
-**NOTE: The examples here were done in Cuis 5; Cuis 6 is current and includes Vector Graphics and changes to the Morphic hierarchy.  Update is in progress.**
+**NOTE: The examples here were done in Cuis 5; Cuis 6 is current and includes Vector Graphics and changes to the Morphic hierarchy.  Update of the graphics is in progress.**
 
 A Morph which contains other Morphs may be resized and wish to maintain positional relationships between the contained Morphs.
 
@@ -20,23 +20,19 @@ First we will load two tools to help us see how **LayoutMorphs** and **LayoutSpe
 Cuis remains small and comprehensible in part because we have **Features** which can be loaded as needed.  Each Feature is in a text package which notes its requirements.  To get the tools I want I open a Cuis image, Control-click to get the World Menu, Open a Workspace, and 
 
 ````Smalltalk
-  Feature require: 'Morphic-Misc1'.
+  Feature require: 'Layout-Edit-Panels'.
 ````
 
 <img src="LayoutTour/layout-1-img-17-nov-2021/img-1.png" width=65%>
 
 Of course, this won't work very well unless you actually have the packaged code for this Feature.
 
+We assume you have Cuis set up as per
+https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev#setting-up-cuis-in-your-machine
+
 What I do is maintain a Cuis directory where I clone git repositories for all Cuis-Smalltalk-* features.
 
-In Linux, I open a command line window.
-
--  cd ~/Cuis
--  git clone https://github.com/Cuis-Smalltalk/Morphic
--  cd Cuis-Smalltalk-Dev 
--   "open a cuis image"
-
-OK. I am running a Cuis image with a Workspace and have required Feature #'Morphic-Misc1".
+OK. I am running a Cuis image with a Workspace and have required Feature #'Layout-Edit-Panels.
 
 Let's create a LayoutMorph to see what it does.
 
@@ -55,7 +51,7 @@ I select the new text and type Cmd-d (DoIt) and see ... not much has changed, ex
 Ah!  Let me open it in the current Cuis World.  The Cuis backdrop is a PasteUpMorph which we call the World.
 
 ````Smalltalk
-myLayout morphExtent: 400@300; color: Color skyBlue; openInWorld.
+myLayout morphExtent: 400@300; color: Color lightBlue; openInWorld.
 ````
 
 I took a shortcut here.  I sent three messages on one line.  The ';' (semicolon) character introduces a **cascade**.  What a cascade does is to send messages to the original recever object.
@@ -64,7 +60,7 @@ So the above is the same as typing:
 
 ````Smalltalk
   myLayout morphExtent: 400@300. 
-  myLayout color: Color skyBlue.
+  myLayout color: Color lightBlue.
   myLayout openInWorld.
 ````
 
@@ -73,10 +69,10 @@ So the above is the same as typing:
 
 ### Add submorphs
 
-Well, a skyBlue rectangle is not much to work with.  Let's add a few submorphs -- morphs which are contained in the skyBlue LayoutMorph.
+Well, a lightBlue rectangle is not much to work with.  Let's add a few submorphs -- morphs which are contained in the lightBlue LayoutMorph.
 
 ````Smalltalk
-myLayout addMorph: (WidgetMorph new :: color: Color blue; yourself).
+myLayout addMorph: (BoxedMorph new :: color: Color blue; yourself).
 ````
 
 <img src="LayoutTour/layout-1-img-17-nov-2021/img-4.png" width=65%>
@@ -87,17 +83,17 @@ This introduces a different shortcut: "::".  The double-colon acts like ";" exce
 If we had typed
 
 ````Smalltalk
-  WidgetMorph new ; color: Color blue;
+  BoxedMorph new ; color: Color blue;
 ````
 
-the #color: message would have been sent to the **WidgetMorph** class, the target of the original message.
+the #color: message would have been sent to the **BoxedMorph** class, the target of the original message.
 
 ````Smalltalk
-  WidgetMorph new :: color: Color blue
+  BoxedMorph new :: color: Color blue
 ````
 
-on the other hand sends #color: to the result of (WidgetMorph new), which is a new instance of a WidgetMorph.
-  Using a cascade with #yourself allows us to get the target receiver, the WidgetMorph, which is then the argument to #addMorph: message sent to our LayoutMorph.
+on the other hand sends #color: to the result of (BoxedMorph new), which is a new instance of a BoxedMorph.
+  Using a cascade with #yourself allows us to get the target receiver, the BoxedMorph, which is then the argument to #addMorph: message sent to our LayoutMorph.
 
 Whew!  OK.  No more shortcuts.  But these two shortcuts, cascade and chain, are very useful.
 
@@ -123,7 +119,7 @@ We have a blue rectangle, a yellow ellipse, and a cuis image in a row.
 
 ### LayoutMorph intro
 
-Command-click (Windows button3, or click the mouse wheel) on the larger, skyBlue rectangle to get its **construction halo**. 
+Command-click (Windows button3, or click the mouse wheel) on the larger, lightBlue rectangle to get its **construction halo**. 
 
 <img src="LayoutTour/layout-1-img-17-nov-2021/img-6.png" width=65%>
 
@@ -205,7 +201,7 @@ By the way, we are starting to get a number of edit panels up.  It can get confu
 
 So it is always easy to find out who is being edited.
 
-OK.  Let's change the column back into a row.  Click on Row radio button in the layout edit panel and Update to see the other orientation. What do you think will happen?
+OK.  Let's change the column back into a row.  Click on Left and Row radio buttons in the layout edit panel and Update to see the other orientation. What do you think will happen?
 
 <img src="LayoutTour/layout-1-img-17-nov-2021/img-17.png" width=65%>
 
@@ -221,14 +217,13 @@ So when you resize the layout, the Ellipse keeps the same width, but its height 
 
 Command click on the blue rectangle, select 'edit my layoutspec' from its context menu, move the layoutspec edit panel aside and click on its push-pin.
 
-Now set its Height to Proportional 50% with a minimum of 30 pixels and click Update.  Perhaps a Proportional Width of
-80% and min 30 pixels.
+Now set its Height to Proportional 50% with a minimum of 10 pixels.  Perhaps a Proportional Width of 80% and min 30 pixels.  Click Update.
 
 <img src="LayoutTour/layout-1-img-17-nov-2021/img-19.png" width=65%>
 
-Go ahead and resize the skyBlue LayoutMorph to see how things are kept in place.
+Lets resize the lightBlue LayoutMorph to see how things are kept in place.
 
-If you 'show halo' from the layout edit panel or command-click on the skyBlue rectangle, you can drag the yellow circle on the lower right corner of the LayoutMorph to change its size dynamically.
+If you 'show halo' from the layout edit panel or command-click on the lightBlue rectangle, you can drag the yellow _grab handle_ on the lower right corner of the LayoutMorph to change its size dynamically.
 
 <img src="LayoutTour/layout-1-img-17-nov-2021/img-20.png" width=65%>
 
