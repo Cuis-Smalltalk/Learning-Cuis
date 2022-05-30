@@ -10,18 +10,20 @@ Along the way, we will introduce some tools as well.
 If you have not done so already, please read part 1, which includes instructions to get required Features:
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/LayoutTour.md
 
+**Note: Images not yet updated for Cuis 6 **
+
 ### Getting Started
 
 We will start with layout of the Color Editor Panel.
 
 First we need to load the code for the Color Editor. 
 ````Smalltalk
-  Feature require: #'Morphic-ColorEditor'.
+  Feature require: #'Color-Edit-Panel'.
 ````
 
 ![Cuis Window](LayoutTour/Cuis-201.png)
 
-OK. Command-Click on the World background to get the World Menu and select the ColorEditorPanel from New Morph..->ColorEditor.
+OK. Command-Click on the World background to get the World Menu and select the ColorEditorPanel from New Morph..->User Interface->A-Fon->ColorEditorPanel.
 
 ![Cuis Window](LayoutTour/Cuis-202.png)
 
@@ -45,6 +47,8 @@ One can click on the (2D) color plane -- see the little circle? -- and have the 
 
 In Addition to the RGB value, there is a display of the color "swatch" at that point, and the closest matching named color in a particular color dictionary (CSS3 web color names) along with the named color's RGB specification.
 
+There is also an _Alpha Value_ slider to show the selected color with varying transparency.
+
 This gives us a lot of control to experiment with and specify color values.
 
 
@@ -59,6 +63,8 @@ Lets look at the code to see how this is set up.
 ### Hierarchy Browser
 
 One can use the world menu to open a code browser, but another way is to command-click on the Morph of interest, open its menu, and select debug...->browse morph class.
+
+Let's do that with the Color Editor Panel.
 
 ![Cuis Window](LayoutTour/Cuis-204.png)
 
@@ -106,7 +112,7 @@ Let's select 'buildColorPlaneColumn', which builds the column on the left.
 
 I won't go into much detail here, but you can see that the first column has a #colorPane and a hexDisplayLayout which is the row of '16r[40A5D0] hexRGB' morphs.
 
-(Note that part of the LayoutSpec interface has changed since I wrote this.  The code now changed ```minorDirectionPadding: left``` ->  ```offAxisEdgeWeight: #rowTop```)
+(Note that part of the LayoutSpec interface has changed since I wrote this.  The code now changed ```minorDirectionPadding: left``` ->  ```offAxisEdgeWeight: #center```)
 
 ![Cuis Window](LayoutTour/Cuis-211.png)
 
@@ -171,7 +177,7 @@ Looking up 'senders of colorChanged', we find:
 
 ![Cuis Window](LayoutTour/Cuis-216.png)
 
-In ColorEditPanel>>buildRadioButton we see
+In ColorEditPanel>>buildRadioButtonColumn we see
 ````Smalltalk
 rgbRadio when: #informRadioSelection 
 	 send: #newRadioSelection: 
@@ -260,6 +266,9 @@ self showNonLayouts.
 Hmmm..  Not much difference.
 
 How about using _dropShadows_ to hilight the Z-order?  Give some depth to the submorphs being layed out?
+
+**DropShadoes BROKEN in Cuis 6; Please ignore this section
+  /home/pi/Cuis-Smalltalk/Morphic/Morphic-Misc1/DropShadows.cs.st**
 
 Not everyone likes dropShadows, so the code for this is packaged as a separate change set.  To include this change set, open a FileList (World menu > Open..> FileList), select file "DropShadow.cs.st" and click on the _install_ button.  Then close the FileList window. 
 
