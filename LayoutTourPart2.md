@@ -10,9 +10,9 @@ Along the way, we will introduce some tools as well.
 If you have not done so already, please read part 1, which includes instructions to get required Features:
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/LayoutTour.md
 
-**Note: Images not yet updated for Cuis 6 **
-
 ### Getting Started
+
+**Note: Images not yet updated for Cuis 6**
 
 We will start with layout of the Color Editor Panel.
 
