@@ -12,8 +12,6 @@ If you have not done so already, please read part 1, which includes instructions
 
 ### Getting Started
 
-**Note: Images not yet updated for Cuis 6**
-
 We will start with layout of the Color Editor Panel.
 
 First we need to load the code for the Color Editor. 
@@ -21,15 +19,15 @@ First we need to load the code for the Color Editor.
   Feature require: #'Color-Edit-Panel'.
 ````
 
-![Cuis Window](LayoutTour/Cuis-201.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_1.png)
 
 OK. Command-Click on the World background to get the World Menu and select the ColorEditorPanel from New Morph..->User Interface->A-Fon->ColorEditorPanel.
 
-![Cuis Window](LayoutTour/Cuis-202.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_2.png)
 
 Thus we get a handy Color Editor.
 
-![Cuis Window](LayoutTour/Cuis-203.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_3.png)
 
 ### Color Editor Overview
 
@@ -66,17 +64,17 @@ One can use the world menu to open a code browser, but another way is to command
 
 Let's do that with the Color Editor Panel.
 
-![Cuis Window](LayoutTour/Cuis-204.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_4.png)
 
 Here is a Hierarchy Browser expanded a bit.
 
-![Cuis Window](LayoutTour/Cuis-205.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_5.png)
 
 The reason this is called a Hierarchy Browser is that it shows a class nested with it parent class, its grandpatent class, and so on.  
 
 This lets one look at inheritance of methods, how each layer of class adds some capability or refinement to its parent, and what "send to super" does.  More on this later.
 
-![Cuis Window](LayoutTour/Cuis-206.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_6.png)
 
 What we see under the 'GUI building' category is a method named #buildMorphicWindow.
 
@@ -86,7 +84,7 @@ One can assume from #addMorph: messages in the code that each of the 'build' met
 
 Code browsers are really, really handy and we will be using them a lot, so it is useful to take the time to note some of the many ways they can help us out.
 
-![Cuis Window](LayoutTour/Cuis-207.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_7.png)
 
 Here I have selected the name 'buildMorphicWindow' and command-clicked to get the menu for the SmalltalkEditor pane.
 
@@ -96,11 +94,11 @@ Right now I want to point out that there is a convention on window building to u
 
 Browsing 'Implementors of it' shows all the classes which implement this method.
 
-![Cuis Window](LayoutTour/Cuis-208.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_8.png)
 
 Browsing 'Senders of it' shows how the method is used.
 
-![Cuis Window](LayoutTour/Cuis-209.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_9.png)
 
 SystemWindow, by the way, is an important class.  Most browsers are specialized SystemWindows.
 
@@ -108,13 +106,13 @@ OK. Back to ColorEditPanel>>buildMorphicWindow.
 
 Let's select 'buildColorPlaneColumn', which builds the column on the left.
 
-![Cuis Window](LayoutTour/Cuis-210.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_10.png)
 
 I won't go into much detail here, but you can see that the first column has a #colorPane and a hexDisplayLayout which is the row of '16r[40A5D0] hexRGB' morphs.
 
 (Note that part of the LayoutSpec interface has changed since I wrote this.  The code now changed ```minorDirectionPadding: left``` ->  ```offAxisEdgeWeight: #center```)
 
-![Cuis Window](LayoutTour/Cuis-211.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_11.png)
 
 As you scroll down, you will see LayoutSpecs used to set things up.  Finally, the column morph is created, the colorPane and hexDisplayLayout submorphs added, and the column morph is returned.
 
@@ -129,7 +127,7 @@ Back to the code browser.  I selected '-- all --' method category, moved the cur
 
 When you type a letter in a browser selection list, the list scrolls to show the first name starting with that character.
 
-![Cuis Window](LayoutTour/Cuis-212.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_12.png)
 
 The #newRadioSelection method is invoked when one clicks on a radio button.  
 
@@ -145,11 +143,11 @@ Let's close the browser on the ColorEditorPanel and open one on the ColorEditorM
 
 Going back to the Color Editor, command-click, select its menu, and select debug..->browse model class.
 
-![Cuis Window](LayoutTour/Cuis-213.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_13.png)
 
 You should now have a code browser on the ColorEditModel class.  This is a very simple model!  But it keeps the expected pattern of display/model separation.
 
-![Cuis Window](LayoutTour/Cuis-214.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_14.png)
 
 ### User Interface Events
 
@@ -169,13 +167,13 @@ From the World Menu, Open..->Message Names
 
 Type in 'when:send:to:' (without the ' quote-marks), press enter/cr, and you should see something like the next screen.
 
-![Cuis Window](LayoutTour/Cuis-215.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_15.png)
 
 Any Smalltalk object can be the target of an event.  When an event occurs, it gets dispatched based on the event selector message name.
 
 Looking up 'senders of colorChanged', we find:
 
-![Cuis Window](LayoutTour/Cuis-216.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_16.png)
 
 In ColorEditPanel>>buildRadioButtonColumn we see
 ````Smalltalk
@@ -202,7 +200,7 @@ The ObjectExplorer is another handy tool which shows the structure of an object 
 
 In a Workspace, you can type 'anObject explore' for any Object.   For a visible Morph, we can command-click, and use the Morph's menu to select debug..->explore morph
 
-![Cuis Window](LayoutTour/Cuis-217.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_17.png)
 
 The ObjectExplorer has a lower pane which acts as a mini-Workspace.  You can type code and Do-it (command-d).  
 
@@ -212,7 +210,7 @@ Before I dive too far into the ObjectExplorer, let me talk a bit about the diffe
 
 We can get an Inspector on a Morph via its menu: debug->inspect morph.  Do-it on 'anObject inspect' in a Workspace also works.
 
-![Cuis Window](LayoutTour/Cuis-218.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_18.png)
 
 An ObjectExplorer allows one to "drill down" through submorphs of submorphs.  An Inspector shows only a single object (one level).
 
@@ -222,13 +220,13 @@ I selected the #location instance variable in each inspector asked 'self class' 
 
 Both tools are really useful, but right now I am interested in deep layout structure, so I will close the Inspecter and use the ObjectExplorer.
 
-![Cuis Window](LayoutTour/Cuis-219.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_19.png)
 
 Clicking on the triangles of #submorphs at each level, I see that the ColorEditPanel has a title and a LayoutMorph and the LayoutMorph has our three column layouts.
 
 An interesting thing to notice is that the order of submorphs is backward to their position when drawn.  The third layout morph is the one left.
 
-![Cuis Window](LayoutTour/Cuis-220.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_20.png)
 
 Going down another couple of levels, I find the row of '16r[40A5D0] hexRGB.
 
@@ -250,7 +248,7 @@ Shrinking the ObjectExporer and moving it aside, I type in its mini-Workspace:
 ````Smalltalk
 self showLayouts.
 ````
-![Cuis Window](LayoutTour/Cuis-221.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_21.png)
 
 I get frames around layout for five seconds, and they they disappear.
 
@@ -261,7 +259,7 @@ How about boxes around the non-layout Morphs which are being placed?
 self showNonLayouts.
 ````
 
-![Cuis Window](LayoutTour/Cuis-222.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_22.png)
 
 Hmmm..  Not much difference.
 
@@ -279,11 +277,11 @@ In the ObjectExplorer workspace pane..
 ````Smalltalk
 self shadowNonLayouts.
 ````
-![Cuis Window](LayoutTour/Cuis-223.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_25.png)
 
 Interesting.  How about showLayouts with shadowNonLayouts?
 
-![Cuis Window](LayoutTour/Cuis-224.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_26.png)
 
 Still not quite what I want.
 
@@ -291,19 +289,19 @@ I'll remove the shadows now.
 ````Smalltalk
 self unShadowNonLayouts.
 ````
-![Cuis Window](LayoutTour/Cuis-225.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_27.png)
 
 How about tinging row layouts red and column layouts blue?
 ````Smalltalk
 self colorizeLayouts.
 ````
-![Cuis Window](LayoutTour/Cuis-226.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_23.png)
 
 Now this I like!
 
 Let me command-click and use the yellow circle to drag the corner around.
 
-![Cuis Window](LayoutTour/Cuis-227.png)
+![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_24.png)
 
 Wow.  This looks helpful to me.  I _see_ the layouts as they are resized.
 
