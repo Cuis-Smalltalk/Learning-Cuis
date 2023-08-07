@@ -170,7 +170,7 @@ Congratulations!  You have created a new Class!
 
 ### Add a Class Comment
 
-Noting the red 'THIS CLASS HAS NO COMMENT!', now is a good time to add some description of the new class.
+Noting the 'Please enter a comment for this class', now is a good time to add some description of the new class.
 
 ![Cuis Window](SamplePkg/IA-EN-Dict-015.png)
 

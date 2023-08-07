@@ -17,29 +17,28 @@ Another reason is that I keep opening an IEDictWindow and I want to make this ea
 Also, adding a menu item is easy.  Just add a method to the class side of your browser class.  In our case, IEDictWindow class.
 
 ````Smalltalk
-worldMenuForOpenGroup
-	"Answer the information required to add me to the World menu-->Open.. submenu"
+worldMenuOptions
 
-	^ Dictionary new
-		
-			at: #itemGroup
-			put: 10;
-		
-			at: #itemOrder
-			put: 20;
-		
-			at: #label
-			put: 'IA<-->EN';
-		
-			at: #object
-			put: self;
-		
-			at: #selector
-			put: #open;
-		
-			at: #balloonText
-			put: 'Interlingua<-->English Lookup';
-		yourself.
+	"Answer the information required to add me to the World menu-->Open.. submenu"
+	"i.e. an array with one item: a Dictionary"
+	| arr |
+	arr := `{{
+			#submenuOf 	-> TheWorldMenu openLabel.
+			#itemGroup 	-> 10.
+			#itemOrder 	-> 20.
+			#label 		-> 'IA<-->EN'.
+			#object 	-> IEDictWindow.
+			#selector 	-> #open.
+			#balloonText	-> 'Interlingua<-->English Lookup'.
+		} asDictionary}`.
+	(arr at: 1) at: #icon put: self searchIcon.
+	^arr
+````
+
+````Smalltalk
+searchIcon
+
+	^ Theme content from: 'Theme' get: {'16x16'. 'actions'. 'system-search.png'}
 ````
 
 ![Cuis Window](SamplePkg/Sample-Package-060.png)
@@ -47,7 +46,7 @@ worldMenuForOpenGroup
 
 Hey, do I like easy!
 
-You can hilight `worldMenuForOpenGroup` and Cmd-n (seNders) or Cmd-m (iMplementors) to see how menus get built.
+You can hilight `worldMenuOptions` and Cmd-n (seNders) or Cmd-m (iMplementors) to see how menus get built.
 
 
 ### A bit of Color
@@ -149,8 +148,8 @@ windowColor
 ````
 
 Note: you can hilight `Theme`, Cmd-b (Browse the class) to look at various color selections.  Exploring a Color shows a small color swatch.  For Color details, look at various sets of named colors and the Color Editor.
-- https://github.com/KenDickey/Cuis-Smalltalk-NamedColors
-- https://github.com/KenDickey/Cuis-Smalltalk-ColorEditor
+- https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev/tree/master/Packages/Features/NamedColors
+- https://github.com/Cuis-Smalltalk/Morphic/tree/master/ColorEditor
 
 
 Open a new IEDictWindow and...

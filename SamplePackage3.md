@@ -47,11 +47,12 @@ makeEntryArea
 	
 	entryLayout := LayoutMorph newRow.
 	
-	promptMorph := (StringMorph contents: 'Enter Text: ') 
+	promptMorph := (LabelMorph contents: 'Enter Text: ') 
 					emphasis: AbstractFont boldCode; 
 					yourself.
 	promptMorph  layoutSpec: 
-		(LayoutSpec fixedWidth: (promptMorph measureContents x)).
+		(LayoutSpec proportionalWidth: 0.3; 
+						fixedWidth: (promptMorph measureContents x)).
 			
 	entryTextMorph := (OneLineEditorMorph contents: 'salute'). "initial text"
 	entryTextMorph 
@@ -64,7 +65,7 @@ makeEntryArea
 		layoutSpec: (LayoutSpec proportionalWidth: 1 fixedHeight: entryHeigth);
 		addMorph: promptMorph;
 		addMorph: entryTextMorph;
-		padding: #left
+		axisEdgeWeight: #rowLeft
 		yourself
 ````
 
@@ -76,7 +77,7 @@ We want the entryTextMorph to extend across the window and so we give it a propo
 
 We also set the `crAction` for the morph.  This code in invoked when the user types a carriage return / enter key.  As I said above, we want the same action as when a user clicks on the 'Interlingua Contains' button.
 
-We want the prompt string to stick to the left of the layout, so we set the entryLayout's padding to `#left`.
+We want the prompt string to stick to the left of the layout, so we set the entryLayout's axisEdgeWeight to `#rowLeft`.
 
 We will see how this works when we actually build and return a window.
 
@@ -152,7 +153,7 @@ makeButtonArea
 	interlinguaButtonLayout := LayoutMorph newRow. "a row of two buttons"
 
 	interlinguaButtonLayout 
-		padding: #center; 
+		axisEdgeWeight: #center; 
 		separation: 2;
 		addMorph: 
 			(PluggableButtonMorph 
@@ -168,7 +169,7 @@ makeButtonArea
 	englishButtonLayout := LayoutMorph newRow. "a row of two buttons"
 									.
 	englishButtonLayout 
-		padding: #center; 
+		axisEdgeWeight: #center; 
 		separation: 2;
 		addMorph: 
 			(PluggableButtonMorph 
@@ -242,7 +243,7 @@ makeResultsArea
 		indexSetter: #resultIndex:
 		mainView: self
 		menuGetter: nil
-		keystrokeAction: nil).
+		keystrokeAction: #resultsKey:from:).
 		
 	^ resultMorph 
 		layoutSpec: (LayoutSpec proportionalWidth: 1.0 proportionalHeight: 0.98);  
@@ -284,7 +285,7 @@ defaultSeparation
 textSizeUnit
 	"Answer the scaling factor for sizing; note  method #fontPreferenceChanged"
 
-	^ AbstractFont default height
+	^ Preferences standardListFont lineSpacing
 ````
 
 OK.  Try again and...
@@ -469,7 +470,7 @@ buildMorphicWindow
 	^ self
 ````
 
-Now IEDictWindow needs a `searchResultChanged` method added to its `events` methods
+Now IEDictWindow needs a `searchResultsChanged` method added to its `events` methods
 
 ````Smalltalk
 searchResultsChanged
