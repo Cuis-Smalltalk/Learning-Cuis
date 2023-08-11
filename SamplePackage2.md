@@ -45,7 +45,7 @@ You can ignore these or select one of them and press enter/CR to complete the wo
 
 In a Workspace you can select a line of code and either Cmd-click for the context menu and select DoIt or press Cmd-d to compile and run the code.
 
-If the package loads, skip this paragraph and go to the next one. Otherwise, make sure all words are spelled properly and try DoIt again. If there is still a problem, please ask for help on the Cuis mailing list http://cuis-smalltalk.org/mailman/listinfo/cuis-dev_cuis-smalltalk.org
+If the package loads, skip this paragraph and go to the next one. Otherwise, make sure all words are spelled properly and try DoIt again. If there is still a problem, please ask for help on the Cuis mailing list [https://lists.cuis.st/mailman/listinfo/cuis-dev](https://lists.cuis.st/mailman/listinfo/cuis-dev)
 
 After the package has been loaded, you should be able to open a code browser, scroll to and select the category and the IEDict class.  You can also move the mouse to the _class category_ pane of the code browser, Cmd-click to get the context menu, select Find (or just Cmd-f) type 'IEDict' and you should get to the class code.
 
@@ -99,7 +99,7 @@ initialize
 	IEDict initialize.
 "
 	| curIndex aLine |
-	DictData := Array new: 30811. "We know the exact size (wc -l iedict.txt) less 1"
+	DictData := Array new: 31034. "We know the exact size (wc -l iedict.txt) less 1"
 
 	(self package asFileName asFileEntry parent  // 'iedict.txt') readStreamDo: [ :fileStream |
 		fileStream nextLine. "Skip initial comment line"
