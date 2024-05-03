@@ -20,10 +20,9 @@ Cuis remains small and comprehensible in part because we have **Features** which
 ````Smalltalk
   Feature require: 'Layout-Edit-Panel'.
 ````
-
-<img src="LayoutTour/Cuis-6/Part-1/LayoutTour_1.png" width=65%>
 [Note: older name was 'Layout-Edit-Panels' -- graphics stil show this. 'Layout-Edit-Panel' is correct now.]
 
+<img src="LayoutTour/Cuis-6/Part-1/LayoutTour_1.png" width=65%>
 
 Of course, this won't work very well unless you actually have the packaged code for this Feature.
 
