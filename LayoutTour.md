@@ -18,10 +18,8 @@ First we will load two tools to help us see how **LayoutMorphs** and **LayoutSpe
 Cuis remains small and comprehensible in part because we have **Features** which can be loaded as needed.  Each Feature is in a text package which notes its requirements.  To get the tools I want I open a Cuis image, Control-click to get the World Menu, Open a Workspace, and 
 
 ````Smalltalk
-  Feature require: 'Layout-Edit-Panel'.
+  Feature require: 'Layout-Edit-Panels'.
 ````
-[Note: older name was 'Layout-Edit-Panels' -- graphics stil show this. 'Layout-Edit-Panel' is correct now.]
-
 <img src="LayoutTour/Cuis-6/Part-1/LayoutTour_1.png" width=65%>
 
 Of course, this won't work very well unless you actually have the packaged code for this Feature.
