@@ -250,7 +250,7 @@ self showLayouts.
 ````
 ![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_21.png)
 
-I get frames around layout for five seconds, and the they disappear.
+I get frames around layout for five seconds, and then they disappear.
 
 Very interesting.
 
@@ -299,7 +299,7 @@ self colorizeLayouts.
 
 Now this I like!
 
-Let me command-click and use the yellow circle to drag the lower right corner around to resiz.
+Let me command-click and use the yellow circle to drag the lower right corner around to resize.
 
 ![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_24.png)
 
