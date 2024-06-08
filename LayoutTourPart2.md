@@ -70,7 +70,7 @@ Here is a Hierarchy Browser expanded a bit.
 
 ![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_5.png)
 
-The reason this is called a Hierarchy Browser is that it shows a class nested with it parent class, its grandpatent class, and so on.  
+The reason this is called a Hierarchy Browser is that it shows a class nested within its parent class, its grandpatent class, and so on.  
 
 This lets one look at inheritance of methods, how each layer of class adds some capability or refinement to its parent, and what "send to super" does.  More on this later.
 
@@ -250,7 +250,7 @@ self showLayouts.
 ````
 ![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_21.png)
 
-I get frames around layout for five seconds, and they they disappear.
+I get frames around layout for five seconds, and the they disappear.
 
 Very interesting.
 
@@ -265,7 +265,7 @@ Hmmm..  Not much difference.
 
 How about using _dropShadows_ to hilight the Z-order?  Give some depth to the submorphs being layed out?
 
-**DropShadoes BROKEN in Cuis 6; Please ignore this section
+**DropShadow BROKEN in Cuis 6; Please ignore this section
   /home/pi/Cuis-Smalltalk/Morphic/Morphic-Misc1/DropShadows.cs.st**
 
 Not everyone likes dropShadows, so the code for this is packaged as a separate change set.  To include this change set, open a FileList (World menu > Open..> FileList), select file "DropShadow.cs.st" and click on the _install_ button.  Then close the FileList window. 
@@ -299,7 +299,7 @@ self colorizeLayouts.
 
 Now this I like!
 
-Let me command-click and use the yellow circle to drag the corner around.
+Let me command-click and use the yellow circle to drag the lower right corner around to resiz.
 
 ![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_24.png)
 
