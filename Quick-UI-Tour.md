@@ -22,13 +22,13 @@ You can start an image, do things with it and throw it away or save the image an
 
 The job of a user interface is to answer the questions: "Where am I" and "What can I do here?".
 
-With a deep feature set, here is a fundamental conflict between showing everything you can interact with and reducing the "clutter" so that one can concentrate on what one 'wants' to do.
+With a deep feature set, here is a fundamental conflict between showing everything you can interact with and reducing the "clutter" so that one can concentrate on what one wants to do.
 
-The basic solution to this problem is to information until it is needed and present it in context.
+The basic solution to this problem is to hide information until it is needed and present it in context.
 
 The initial user interface screen is pretty sparse.  Cuis Smalltalk is an 'Interactive Development Environmant' just waiting for you.
 
-The entry point of this interface is the WOrkd Menu which you can get by clicking on the desktop.
+The entry point of this interface is the World Menu which you can get by clicking on the desktop.
 
 If you right-click or cmd-click on the desktop, you will see a World Menu.
 
@@ -69,9 +69,7 @@ The Open menu gives access to fundamental tools.
 
 Clicking on World Menu -> Open.. -> Browser  brings up a System Browser, from which you can view all the code in the Cuis environment.
 
-The panes are arranged by Category (upper left), Class, Topic, and Method (the code shown in the lower pane).
-
-Left to right at top, clicking on a Class Category shows related Classes. Clicking on a Class shows its code.  Selecting a Method Category shows related methods.  Selecting a Method name shows its code.
+Left to right at top, clicking on a Class Category shows related Classes. Clicking on a Class shows its code.  Selecting a Method Category shows related methods.  Selecting a Method name shows its code in the lower pane.
 
 The Code Browser gives many ways to find and view code.
 
@@ -122,7 +120,7 @@ This brings up a Morph Menu.
 
 In this case, I selected a Basic Morph called a BoxedMorph.
 
-I then cmd-clicked on the BodexMorph to bring up a "halo" of "construction handles" (small circles around the Morph) and used the one in the lower right (Change Size) to make it bigger.
+I then cmd-clicked on the BoxedMorph to bring up a "halo" of "construction handles" (small circles around the Morph) and used the one in the lower right (Change Size) to make it bigger.
 
 ![BoxedMorph-Menu](UITour/Cuis11.png)
 
@@ -134,29 +132,29 @@ Selecting debug -> inspect morph gives an Object Inspector tool which allows one
 
 One can click on a Morph's "instance variables" to see their values, and in turn "inspect" those values.
 
-![BoxedMorph-Color](UI-Tour/Cuis13.png)
+![BoxedMorph-Color](UITour/Cuis13.png)
 
 You can also write code in the lower pane in which "self" is bound to the object clicked on in the upper left pane.  So one can do things like changing the setting of the "color" instance variable.
 
-![BoxedMorph-Color](UI-Tour/Cuis14.png)
+![BoxedMorph-Color](UITour/Cuis14.png)
 
-![BoxedMorph-Code](UI-Tour/Cuis15.png)
+![BoxedMorph-Code](UITour/Cuis15.png)
 Another useful operation in a Morph's Menu is to look at its Code.
 
-![BoxedMorph-Browsing](UI-Tour/Cuis16.png)
+![BoxedMorph-Browsing](UITour/Cuis16.png)
 The upper-left pane of the Browser shows the Class inheritance hierarchy for a BoxedMorph.  Each "child" or specialization of a Class has code which essentially says "I am like my parent but for these changes/extensions", which it then defines.
 
-![Browsers are Morphs too](UI-Tour/Cuis17.png)
+![Browsers are Morphs too](UITour/Cuis17.png)
 
 Each graphical element in the UI is a Morph, which may be composed of sub-morphs.
 
 This is also true of the UI tools.  You can click-select graphical elements (middle-click multiple times to select an interior submorph).  This means that you can look at any graphical element in the system, see how it is composed and how its code works.
 
-![Send Morph to back](UI-Tour/Cuis18.png)
+![Send Morph to back](UITour/Cuis18.png)
 
 In this case, I get the Morph Menu of the browser and "send it to the back" so that I can again see the BoxedMorph.
 
-![Color method](UI-Tour/Cuis19.png)
+![Color method](UITour/Cuis19.png)
 Looking again at the BoxedMorph's code, I see how the `color:` method is implemented.
 
 ![Breaking into the Debugger](UITour/Cuis20.png)
