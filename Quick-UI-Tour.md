@@ -22,7 +22,7 @@ You can start an image, do things with it and throw it away or save the image an
 
 The job of a user interface is to answer the questions: "Where am I" and "What can I do here?".
 
-With a deep feature set, here is a fundamental conflict between showing everything you can interact with and reducing the "clutter" so that one can concentrate on what one wants to do.
+With a deep feature set, there is a fundamental conflict between showing everything you can interact with and reducing the "clutter" so that one can concentrate on what one wants to do.
 
 The basic solution to this problem is to hide information until it is needed and present it in context.
 
