@@ -51,7 +51,7 @@ I took a shortcut here.  I sent three messages on one line.  The ';' (semicolon)
 So the above is the same as typing:
 
 ````Smalltalk
-myLayout morphPosition: 200@300 morphExtent: 400@300
+myLayout morphPosition: 200@300 morphExtent: 400@300.
 myLayout color: Color lightBlue.
 myLayout openInWorld.
 ````
@@ -180,7 +180,7 @@ By the way, we are starting to get a number of edit panels up.  It can get confu
 
 So it is always easy to find out who is being edited.
 
-OK.  Let's change the column back into a row.  Click on Left and Row radio buttons in the layout edit panel and Update to see the other orientation. What do you think will happen?
+OK.  Let's change the column back into a row.  Click on Row radio button and then the Left button in the _layout_ edit panel and Update to see the other orientation. What do you think will happen?
 
 <img src="LayoutTour/Layout18.png" width=65%>
 
@@ -194,7 +194,7 @@ Let's set the Width to a Fixed 80 pixels and the Height to 40% of the container,
 
 So when you resize the layout, the Ellipse keeps the same width, but its height is maintained at approxumately 40% of the LayoutMorph.
 
-Command click on the blue rectangle, select 'edit my layoutspec' from its context menu, move the layoutspec edit panel aside and click on its push-pin.
+Command click on the blue BoxedMorph, select 'edit my layoutspec' from its context menu, move the layoutspec edit panel aside and click on its push-pin.
 
 Now set its Height to Proportional 50% with a minimum of 10 pixels.  Perhaps a Proportional Width of 80% and min 30 pixels.  Click Update.
 

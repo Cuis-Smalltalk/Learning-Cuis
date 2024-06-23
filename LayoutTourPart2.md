@@ -84,7 +84,6 @@ One can assume from #addMorph: messages in the code that each of the 'build' met
 Code browsers are really, really handy and we will be using them a lot, so it is useful to take the time to note some of the many ways they can help us out.
 
 ![Cuis Window](LayoutTour/Layout30.png)
-![Cuis Window](LayoutTour/Cuis-6/Part-2/LayoutTour2_7.png)
 
 Here I have selected the name 'buildMorphicWindow' and command-clicked to get the menu for the SmalltalkEditor pane.
 
@@ -123,7 +122,7 @@ Back to the code browser.  I selected '-- all --' method category, moved the cur
 
 When you type a letter in a browser selection list, the list scrolls to show the first name starting with that character.
 
-![Cuis Window](LayoutTour/Layout34.png)
+![Cuis Window](LayoutTour/Layout35.png)
 
 The #newRadioSelection method is invoked when one clicks on a radio button.  
 
@@ -249,7 +248,7 @@ One idea is to draw a frame around each LayoutMorph.  There happens to be a Fram
 
 ![Cuis Window](LayoutTour/Layout45.png)
 
-Shrinking the ObjectExporerObject Inspector and moving it aside, I type in its mini-Workspace:
+Shrinking the Object Inspector and moving it aside, I type in its mini-Workspace:
 ````Smalltalk
 self showLayouts.
 ````
