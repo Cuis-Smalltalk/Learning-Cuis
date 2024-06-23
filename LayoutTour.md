@@ -20,7 +20,7 @@ Cuis remains small and comprehensible in part because we have **Features** which
 ````Smalltalk
   Feature require: 'UI-Layout-Panel'.
 ````
-![Cuis Window](LayoutTour/Layout1.png) ()
+![Cuis Window](LayoutTour/Layout1.png)
 
 Of course, this won't work very well unless you actually have the "git cloned" packaged code for this Feature.
 
