@@ -43,7 +43,7 @@ I select the new text and type Cmd-d (DoIt) and see ... not much has changed, ex
 Ah!  Let me open it in the current Cuis World.  The Cuis backdrop is a PasteUpMorph which we call the World.
 
 ````Smalltalk
-myLayout morphPosition: 200@300 morphExtent: 400@300; color: Color lightBlue; openInWorld.
+myLayout morphPosition: 200@300 extent: 400@300; color: Color lightBlue; openInWorld.
 ````
 
 I took a shortcut here.  I sent three messages on one line.  The ';' (semicolon) character introduces a **cascade**.  What a cascade does is to send messages to the original recever object.
@@ -51,7 +51,7 @@ I took a shortcut here.  I sent three messages on one line.  The ';' (semicolon)
 So the above is the same as typing:
 
 ````Smalltalk
-myLayout morphPosition: 200@300 morphExtent: 400@300.
+myLayout morphPosition: 200@300 extent: 400@300.
 myLayout color: Color lightBlue.
 myLayout openInWorld.
 ````
