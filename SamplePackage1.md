@@ -204,11 +204,11 @@ Clicking on the _new_ button, I fill in exactly the same name as I gave the syst
 
 Now I just select the package name, fill in the package comment, and click the 'save' button.
 
-You can change the pathname to be the path to your Cuis-Smalltalk-IA-EN-Dictionary, or just take the default, copy the saved packag into your repository, and reload from the file list.
+You can change the pathname to be the path to your Cuis-Smalltalk-IA-EN-Dictionary, or just take the default, copy the saved package into your repository, and reload from the file list.
 
 ![Cuis Window](SamplePkg/IADict13.png)
 
-IN any case, now is a good time to open a File List Browser to check that the package was created.
+Now is a good time to open a File List Browser to check that the package was created.
 
 ![Cuis Window](SamplePkg/IADict14.png)
 
