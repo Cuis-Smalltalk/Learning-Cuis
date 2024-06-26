@@ -204,10 +204,6 @@ Clicking on the _new_ button, I fill in exactly the same name as I gave the syst
 
 Now I just select the package name, fill in the package comment, and click the 'save' button.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-011.png)
-
-![Cuis Window](SamplePkg/IA-EN-Dict-012.png)
-
 You can change the pathname to be the path to your Cuis-Smalltalk-IA-EN-Dictionary, or just take the default, copy the saved packag into your repository, and reload from the file list.
 
 ![Cuis Window](SamplePkg/IADict13.png)
