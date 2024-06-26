@@ -16,15 +16,11 @@ From the Cuis-Smalltalk-Dev web site:
 
 Within a running Cuis image, use Cmd-Click (the Command key depends on your Operating System) to get the World Menu.  Then open the pages from the Help submenu.
 
-![Cuis Window](SamplePkg/Sample-Package-0001.png)`
-
-
-![Cuis Window](SamplePkg/Sample-Package-0002.png)
-
+![Cuis Window](SamplePkg/IADict0.png)`
 
 We will be following the recipies for developing with packages.
 
-![Cuis Window](SamplePkg/Sample-Package-0003.png)
+![Cuis Window](SamplePkg/IADict1.png)
 
 
 The first step in developing a package is to get yourself an account on GitHub
@@ -45,30 +41,30 @@ The convention for Cuis is to start all repository names with 'Cuis-Smalltalk-'.
 
 Note that I am creating a repository in Cuis-Smalltalk-Learners.  You will want to create a repository within your own GitHub account.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-001.png)
+![Cuis Window](SamplePkg/IADict001.png)
 
 
 Shareable Cuis code by convention uses the MIT open source licence.
 
 I typically create a default README.md file as well.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-002.png)
+![Cuis Window](SamplePkg/IADict002.png)
 
 
 OK.  Now that I have a repository set up, I can clone it and add files.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-003.png)
+![Cuis Window](SamplePkg/IADict003.png)
 
 I am a Linux user, so I use the command line.
 
 Being lazy, I "Copy" the github name from the web page.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-004.png)
+![Cuis Window](SamplePkg/IADict004.png)
 
 
 I can now "git clone", paste the name, and get a local copy of my shiny new repository.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-005.png)
+![Cuis Window](SamplePkg/IADict005.png)
 
 
 ### Add a new file to a Git repository
@@ -88,23 +84,25 @@ The way this works is
 
 Pressing enter (carriage return) is the same as clicking on button labeled  'Interlingua Contains'.
 
-Having decided this, the first thing I did was add the Interlingua->English dictionary to the local Git repository.
+Having decided this, the first thing I did was add the Interlingua->English usage dictionary to the local Git repository.
 
-- [1] copy the file into the local repository
+Assuming `git clone https://github.com/Cuis-Smalltalk/CodeExamples` you copy CodeExamples/IA-EN-Dictionary/iedict.txt.
+
+- [1] copy the file "iedict.txt" into the local repository
 - [2] "git add" to make the repository aware of the file
 - [3] "git commit" to declare the file as ready for update
 - [4] "git push" to actually update the repository on GitHub from the local version.
 
 Here is what this looks like in a Linux shell:
 
-![Cuis Window](SamplePkg/IA-EN-Dict-006.png)
+![Cuis Window](SamplePkg/IADict006.png)
 
-![Cuis Window](SamplePkg/IA-EN-Dict-007.png)
+![Cuis Window](SamplePkg/IADict007.png)
 
 
 I can check this by refreshing the repository web page.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-008.png)
+![Cuis Window](SamplePkg/IADict008.png)
 
 
 ### Creating a Cuis Category
@@ -117,19 +115,19 @@ Command-Click on the World background to get a World Menu.
 
  World->Open..->Browser
 
-![Cuis Window](SamplePkg/IA-EN-Dict-009.png)
+![Cuis Window](SamplePkg/IADict2.png)
 
 
 The upper left _pane_ in the Browser lists class categories.
 
 We want to add a new class category.  Cmd-Click on this pane to gets it's context menu and select 'add item..'
 
-![Cuis Window](SamplePkg/IA-EN-Dict-010.png)
+![Cuis Window](SamplePkg/IADict3.png)
 
 
 Now we can create a category 'IA-EN-Dictionary'.  
 
-![Cuis Window](SamplePkg/IA-EN-Dict-011.png)
+![Cuis Window](SamplePkg/IADict4.png)
 
 
 As you might suspect, the international language code for English is 'EN' and the code for Interlingua is 'IA'.
@@ -151,7 +149,7 @@ Access to a class variable is shared by all instances of that class.  An instanc
 
 It is a bit subtle, but there is a thin red border around the lower pane where we typed in the `IEDict` definition fields.  This means that we have started an edit, but not yet saved it.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-012.png)
+![Cuis Window](SamplePkg/IADict5.png)
 
 
 The code you are looking at is just code.  It is text which will be compiled and the compiled code then invoked to create a new Smalltalk class.
@@ -160,19 +158,25 @@ Cmd-click on this pane to see the context menu.  We can select 'Accept (s)'.
 
 If we did not wish to use the menu, we could just type Cmd-s (hold down the command key and press 's').  This is why the '(s)' in 'Accept (s)'.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-013.png)
+![Cuis Window](SamplePkg/IADict6.png)
 
 
 Congratulations!  You have created a new Class!
 
-![Cuis Window](SamplePkg/IA-EN-Dict-014.png)
+When you first add code, you will be asked for your intials.
+
+This lets the system annotate methods you create.
+Knowing who created a method lets others ask questions.
+If you see 'KenD' you know who to ask!
+
+![Cuis Window](SamplePkg/IADict7.png)
 
 
 ### Add a Class Comment
 
 Noting the 'Please enter a comment for this class', now is a good time to add some description of the new class.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-015.png)
+![Cuis Window](SamplePkg/IADict8.png)
 
 
 To (s)ave the class comment, I type Cmd-s (or use the context menu selection Accept).
@@ -188,42 +192,60 @@ The first thing to do is to create a Package which can be added to our GitHub  r
 
 I open an Installed Packages browser from the World Menu -> Open.. submenu.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-016.png)
+![Cuis Window](SamplePkg/IADict9.png)
+
+Note that this shows 2 packages already loaded.  This is because I am using the PNG image writer from the 'Graphics-Files-Additional' package and it requires 'Compression'.  I am using this code to write out the '.png' images for this tutorial.  You will probably see zero packages already loaded.  Don't worry about it.
 
 
-Clicking on the _new_ button, I fill in exactly the same name as I gave the system category: 'IA-EN-Dictionary'.  Copy/Paste from the class browser would work here as well.  I Accept the name.
+Clicking on the _new_ button, I fill in exactly the same name as I gave the system category: 'IA-EN-Dictionary'.  Copy/Paste from the class browser would work here as well.  I Accept the name by clicking on the green check-mark.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-017.png)
-
-
-Now I just fill in the package comment and click the 'save' button.
-
-![Cuis Window](SamplePkg/IA-EN-Dict-018.png)
+![Cuis Window](SamplePkg/IADict10.png)
 
 
-I can open a File Browser to check that the package was created.
+Now I just select the package name, fill in the package comment, and click the 'save' button.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-019.png)
+![Cuis Window](SamplePkg/IADict011.png)
 
+![Cuis Window](SamplePkg/IADict012.png)
 
-I find a file 'IA-EN-Dictionary.pck.st' was created in the directory where the Cuis image file was found 'Cuis-Smalltalk-Dev'.
+You can change the pathname to be the path to your Cuis-Smalltalk-IA-EN-Dictionary, or just take the default, copy the saved packag into your repository, and reload from the file list.
 
-This package text file contains the code and some _meta-data_ about the code and looks fine.  However, the package file is ***not*** in the 'Cuis-Smalltalk-IA-EN-Dictionary' directory.
+![Cuis Window](SamplePkg/IADict13.png)
 
-Gotta fix this!
+IN any case, now is a good time to open a File List Browser to check that the package was created.
 
-In my case, I get a Linux command shell, move the file to the Cuis-Smalltalk-IA-EN-Dictionary directory, "git add", "git commit", "git push".
+![Cuis Window](SamplePkg/IADict14.png)
 
-![Cuis Window](SamplePkg/IA-EN-Dict-020.png)
+In my case, I get a Linux command shell, check the file is in the Cuis-Smalltalk-IA-EN-Dictionary directory, "git add", "git commit", "git push".
+
+````
+~/Cuis-Smalltalk/Cuis-Smalltalk-IA-EN-Dictionary >>> ls
+IA-EN-Dictionary.pck.st  iedict.txt  LICENSE  README.md
+~/Cuis-Smalltalk/Cuis-Smalltalk-IA-EN-Dictionary >>> git add IA-EN-Dictionary.pck.st 
+~/Cuis-Smalltalk/Cuis-Smalltalk-IA-EN-Dictionary >>> git commit -m "Package Code" IA-EN-Dictionary.pck.st 
+[main 12f15c3] Package Code
+ 1 file changed, 40 insertions(+)
+ create mode 100644 IA-EN-Dictionary.pck.st
+~/Cuis-Smalltalk/Cuis-Smalltalk-IA-EN-Dictionary >>> git push
+Username for 'https://github.com': KenDickey
+Password for 'https://KenDickey@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 881 bytes | 881.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/KenDickey/Cuis-Smalltalk-IA-EN-Dictionary
+   8b513c3..12f15c3  main -> main
+````
 
 Our Cuis-Smalltalk-IA-EN-Dictionary repository on GitHub has now been updated to contain our package.
 
 Anyone with access to this directory web page on GutHub can now "git clone" the directory and share our code, after which they can "git pull" to get our updates.
 
-All that remains to do is quit out of Cuis WITHOUT saving our changes.
+All that remains to do is quit out of Cuis WITHOUT saving our changes [Yes!].
 
-![Cuis Window](SamplePkg/IA-EN-Dict-021.png)
-![Cuis Window](SamplePkg/IA-EN-Dict-022.png)
+![Cuis Window](SamplePkg/IADict15.png)
 
 This is OK as we are not changing the base Cuise image.  All our work is saved in GitHub.
 
