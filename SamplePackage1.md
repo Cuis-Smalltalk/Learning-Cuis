@@ -41,30 +41,30 @@ The convention for Cuis is to start all repository names with 'Cuis-Smalltalk-'.
 
 Note that I am creating a repository in Cuis-Smalltalk-Learners.  You will want to create a repository within your own GitHub account.
 
-![Cuis Window](SamplePkg/IADict001.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-001.png)
 
 
 Shareable Cuis code by convention uses the MIT open source licence.
 
 I typically create a default README.md file as well.
 
-![Cuis Window](SamplePkg/IADict002.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-002.png)
 
 
 OK.  Now that I have a repository set up, I can clone it and add files.
 
-![Cuis Window](SamplePkg/IADict003.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-003.png)
 
 I am a Linux user, so I use the command line.
 
 Being lazy, I "Copy" the github name from the web page.
 
-![Cuis Window](SamplePkg/IADict004.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-004.png)
 
 
 I can now "git clone", paste the name, and get a local copy of my shiny new repository.
 
-![Cuis Window](SamplePkg/IADict005.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-005.png)
 
 
 ### Add a new file to a Git repository
@@ -95,14 +95,14 @@ Assuming `git clone https://github.com/Cuis-Smalltalk/CodeExamples` you copy Cod
 
 Here is what this looks like in a Linux shell:
 
-![Cuis Window](SamplePkg/IADict006.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-006.png)
 
-![Cuis Window](SamplePkg/IADict007.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-007.png)
 
 
 I can check this by refreshing the repository web page.
 
-![Cuis Window](SamplePkg/IADict008.png)
+![Cuis Window](SamplePkg/IA-EN-Dict-008.png)
 
 
 ### Creating a Cuis Category
