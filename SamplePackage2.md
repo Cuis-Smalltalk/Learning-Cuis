@@ -5,19 +5,60 @@ This is a continuation of
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage1.md
 
 
+### Quick Side Trip -- saving a screenShot.
+
+I mentioned in SamplePackage1.md that I had installed the 'Graphics-FIles-Additional' package.
+
+You can skip to the next section, but here I will explain a bit.
+
+Cuis comes with a ultility to save a screen image.  `Utilities saveScreenshot`.
+
+This will save a screen image with the default name of "CuisWorld.bmp".
+
+I just saved a bitmap image of the screen and its size is about 2 MegaBites.
+
+Saving the same image as a PNG (Portable Network Graphics) file is 236 KiloBytes in size, so you see why it is worthwhile to load a package to write PNG files.
+
+A useful thing to do at times is to save a Workspace text to a file.  The blue ircle at top shows a menu with a "Save As" option.
+
+One can view such a file with a File List, select it, right-click to get the context menu, and select "workspace with contents".  One can now select saved code and Do-It.
+
+![Cuis Window](SamplePkg/IADict16.png)
+
+In this case the code creates a small invisible field at the top-left of the display which, after a delay, writes a screen image as a PNG file and increments a counter so that each screenShot gets a different name.
+
+This is a case of saving information in Morph's properties allows one to have behavior specialized to an individual Morph.  In this case we don't need to share behavior among Morphs, so subclassing would be overwork.
+
+Note that a new Smalltalk process was "forked" to be able to wait while a user action can take place in the main thread.
+
+You don't have to understand or follow this right now, but it is good to know how to do such things.
+
+OK, back to the tutorial..
+
+
 ### Package loading
 
 You should know how Cuis finds packages to load.
 
-First, Cuis looks in the folder the image is running from, then in its subfolders/subdirectories 'Packages' and 'CompatibilityPackages'.  Then it looks in the parent directory of 'Cuis-Smalltalk-Dev' for directories with names starting 'Cuis-Smalltalk-'.  
+Cuis looks in "standard places".  What places?
 
-So the best thing is for all directories/folders named 'Cuis-Smalltalk-*' to be in the same common directory.  If this directory is named 'Cuis' then there should be a 'Cuis/Cuis-Smalltalk-Dev' and a 'Cuis/Cuis-Smalltalk-IA-EN-Dictionary'.  If this is not the case, you must make it so.
+There is a handy tool that searched for selectors by partial name match.
 
-To avoid confusion, make sure your `IA-EN-Dictionary.pck.st` file ***is*** in folder/directory 'Cuis-Smalltalk-IA-EN-Dictionary' and that there is  ***not*** a `IA-EN-Dictionary.pck.st` in 'Cuis-Smalltalk-Dev'.
+World Menu --> Open --> Message Names
 
-Also, if you have a 'Cuis-Smalltalk-SamplePkg' directory, you might rename it to something like 'SamplePackage'.
+I typed "findpack" to look for methods which find packages to load.
 
-This will ensure that there is only one `IA-EN-Dictionary` feature to find when Cuis looks for a package with this feature.
+In this case, there was only one method.
+
+Looking here, I noted 'placesToLookForPackagesDo:' and selected implementors.
+
+![Cuis Window](SamplePkg/IADict17.png)
+
+First, Cuis looks in the folder the image is running from, then the codePackageFile folder, all children of the Packages directory, the NewPackages directory, and the base directory.
+
+It is easy select text and Inspect, for example `DirectoryEntry packagesDirectory` to see what directory would be searched.
+
+For me, the best thing is for all cloned repositories to be in a common directory named 'Cuis-Smalltalk'.  This way the package code can be searched for in 'Cuis-Smalltalk/Cuis-Smalltalk-Dev' and 'Cuis-Smalltalk/Cuis-Smalltalk-IA-EN-Dictionary'. 
 
 
 ### Feature require: #'IA-EN-Dictionary'
@@ -40,8 +81,7 @@ You also have _word completion_.  If you start typing a word, e.g. 'Fea', then t
 
 You can ignore these or select one of them and press enter/CR to complete the word you want.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-023.png)
-
+![Cuis Window](SamplePkg/IADict18.png)
 
 In a Workspace you can select a line of code and either Cmd-click for the context menu and select DoIt or press Cmd-d to compile and run the code.
 
@@ -49,7 +89,7 @@ If the package loads, skip this paragraph and go to the next one. Otherwise, mak
 
 After the package has been loaded, you should be able to open a code browser, scroll to and select the category and the IEDict class.  You can also move the mouse to the _class category_ pane of the code browser, Cmd-click to get the context menu, select Find (or just Cmd-f) type 'IEDict' and you should get to the class code.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-024.png)
+![Cuis Window](SamplePkg/IADict19.png)
 
 
 ### Initializing the IEDict Class
