@@ -38,9 +38,9 @@ OK, back to the tutorial..
 
 ### Package loading
 
-You should know how Cuis finds packages to load.
+It is good to understand how Cuis finds packages to load.
 
-Cuis looks in "standard places".  What places?
+Cuis looks in "standard places".  What places?  How do we find out?
 
 There is a handy tool that searched for selectors by partial name match.
 
@@ -56,7 +56,10 @@ Looking here, I noted 'placesToLookForPackagesDo:' and selected implementors.
 
 First, Cuis looks in the folder the image is running from, then the codePackageFile folder, all children of the Packages directory, the NewPackages directory, and the base directory.
 
-It is easy select text and Inspect, for example `DirectoryEntry packagesDirectory` to see what directory would be searched.
+The special directories Cuis uses are described in
+https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev/blob/master/Documentation/CuisDirectoryStructure.md
+
+In the code, it is easy select text and Inspect, for example, `DirectoryEntry packagesDirectory` to see what specific directory you are using.
 
 For me, the best thing is for all cloned repositories to be in a common directory named 'Cuis-Smalltalk'.  This way the package code can be searched for in 'Cuis-Smalltalk/Cuis-Smalltalk-Dev' and 'Cuis-Smalltalk/Cuis-Smalltalk-IA-EN-Dictionary'. 
 
@@ -96,32 +99,26 @@ After the package has been loaded, you should be able to open a code browser, sc
 
 In the Class pane, under 'IEDict' there are three buttons labled 'instance', '?', and 'class'.  Click on 'class'.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-025.png)
-
 The difference between Class and Instance is that _instance methods_ operate on individual objects which are instances of a class.  _Class methods_ operate on the class code shared by all instances.  We'll get into what this means in a bit more detail below.
 
 To keep things organized, the class browser groups methods into categories.  We will be adding code which does _class initialization_ so we first add this category.
 
 Cmd-click on the method category pane to get its context menu and add a new method category.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-026.png)
-
-![Cuis Window](SamplePkg/IA-EN-Dict-027.png)
-
+![Cuis Window](SamplePkg/IADict21.png)
 
 Select the 'class initialization' category to get a _method template_.  
 
-Note the syntax hilighting.  The _method selector_ is in black, _comments_ are in green, _temporaries_ are in grey, unknown words in red.
+![Cuis Window](SamplePkg/IADict22.png)
 
-
-![Cuis Window](SamplePkg/IA-EN-Dict-028.png)
+Note the method code syntax hilighting.  The _method selector_ is in black, _comments_ are in green, _temporaries_ are in grey, unknown words in red.
 
 
 ### Reading the Dict Data
 
 The first thing we need to look up words in a dictionary is, of course, the dictionary.  Please open a File List browser and navigate to 'iedict.txt' to see what this text file looks like.  (Cmd-click on World; World->Open->File List).
 
-![Cuis Window](SamplePkg/IA-EN-Dict-029.png)
+![Cuis Window](SamplePkg/IADict23.png)
 
 There is a comment line which indicates the original source of the file, then lines like
 - interlingua parolas : english words
@@ -155,7 +152,7 @@ initialize
 	] 
 ````
 
-![Cuis Window](SamplePkg/IA-EN-Dict-030.png)
+![Cuis Window](SamplePkg/IADict24.png)
 
 
 When I Accept this, I am adding code for the first time since the image started, so the code browser asks who I am.  This is so that my initials get placed into the code's meta-data.  
@@ -190,13 +187,12 @@ One can select any text in a code browser window and DoIt (Cmd-d).  When I am ch
 
 Did I mention that I like to make things easy for myself?
 
-
-![Cuis Window](SamplePkg/IA-EN-Dict-032.png)
+![Cuis Window](SamplePkg/IADict25.png)
 
 
 We DoIt and..
 
-![Cuis Window](SamplePkg/IA-EN-Dict-033.png)
+![Cuis Window](SamplePkg/IADict26.png)
 
 Oops!
 
@@ -204,7 +200,7 @@ Well, I guess we are not perfect.  (You already knew that? ;^)
 
 Let's look at the stack with the debugger to see where we went wrong.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-034.png)
+![Cuis Window](SamplePkg/IADict27.png)
 
 Ah. What happened is this.  Instead of cut+paste, I typed in the code.  When I did this, I typed `asFileName` rather than `fullFileName`.
 
@@ -218,12 +214,13 @@ I just
 
 We fix things and continue without unwinding the stack!  8^)
 
+![Cuis Window](SamplePkg/IADict29.png)
 
-![Cuis Window](SamplePkg/IA-EN-Dict-035.png)
+![Cuis Window](SamplePkg/IADict30.png)
 
-![Cuis Window](SamplePkg/IA-EN-Dict-036.png)
+![Cuis Window](SamplePkg/IADict31.png)
 
-![Cuis Window](SamplePkg/IA-EN-Dict-037.png)
+![Cuis Window](SamplePkg/IADict32.png)
 
 Well, without a visible change it is hard to see that `IEDict>>initialize` succeeded.  I could open an object explorer on the IEDict class object, but since we need lookup methods in any case, why not just write them and use them to be sure we read in the dictionary?
 
@@ -275,15 +272,18 @@ englishStarts: aString
 	^DictData select: [ :pairArray | matchStr match: (pairArray at: 2) ]
 ````
 
+![Cuis Window](SamplePkg/IADict33.png)
+
 ### Quicklook Testing in a Workspace
 
 ````Smalltalk
 IEDict englishStarts: 'core'.
 ````
-
 Cmd-p (print) will show the result in a Workspace.
 
-![Cuis Window](SamplePkg/IA-EN-Dict-038.png)
+![Cuis Window](SamplePkg/IADict34.png)
+
+![Cuis Window](SamplePkg/IADict36.png)
 
 You can make up tests for the other methods yourself.
 
@@ -300,6 +300,8 @@ We need to
 - "git push"
 
 You remember how to open the package browser and "save", right?
+
+![Cuis Window](SamplePkg/IADict37.png)
 
 Here is the last time I will bore you with a non-Smalltalk screen shot
 
@@ -319,7 +321,11 @@ An `IEDictWindow` needs to keep track of two things: the text query and the resu
 
 These will be Morphs, graphical screen objects.
 
-![Cuis Window](SamplePkg/Sample-Package-037.png)
+![Cuis Window](SamplePkg/IADict38.png)
+
+One has to Accept (save) the definition in the Class Definition pane before adding text to the Class Comment.
+
+As the _SystemWindow_ class exists one can type 'Sys', hit the TAB key, and select 'SystemWindow' from the popup select-list.
 
 
 ### Opening a IEDictWindow (a new instance)
@@ -328,32 +334,27 @@ We want to open a new IEDictWindow by asking its class to make one.
 
 The first step is to add a method category to the class side
 
-![Cuis Window](SamplePkg/Sample-Package-038.png)
+![Cuis Window](SamplePkg/IADict39.png)
 
+![Cuis Window](SamplePkg/IADict40.png)
 
 Now we add the code to create an instance
 
-![Cuis Window](SamplePkg/Sample-Package-039.png)
-
+![Cuis Window](SamplePkg/IADict41.png)
 
 `IEDictWindow class>>open` uses the inherited method `SystemWindow class>>open:label:`
 
 Let's take a brief look at this.  Select the text which contains `open:*label:` and Cmd-m (iMplementors).
 
-![Cuis Window](SamplePkg/Sample-Package-040.png)
+![Cuis Window](SamplePkg/IADict43.png)
 
-
-Implementors shows just one implementor: SystemWindow.
-
-![Cuis Window](SamplePkg/Sample-Package-041.png)
-
+![Cuis Window](SamplePkg/IADict44.png)
 
 The `SystemWindow class>>open:label:` method sets the window's _model_, invokes `buildMorphicWindow`, sets the label (if any), and returns the window.
 
 So our next task is to go to the _instance_ side of the class and implement `IEDictWindow>>buildMorphicWindow`.
 
-![Cuis Window](SamplePkg/Sample-Package-042.png)
-
+![Cuis Window](SamplePkg/IADict45.png)
 
 ..which we will do in Part 3 of this tutorial
 - https://github.com/Cuis-Smalltalk/Learning-Cuis/blob/master/SamplePackage3.md
