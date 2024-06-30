@@ -125,7 +125,7 @@ This sometimes helps me decide if a package has something I want.
 
 ![Cuis Window](SamplePkg/IADict51.png)
 
-When using something from another package, we say that other package is _required_ for our package to work.  The system does not know this. We need to open an Installed Packages browser and click on the 'add requirement' button.
+When using something from another package, we say that other package is ***required*** for our package to work.  The system does not know this. We need to open an Installed Packages browser and click on the 'add requirement' button.
 
 Note that we only get to select from loaded packages.
 
@@ -271,7 +271,7 @@ Many ways to do this.  Since I already typed the text into the IEDictWindow clas
 
 ![Cuis Window](SamplePkg/IADict57.png)
 
-Try again, and ..
+DoIt, and ..
 
 ![Cuis Window](SamplePkg/IADict58.png)
 
@@ -303,11 +303,13 @@ Ah!  I have to add the access methods to IEDict as well.
 
 I guess it is time to do this now.
 
-Note that I don't have to define everything up front.  It is OK to leave some holes to be filled and just let the system tell me when I try and use them.
+Note that I don't have to define everything up front.  It is OK to leave holes to be filled and just let the system tell me when I try and use them.
+
+The debugger is our friend!
 
 ### IEDict instance variables
 
-The first thing I need to do is add instance variables so that out IEDict model instance knows and keeps track of its searchString, searchResult, and resultIndex.
+The first thing I need to do is add instance variables so that our IEDict model instance knows and keeps track of its searchString, searchResult, and resultIndex.
 
 I also need to add method class `accessing` and the methods to get and set the values for these.
 
@@ -344,6 +346,8 @@ initialize
 ### method category: `ui support`
 
 OK.  Here it gets interesting.
+
+Buttons get "clicked"!
 
 Remember the four methods used by our buttons?
 
