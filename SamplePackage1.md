@@ -1,7 +1,9 @@
 Making a Simple Package for Cuis
 ================================
 
-This is a tutorial which shows in detail the process of creating a simple package in Cuis Smalltalk and making it sharable on GitHub.
+This is a tutorial which shows in detail the process of creating a simple package in Cuis Smalltalk and making it shareable on GitHub.
+
+Package creation hilights UI tools and techniques.
 
 ### Basic Orientation
 
