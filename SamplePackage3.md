@@ -424,7 +424,7 @@ searchString
 	^ entryTextMorph contents asString 
 ````
 
-![Cuis Window](SamplePkg/IADict63.png)
+![Cuis Window](SamplePkg/IADict64.png)
 
 Now we can click on the buttons without bringing up the debugger, but something is missing!  The results!
 
@@ -491,8 +491,9 @@ searchResultsChanged
 
 OK.  Let's click on some buttons!!
 
-![Cuis Window](SamplePkg/Sample-Package-058.png)
-![Cuis Window](SamplePkg/Sample-Package-059.png)
+![Cuis Window](SamplePkg/IADict65.png)
+
+![Cuis Window](SamplePkg/IADict66.png)
 
 Wow!!  The buttons work!!
 
