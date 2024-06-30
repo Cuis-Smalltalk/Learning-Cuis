@@ -36,7 +36,7 @@ OK.  Let's define all those methods.
 
 I'll start with the most complex one: `makeEntryArea`
 
-The LayoutMorph returned is a row with the prompt ('Enter text: ') and a OneLineEditorMorph where the user can type words to be matched.
+The LayoutMorph returned is a row with the prompt ('Enter text: ') and a TextEntryMorph where the user can type words to be matched.
 
 ````Smalltalk
 makeEntryArea
@@ -109,7 +109,7 @@ Time to bail out (cancel) and load the required code!
 
 What has happened is this.  Cuis keeps a small kernel by moving optional code into packages.  This means that the core is smaller and easier to understand.  It also means that we can learn each package Feature incrementally as we need them.
 
-As Cuis gets simpler sometimes code we use and rely on gets moved somewhere else!  That happened to me here.  The TextEntryMorph was moved into a package in the Packages directory with a Feature name of `#'UI-Entry'`.
+As Cuis gets simpler sometimes code we use and rely on gets moved somewhere else!  That happened to me here.  The TextEntryMorph was moved into a package in the Cuis-Smalltalk-UI directory with a Feature name of `#'UI-Entry'`.
 
 You can do a text search to find such classes.  In a Linux shell this would be `grep TextEntry --files-with-matches */*.st` but each OS has some text search method.  You know which directories to check, right?
 
@@ -117,7 +117,7 @@ You can do a text search to find such classes.  In a Linux shell this would be `
 
 ![Cuis Window](SamplePkg/IADict50.png)
 
-After loading the UI-Entry feature, we can Accept the code.  Note that the word `TextEntryMorph` turns from red to black to indicate it is a known class name.
+After loading the UI-Entry feature, we can Accept the code.  Note that the word `TextEntryMorph` turns from red to black to indicate it is now a known class name.
 
 Also, you can use a FileList to open a Package Browser to view code in a package ***without loading it*** into your image.
 
@@ -271,7 +271,9 @@ Many ways to do this.  Since I already typed the text into the IEDictWindow clas
 
 ![Cuis Window](SamplePkg/IADict57.png)
 
+Try again, and ..
 
+![Cuis Window](SamplePkg/IADict58.png)
 
 Ah, need to write `defaultSeparation`.  Thinking back, I also need the `textSizeUnit`.
 
@@ -438,7 +440,7 @@ The basic idea is that these are separated so that one can have multiple views o
 
 So how does a view know when to update its display of the model's information?
 
-The answer to that is _events_.
+The answer to that is ***events***.
 
 When something changes in a model, it just announces an event.  Any view (any object, really) can register as interested in an event.
 
@@ -449,7 +451,7 @@ When is there an interesting event?
 
 In the case of IEDict, it is when a search takes place and a new result is obtained.
 
-So IEDict needs to announce an event when there is a new search result.
+So IEDict, our model, needs to announce an event when there is a new search result.
 
 ````Smalltalk
 searchResult: newResult
