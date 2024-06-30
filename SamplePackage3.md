@@ -28,7 +28,7 @@ So let's write this down.
 
 Note that when I Accept this method, I get repeated warnings about undefined methods and options to change the text to known methods. 
 
-I just select the unknown selector at the top line of the menu (the original text) to confirm that this is the choice I want.
+I just pick the unknown selector at the top line of the menu (the original text), in each case, to confirm that this is the choice I want.
 
 OK.  Let's define all those methods.
 
