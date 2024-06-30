@@ -226,7 +226,7 @@ When we select a font size and open an IEDictWindow, it scales itself to the fon
 ![Cuis Window](SamplePkg/IADict79.png)
 
 
-However, if we change the font now, the window does not look so good.
+However, if we enlarge the font now, the window does not look so good to me.
 
 ![Cuis Window](SamplePkg/IADict80.png)
 
