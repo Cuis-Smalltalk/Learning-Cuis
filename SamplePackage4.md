@@ -6,6 +6,8 @@ This is a continuation of
 
 ### Add to the World->Open menu
 
+*** The Menu code is being updated -- skip to: A Bit Of Color ***
+
 The next thing I am going to do is add a selection to the Open menu to open an IEDictWindow.  
 
 There are several reasons for this.
@@ -87,13 +89,15 @@ buildMorphicWindow
 
 Now to open an new window from the Open menu and ...
 
-![Cuis Window](SamplePkg/Sample-Package-061.png)
+![Cuis Window](SamplePkg/IADict67.png)
 
-Nothing happened?  Huh?
+Nothing changed?  Huh?
 
 This just goes to show that we need to flexible and nimble enough to deal with the unexpected.
 
 Let's look around a bit.
+
+![Cuis Window](SamplePkg/IADict68.png)
 
 I Cmd-click on the IEDictWindow morph and use its _menu handle_ to open an Inspector on it.
 
@@ -103,8 +107,7 @@ self color: self backgroundColor.
 ````
 Press Cmd-d (DoIt) and ...
 
-![Cuis Window](SamplePkg/Sample-Package-062.png)
-![Cuis Window](SamplePkg/Sample-Package-063.png)
+![Cuis Window](SamplePkg/IADict69.png)
 
 The background color for the window is set as I expect.
 
@@ -118,8 +121,9 @@ Let's see who is messaging/calling `buildMorphicWindow`.
 
 Being lazy (did I tell you I was lazy?), I go back to the buildMorphicWindow method, select the name and Cmd-n (seNders of it).
 
-![Cuis Window](SamplePkg/Sample-Package-064.png)
-![Cuis Window](SamplePkg/Sample-Package-065.png)
+![Cuis Window](SamplePkg/IADict70.png)
+
+![Cuis Window](SamplePkg/IADict71.png)
 
 I find that the `SystemWindow class>>open:label:` method
 - creates a new window
@@ -132,8 +136,9 @@ Nothing wierd here.
 
 Let's look at implementors of `openInWorld`
 
-![Cuis Window](SamplePkg/Sample-Package-066.png)
-![Cuis Window](SamplePkg/Sample-Package-067.png)
+![Cuis Window](SamplePkg/IADict72.png)
+
+![Cuis Window](SamplePkg/IADict73.png)
 
 Ah hah!  
 
@@ -154,7 +159,7 @@ Note: you can hilight `Theme`, Cmd-b (Browse the class) to look at various color
 
 Open a new IEDictWindow and...
 
-![Cuis Window](SamplePkg/Sample-Package-068.png)
+![Cuis Window](SamplePkg/IADict74.png)
 
 
 This is starting to look pretty good.
@@ -178,7 +183,7 @@ open
 
 Open an new IEDictWindow and...
 
-![Cuis Window](SamplePkg/Sample-Package-0691.png)
+![Cuis Window](SamplePkg/IADict74.png)
 
 
 Super!!
@@ -190,6 +195,8 @@ Now we know we can play with colors to get whatever we want want.
 
 World menu->Preferences->Font Sizes lets one select a font size which works well with one's screen size and resolution -- or to set a large font for a demo or talk.
 
+![Cuis Window](SamplePkg/IADict75.png)
+
 If you play with these for a bit, you will see that most windows do pretty much the right thing.
 
 We want our IEDictWindow to do the right thing as well.
@@ -198,8 +205,7 @@ This means that our basic window size should be scaled based on the current font
 
 One way to do this is by changing the window size so that it looks right and asking it for it's unscaled size.
 
-![Cuis Window](SamplePkg/Sample-Package-069.png)
-
+![Cuis Window](SamplePkg/IADict76.png)
 
 I did that here by PrintIt (Cmd-p) on an Inspector opened on the IEDictWindow where I asked the question
 ````Smalltalk
@@ -210,24 +216,26 @@ This gets us the unscaled extent. Now We know enough to add a method to the `geo
 ````Smalltalk
 initialExtent
 
-	^ (30 @ 16) * self textSizeUnit 
+	^ (40 @ 20) * self textSizeUnit 
 ````
 
 When we select a font size and open an IEDictWindow, it scales itself to the font we use.
 
-![Cuis Window](SamplePkg/Sample-Package-070.png)
+![Cuis Window](SamplePkg/IADict77.png)
+
+![Cuis Window](SamplePkg/IADict79.png)
 
 
 However, if we change the font now, the window does not look so good.
 
-![Cuis Window](SamplePkg/Sample-Package-071.png)
+![Cuis Window](SamplePkg/IADict80.png)
 
 
 To fix this, we need to look at how fonts are updated when the font preference changes.
 
 In this case, I bring up a Message Names browser.  (World menu->Open->Message Names) and type 'fontpref', hit return, and look at the SystemWindow method that deals with this.
 
-![Cuis Window](SamplePkg/Sample-Package-072.png)
+![Cuis Window](SamplePkg/IADict81.png)
 
 I also look at some of the other fontPreferenceChanged methods to see how they handle a font resize.
 
@@ -240,21 +248,21 @@ fontPreferenceChanged
 
   super fontPreferenceChanged.
   self promptMorph 
-		layoutSpec: (LayoutSpec 
-						proportionalWidth: 0.3; 
-						fixedWidth: 
-							(self promptMorph measureContents x)).
+	layoutSpec: (LayoutSpec 
+			proportionalWidth: 0.3; 
+			fixedWidth: (self promptMorph measureContents x)).
   self layoutMorph submorphs last "text entry layout"
 	layoutSpec: (LayoutSpec
-					proportionalWidth: 1 
-					fixedHeight: self defaultSeparation * 2 + self textSizeUnit).
+			proportionalWidth: 1 
+			fixedHeight: self defaultSeparation * 2
+				     + self textSizeUnit).
 					
   self morphExtent: (self morphExtent max: self initialExtent).
 ````
 
 Let's try again.  Set the font preference to Small, open an IEDictWindow, set to Huge.
 
-![Cuis Window](SamplePkg/Sample-Package-073.png)
+![Cuis Window](SamplePkg/IADict82.png)
 
 Ah!  Much better!  Celebrate success!
 
@@ -308,7 +316,8 @@ in le global communication!
 '
 ````
 
-![Cuis Window](SamplePkg/Sample-Package-074.png)
+![Cuis Window](SamplePkg/IADict83.png)
+
 
 ### Check Our Work
 
@@ -322,7 +331,7 @@ And check our work.
 
 Did we remember to _require_ all packages we depend on?
 
-![Cuis Window](SamplePkg/Sample-Package-075.png)
+![Cuis Window](SamplePkg/IADict84.png)
 
 
 ***Ben obra!!***
