@@ -181,7 +181,7 @@ Clicking on the next frame down (the "+" frame) shows what the fuss is about and
 
 At this point I am just going to close the debugger and ignore this as adding a string and a number really is a silly thing to do.  But I could have written or changed some code and them re-executed the stack frame to continue the computation -- without unwinding the stack! 
 
-Well, this is enough for thie brief introduction to the Cuis User Interface.
+Well, this is enough for the brief introduction to the Cuis User Interface.
 
 There is much to learn, but much help is available!
 
