@@ -71,7 +71,7 @@ Read ***About Cuis*** !!
 - https://github.com/Cuis-Smalltalk/Cuis-Smalltalk-Dev/blob/master/Documentation/AboutCuis.md
 
 Peruse ***Other Introductions to Smalltalk***
-- https://mvolkmann.github.io/blog/topics/#/blog/smalltalk/01-quick-introduction/?v=1.1.1
+- https://mvolkmann.github.io/blog/smalltalk/01-quick-introduction/
 
 Look at ***Documentation*** available for other wonderful Smalltalk implementations
 - http://squeak.org/documentation/
